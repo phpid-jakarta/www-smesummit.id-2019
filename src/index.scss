@@ -1,0 +1,72 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header_sticky{
+  background: transparent !important;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+.is--have-bg{
+  background-color: #000 !important;
+}
+.header_wrapper{
+  height: 70px;
+  padding: 1em;
+
+  .link{
+    color: #fff;
+    padding: 1em;
+    font-weight: 600;
+
+    &:hover{
+      background-color: rgba(0,0,0,.7);
+    }
+  }
+}
+
+.hero.is-welcome-cover {
+  background: url(/images/ayana_ballroom_2.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 5rem;
+  color: #FFF;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content{
+  background-color: rgba(0,0,0,.7);
+  padding: 1em;
+}
+.section{
+  margin: 0 auto 8rem auto;
+  padding: 0 1rem;
+  max-width: 960px;
+
+  p{
+    padding-top: 1em;
+  }
+
+}
+.location{
+  .media{
+    img{
+      height: 300px;
+    }
+  }
+}
+.btn-call{
+  margin-top: 3em;
+}
+.footer{
+  background-color: #000;
+  p {
+    color: #fff;
+  }
+}
