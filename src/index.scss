@@ -32,7 +32,7 @@ body{
   background: url(/images/ayana_ballroom_2.jpg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
   color: #FFF;
   position: relative;
   display: flex;
@@ -63,6 +63,14 @@ body{
 }
 .btn-call{
   margin-top: 3em;
+}
+.list-ol{
+  text-align: left;
+  line-height: 2;
+
+  li{
+    padding: .5em;
+  }
 }
 .footer{
   background-color: #000;
