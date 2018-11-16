@@ -1,7 +1,12 @@
 body{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
+.caption-text{
+  font-family: 'PT Sans Caption', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
 .header_sticky{
   background: transparent !important;
   position: fixed;
@@ -29,7 +34,7 @@ body{
 }
 
 .hero.is-welcome-cover {
-  background: url(/images/ayana_ballroom_2.jpg) no-repeat center center fixed;
+  background: url(/images/banner/building.jpeg) no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   margin-bottom: 10rem;
