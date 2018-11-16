@@ -4,3 +4,4 @@ dist/*.js
 test/*.js
 node_modules
 *.config*
+src/sw.js
