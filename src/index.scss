@@ -17,6 +17,9 @@ body{
 }
 .is--have-bg{
   background-color: #000 !important;
+  .brand-logo{
+    filter: invert(100%);
+  }
 }
 .header_wrapper{
   height: 70px;

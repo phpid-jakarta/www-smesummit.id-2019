@@ -1,7 +1,7 @@
 {
   "name": "www-nontech-summit-2019",
   "version": "1.0.0",
-  "description": "Website for Small-Medium Business Non-Tech Company Summit 2019 - Organized by PHP Indonesia",
+  "description": "Website for Small-Medium Enterprise Non-Tech Company Summit 2019 - Organized by PHP Indonesia",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development ./node_modules/.bin/parcel index.html --open",
