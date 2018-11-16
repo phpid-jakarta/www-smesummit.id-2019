@@ -32,44 +32,90 @@
 
     <header class="header_sticky">
       <nav class="level header_wrapper">
-        <p class="level-item has-text-centered">
+        <div class="level-item has-text-centered">
           <img
             class="brand-logo"
             src="https://phpid-jakarta.github.io/assets/images/phpid-jakarta.png"
             alt=""
             style="height: 30px;"
           />
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text" href="#home">Home</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text" href="#about">About</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text" href="#register">Register</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text" href="#sponsors">Sponsors</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text" href="#speakers">Speakers</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text" href="#volunteers">Volunteers</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text" href="#location">Location</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text">FAQ</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text">Blog</a>
-        </p>
-        <p class="level-item has-text-centered">
-          <a class="link caption-text">Contact</a>
-        </p>
+        </div>
+        <!-- DESKTOP MENU -->
+        <div class="level-item has-text-centered is-hidden-mobile nav-right">
+            <nav class="level">
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text" href="#home">Home</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text" href="#about">About</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text" href="#register">Register</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text" href="#sponsors">Sponsors</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text" href="#speakers">Speakers</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text" href="#volunteers">Volunteers</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text" href="#location">Location</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text">FAQ</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text">Blog</a>
+                </p>
+                <p class="level-item has-text-centered">
+                  <a class="link caption-text">Contact</a>
+                </p>
+            </nav>
+        </div>
+        <!-- BURGER MENU -->
+        <div class="level-item burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!-- MOBILE MENU-->
+        <div class="mobile-menu">
+          <nav class="level">
+            <p class="level-item has-text-centered">
+              <a class="link caption-text" href="#home">Home</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text" href="#about">About</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text" href="#register">Register</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text" href="#sponsors">Sponsors</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text" href="#speakers">Speakers</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text" href="#volunteers">Volunteers</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text" href="#location">Location</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text">FAQ</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text">Blog</a>
+            </p>
+            <p class="level-item has-text-centered">
+              <a class="link caption-text">Contact</a>
+            </p>
+          </nav>
+        </div>
       </nav>
     </header>
 
@@ -159,10 +205,13 @@
             rel="noopener noreferrer"
           >
             <figure class="image is-128x128">
-              <img
-                class="is-rounded"
-                src="/images/speaker/ken-ratri-iswari.jpeg"
-              />
+              <picture>
+                  <source type="image/webp" srcset="/images/speaker/ken-ratri-iswari.webp">
+                  <img
+                    class="is-rounded"
+                    src="/images/speaker/ken-ratri-iswari.jpeg"
+                    alt="Ken Ratri Iswari"/>
+                </picture>
             </figure>
           </a>
         </div>
@@ -221,11 +270,17 @@
 
     <section id="location" class="section location">
       <h2 class="title has-text-centered caption-text">Location</h2>
-      <article class="media">
-        <figure class="media-left">
-          <img src="/images/venue/ayana_ballroom_2.jpg" height="300" />
+      <article class="level">
+        <figure class="level-item">
+          <picture>
+            <source type="image/webp" srcset="/images/venue/ayana_ballroom_3_300px.webp">
+            <img
+              src="/images/venue/ayana_ballroom_3_300px.jpeg"
+              alt="Ballroom Ayana Hotel Midplaza, Jakarta"
+              height="300"/>
+          </picture>
         </figure>
-        <div class="media-content">
+        <div class="level-item">
           <div class="content">
             <p class="is-size-4">Ballroom Ayana Hotel Midplaza, Jakarta</p>
             <p>
