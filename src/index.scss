@@ -163,6 +163,13 @@ body {
     border: 1px solid #fff;
   }
 }
+.organizer{
+  &__logo{
+    margin: 0 auto;
+    width: 200px !important;
+    filter: invert(100%);
+  }
+}
 // media screen on mobile
 @media screen and (max-width: 768px) {
   .header_wrapper{
