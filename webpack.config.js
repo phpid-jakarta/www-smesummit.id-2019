@@ -51,7 +51,6 @@ let plugins = [
   extractHTML('index.html', 'src/index.ejs'),
   extractHTML('contact/index.html', 'src/contact/index.ejs'),
   extractHTML('faq/index.html', 'src/faq/index.ejs'),
-  extractHTML('location/index.html', 'src/location/index.ejs'),
   extractHTML('register/index.html', 'src/register/index.ejs'),
   extractHTML('speaker/index.html', 'src/speaker/index.ejs'),
   extractHTML('sponsor/index.html', 'src/sponsor/index.ejs'),
@@ -67,13 +66,13 @@ if (!isDev()) {
     new CompressionPlugin({
       algorithm: 'gzip'
     }),
-    new InjectManifest({
-      swSrc: './src/sw.js',
-    }),
     new CopyWebpackPlugin([
       'manifest.json',
       'images/**',
     ]),
+    new InjectManifest({
+      swSrc: './src/sw.js',
+    }),
   ])
 }
 

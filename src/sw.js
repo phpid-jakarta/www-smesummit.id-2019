@@ -1,16 +1,17 @@
+/* eslint-disable */
 workbox.setConfig({
   debug: false
-});
+})
 workbox.core.setCacheNameDetails({
   prefix: 'smesummit-'
-});
+})
 
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+workbox.precaching.suppressWarnings()
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
 const getHourFromDay = hour => {
-  return hour * 24;
-};
+  return hour * 24
+}
 
 const cacheableConfig = (name, maxEntry, maxHour) => {
   return {
@@ -25,8 +26,8 @@ const cacheableConfig = (name, maxEntry, maxHour) => {
         purgeOnQuotaError: true
       })
     ]
-  };
-};
+  }
+}
 
 // cache third party
 workbox.routing.registerRoute(
@@ -34,13 +35,13 @@ workbox.routing.registerRoute(
   workbox.strategies.cacheFirst(
     cacheableConfig('gfonts', 10, getHourFromDay(30))
   )
-);
+)
 workbox.routing.registerRoute(
   new RegExp('https://cdnjs.cloudflare.com/(.*)'),
   workbox.strategies.cacheFirst(
     cacheableConfig('cloudfrlare', 10, getHourFromDay(30))
   )
-);
+)
 
 // cache image
 workbox.routing.registerRoute(
@@ -48,7 +49,7 @@ workbox.routing.registerRoute(
   workbox.strategies.cacheFirst(
     cacheableConfig('images-cache', 50, getHourFromDay(30))
   )
-);
+)
 
 // cache json
 workbox.routing.registerRoute(
@@ -56,7 +57,7 @@ workbox.routing.registerRoute(
   workbox.strategies.staleWhileRevalidate(
     cacheableConfig('json-cache', 50, getHourFromDay(30))
   )
-);
+)
 
 // cache html
 workbox.routing.registerRoute(
@@ -64,4 +65,4 @@ workbox.routing.registerRoute(
   workbox.strategies.networkFirst(
     cacheableConfig('html-cache', 50, getHourFromDay(30))
   )
-);
+)
