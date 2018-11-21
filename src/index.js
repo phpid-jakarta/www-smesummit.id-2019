@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (entry.intersectionRatio <= 0) {
           document.querySelector('.header_sticky').classList.add('is--have-bg')
         } else {
-          document.querySelector('.header_sticky').classList.remove('is--have-bg')
+          document
+            .querySelector('.header_sticky')
+            .classList.remove('is--have-bg')
         }
       })
     })
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const onClickBurger = () => {
-    if(burgerEl.classList.contains(activeCls)) {
+    if (burgerEl.classList.contains(activeCls)) {
       hideMobileMenu()
     } else {
       showMobileMenu()
@@ -48,3 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
   menuEl.addEventListener('click', onClickMenuMobile)
 })
 
+'serviceWorker' in navigator &&
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+  })
