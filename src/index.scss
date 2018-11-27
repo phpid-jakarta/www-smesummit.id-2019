@@ -1,3 +1,7 @@
+$theme: #2779d6;
+$text-color: #3d4044;
+$overlay-theme: rgba(38, 121, 214, .4);
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -23,7 +27,7 @@ body {
 }
 
 .is--have-bg {
-  background-color: #000 !important;
+  background-color: $theme !important;
   .brand-logo {
     filter: invert(100%);
   }
@@ -37,7 +41,7 @@ body {
     padding: 1em;
     font-weight: 600;
     &:hover {
-      background-color: rgba(0, 0, 0, .7);
+      background-color: $overlay-theme;
     }
   }
 }
@@ -55,7 +59,7 @@ body {
 }
 
 .hero-content {
-  background-color: rgba(0, 0, 0, .7);
+  background-color: $overlay-theme;
   padding: 1em;
 }
 
@@ -65,6 +69,9 @@ body {
   max-width: 960px;
   p {
     padding-top: 1em;
+  }
+  .title-section {
+    color: $theme;
   }
 }
 
@@ -89,12 +96,38 @@ body {
   }
 }
 
-.footer {
-  background-color: #000;
-  p {
-    color: #fff;
+.footer{
+  &_container {
+    background-color: $theme;
+    padding: 1em 0;
+    p {
+      color: #fff;
+    }
   }
 }
+
+.sitemap{
+  text-align: left;
+  line-height: 2;
+  &__wrapper{
+    text-align: left;
+  }
+  .has-text-weight-bold{
+    padding-bottom: .5em;
+  }
+  &__item{
+    color: #fff;
+    a{
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .is--have-bg{
   .burger{
     color: #fff;
@@ -154,7 +187,7 @@ body {
   position: absolute;
   right: 50px;
   top: 45px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: $overlay-theme;
   display: none;
   &.is-active{
     display: block;
@@ -194,11 +227,18 @@ body {
     text-align: center;
     list-style: none;
   }
+
+  .sitemap{
+    text-align: center;
+    &__wrapper{
+      text-align: center;
+    }
+  }
 }
 
 // media screen on not mobile
 @media screen and (min-width: 768px) {
-  .burger{
+  .burger, .hide-in-desktop{
     display: none;
   }
 }
