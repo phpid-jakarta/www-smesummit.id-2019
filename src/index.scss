@@ -29,7 +29,9 @@ body {
 .is--have-bg {
   background-color: $theme !important;
   .brand-logo {
-    filter: invert(100%);
+    background-color: #fff;
+    padding: .25em;
+    border-radius: .25em;
   }
 }
 
