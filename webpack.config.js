@@ -49,6 +49,7 @@ let plugins = [
     }
   }),
   extractHTML('index.html', 'src/index.ejs'),
+  extractHTML('coacher/index.html', 'src/coacher/index.ejs'),
   extractHTML('contact/index.html', 'src/contact/index.ejs'),
   extractHTML('faq/index.html', 'src/faq/index.ejs'),
   extractHTML('register/index.html', 'src/register/index.ejs'),
