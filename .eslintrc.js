@@ -1,23 +1,23 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
-    commonjs: true,
-    es6: true,
-    jest: true
+    node: true
   },
-  extends: ['eslint:recommended'],
   parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module'
+    parser: 'babel-eslint'
   },
+  extends: [
+    'standard',
+    'plugin:vue/recommended'
+  ],
+  // required to lint *.vue files
+  plugins: [
+    'vue'
+  ],
+  // add your custom rules here
   rules: {
-    indent: ['error', 2],
-    'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'never'],
-    'no-console': 'off'
-  },
-  overrides: {
-    files: ['**/*.js']
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
-};
+}
