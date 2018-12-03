@@ -19,6 +19,16 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.gradient-section {
+  @extend %gradient;
+  padding: 5em 1em;
+  margin: 0 auto 8rem auto;
+}
+
+.typed-container{
+  padding-top: 1em;
+}
+
 .button.is-large {
   font-size: 1rem;
   padding: 2em;

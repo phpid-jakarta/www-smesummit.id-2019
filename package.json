@@ -19,6 +19,7 @@
     "intersection-observer": "^0.5.1",
     "nuxt": "^2.3.4",
     "particles.js": "^2.0.0",
+    "typed.js": "^2.0.9",
     "unfetch": "^4.0.1"
   },
   "devDependencies": {

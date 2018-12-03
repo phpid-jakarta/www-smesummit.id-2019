@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="wrapper">
     <section
       id="about"
       class="section about">
@@ -7,73 +7,27 @@
         ABOUT SME SUMMIT 2019
       </h2>
       <div class="has-text-centered">
-        <p>
-          SME Summit 2019 adalah event yang diselenggarakan oleh komunitas PHP
-          Indonesia
+        <p class="is-size-3">
+          {{ aboutTitle }}
         </p>
-        <p/>
-
-        <h2 class="is-size-4 has-text-centered">Tujuan</h2>
-        <ol class="list-ol">
-          <li>
-            Membantu terjadinya Transformasi Teknologi di perusahaan-perusahaan
-            non-tech, perusahaan kecil menengah dan perusahaan tradisional.
-          </li>
-          <li>
-            Membuat divisi IT yang semula hanya sebagai divisi pendukung dalam
-            perusahaan menjadi divisi yang menghasilkan keuntungan
-            (profit-center) bagi perusahaan.
-          </li>
-          <li>
-            Membuat perusahan-perusahaan yang pertumbuhannya stagnan menjadi
-            perusahaan yang bertumbuh eksponensial
-          </li>
-        </ol>
-
-        <h2 class="is-size-4 has-text-centered">Target Events</h2>
-        <ol class="list-ol">
-          <li>
-            Perusahaan-perusahaan non-teknologi akan mendapatkan wawasan dan
-            keberanian untuk memanfaatkan IT secara lebih maksimal
-          </li>
-          <li>
-            Perusahaan non-teknologi yang stagnan akan mendapatkan ide dan
-            inovasi baru untuk berevolusi dengan di Industri IT saat ini
-          </li>
-          <li>
-            Perusahaan akan mendapatkan wawasan baru pentingnya mengikuti
-            informasi dan trend IT yang terkait di sektor MARKETING, FINANSIAL,
-            SDM dan REGULASI.
-          </li>
-        </ol>
       </div>
     </section>
 
     <section
       id="register"
-      class="section register">
+      class="register gradient-section clearfix">
       <h2 class="title has-text-centered title-section caption-text">
-        REGISTER FOR ATTENDANTS
+        ARE YOU THESE PERSON ?
       </h2>
 
-      <h2 class="is-size-5 has-text-centered">
-        Here is our target for being attendants:
-      </h2>
-
-      <div class="has-text-centered">
-        <p>CEO of Small and Medium Enterprise</p>
-        <p>IT Manager or equal of non-technology company</p>
-        <p>Professional Freelancer</p>
-        <p>Professional Freelancer</p>
-        <p>Academic/Lecture</p>
-      </div>
+      <h2 class="is-size-3 has-text-centered has-text-white typed-container"/>
 
       <div class="level btn-call">
         <div class="level-item">
           <a
-            class="button is-outlined is-large is-info caption-text"
+            class="button is-large is-danger caption-text"
             href="/register"
-          >Register</a
+          >Register Here</a
           >
         </div>
       </div>
@@ -164,18 +118,6 @@
         CALL FOR VOLUNTEERS
       </h2>
 
-      <p class="has-text-centered">
-        We knew we can't held this event without support from passionate
-        volunteers. <br ><br >
-        <span
-          class="is-size-5 has-text-weight-semibold"
-        >Be part of our event!</span
-        >
-        <br ><br >
-        As a volunteer, you will get plenty of opportunities to meet many
-        interesting people.
-      </p>
-
       <div class="level btn-call">
         <div class="level-item">
           <a
@@ -231,8 +173,33 @@
 </template>
 
 <script>
+import Typed from 'typed.js'
+import constant from '../constant'
+
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  data () {
+    return {
+      aboutTitle: constant.about
+    }
+  },
+  mounted () {
+    /* eslint-disable */
+    const options = {
+      strings: [
+        'CEO of Small and Medium Enterprise',
+        'IT Manager or equal of Non-Tech Company',
+        'Professional Freelancer',
+        'Academic/Lecture'
+      ],
+      typeSpeed: 40,
+      backSpeed: 40,
+      backDelay: 1000,
+      loop: true,
+      loopCount: Infinity,
+    }
+    new Typed('.typed-container', options)
+  }
 }
 </script>
 
