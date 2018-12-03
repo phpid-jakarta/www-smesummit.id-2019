@@ -1,10 +1,7 @@
-import Rellax from 'rellax'
-
 require('intersection-observer')
 require('./index.scss')
 
 document.addEventListener('DOMContentLoaded', function() {
-  new Rellax('.rellax')
   if ('IntersectionObserver' in window) {
     var about = document.querySelector('#conf_title')
     let lazyImageObserver = new IntersectionObserver(function(entries) {
