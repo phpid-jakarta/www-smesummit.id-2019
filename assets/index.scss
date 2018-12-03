@@ -66,6 +66,13 @@ body {
   }
 }
 
+#particle{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 .hero.is-welcome-cover {
   @extend %gradient;
   height: 100vh;
@@ -76,9 +83,11 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+.hero-body{
+  z-index: 9;
+}
 .hero-content {
-  background-color: $overlay-theme;
+  background-color: rgba(38, 121, 214, .9);
   padding: 1em;
 }
 
@@ -213,6 +222,9 @@ body {
   }
   .level-item{
     border: 1px solid #fff;
+    .link {
+      padding: .5em;
+    }
   }
 }
 .organizer{
@@ -229,6 +241,9 @@ body {
     .level-item:not(:last-child) {
         margin-bottom: 0;
     }
+  }
+  .hero.is-welcome-cover {
+    margin-bottom: 2rem;
   }
   .hero-content {
     padding: .25em;
