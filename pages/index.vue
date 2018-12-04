@@ -197,6 +197,7 @@ export default {
       backDelay: 1000,
       loop: true,
       loopCount: Infinity,
+      showCursor: false,
     }
     new Typed('.typed-container', options)
   }
