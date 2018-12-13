@@ -174,13 +174,13 @@
 
 <script>
 import Typed from 'typed.js'
-import constant from '../constant'
+import { ABOUT_DESC } from '../constant/index'
 
 export default {
   name: 'IndexPage',
   data () {
     return {
-      aboutTitle: constant.about
+      aboutTitle: ABOUT_DESC
     }
   },
   mounted () {

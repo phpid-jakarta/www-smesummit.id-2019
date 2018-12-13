@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import constant from '../constant'
+import { ABOUT_DESC } from '../constant/index'
 
 export default {
   name: 'AboutPage',
   data () {
     return {
-      aboutTitle: constant.about
+      aboutTitle: ABOUT_DESC
     }
   }
 }
