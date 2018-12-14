@@ -1,8 +1,0 @@
-build/*.js
-config/*.js
-dist/*.js
-test/*.js
-static/*.js
-node_modules
-*.config*
-nuxt.config.js
