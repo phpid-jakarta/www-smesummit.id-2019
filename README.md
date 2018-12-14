@@ -6,7 +6,7 @@ Website for Small-Medium Enterprise Non-Tech Company Summit 2019 - Organized by 
 
 ## Dev Env Demo
 
-[https://smesummit-2019.netlify.com/](https://smesummit-2019.netlify.com/)
+[https://smesummit.netlify.com](https://smesummit.netlify.com)
 
 ------
 
