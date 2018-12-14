@@ -18,7 +18,9 @@ $overlay-theme: rgba(38, 121, 214, .4);
 body {
   font-family: 'Roboto', sans-serif;
 }
-
+.hidden{
+  display: none;
+}
 .gradient-section {
   @extend %gradient;
   padding: 5em 1em;
