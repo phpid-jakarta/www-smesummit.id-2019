@@ -12,6 +12,7 @@ import BaseHeader from '../components/BaseHeader'
 import BaseHero from '../components/BaseHero'
 import BaseFooter from '../components/BaseFooter'
 
+import 'unfetch/polyfill'
 require('intersection-observer')
 require('particles.js')
 
