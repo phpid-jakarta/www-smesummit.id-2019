@@ -1,7 +1,7 @@
 {
   "name": "smesummit.id",
   "version": "1.0.0",
-  "description": "Website for Small-Medium Enterprise Non-Tech Company Summit 2019 - Organized by PHP Indonesia",
+  "description": "Small-Medium Enterprise Summit 2019 - IT Transformation for Non-Tech company",
   "author": "Irfan Maulana",
   "private": true,
   "scripts": {
@@ -19,6 +19,7 @@
     "intersection-observer": "^0.5.1",
     "nuxt": "^2.3.4",
     "particles.js": "^2.0.0",
+    "typed.js": "^2.0.9",
     "unfetch": "^4.0.1"
   },
   "devDependencies": {

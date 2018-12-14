@@ -9,7 +9,7 @@ module.exports = {
   */
 
   head: {
-    title: `${appTitle} | ${pkg.description}`,
+    title: `${appTitle}`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

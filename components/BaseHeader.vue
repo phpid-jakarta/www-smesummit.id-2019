@@ -1,21 +1,21 @@
 <template>
   <header class="header_sticky">
     <nav class="level header_wrapper">
+      <div class="level-item has-text-centered">
+        <a
+          class=""
+          href="/#home">
+          <img
+            class="brand-logo"
+            src="/images/logo/SMESummit_Logo.png"
+            alt=""
+            style="height: 60px;"
+          >
+        </a>
+      </div>
       <!-- DESKTOP MENU -->
-      <div class="level-item has-text-centered is-hidden-mobile nav-right">
+      <div class="level-item has-text-centered is-hidden-mobile">
         <nav class="level">
-          <div class="level-item has-text-centered">
-            <a
-              class=""
-              href="/#home">
-              <img
-                class="brand-logo"
-                src="/images/logo/SMESummit_Logo.png"
-                alt=""
-                style="height: 60px;"
-              >
-            </a>
-          </div>
           <p class="level-item has-text-centered">
             <a
               class="link"
@@ -48,10 +48,11 @@
           </p>
         </nav>
       </div>
+      <div class="level-item is-hidden-mobile"/>
       <!-- BURGER MENU -->
       <div
         :class="{ 'is-active': isShowMenu }"
-        class="level-item burger"
+        class="level-item burger navbar-burger"
         @click="onClickBurger">
         <span/> <span/> <span/>
       </div>
