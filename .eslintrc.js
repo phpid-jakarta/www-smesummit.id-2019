@@ -22,6 +22,13 @@ module.exports = {
     "vue/html-closing-bracket-newline": ["error", {
       "singleline": "never",
       "multiline": "never"
+    }],
+    "vue/component-name-in-template-casing": ["error", "PascalCase", {
+      "ignores": [
+        'nuxt',
+        'nuxt-link',
+        'no-ssr'
+      ]
     }]
   }
 }
