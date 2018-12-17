@@ -279,7 +279,7 @@ export default {
         this.error = ''
         this.loadingSubmit = true
         this.isHaveError = false
-        const dataForSubmit = Object.assign({}, this.formData, { _token: this._token })
+        const dataForSubmit = Object.assign({}, this.formData)
         this.$store.dispatch('postRegisterParticipant', {
           token: this._token,
           data: dataForSubmit,
