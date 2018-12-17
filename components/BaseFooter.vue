@@ -39,32 +39,44 @@
         </p>
         <ul class="sitemap__wrapper">
           <li class="sitemap__item">
-            <a href="/register" title="Register">
+            <a
+              href="/register"
+              title="Register">
               Register
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/speaker" title="Speakers">
+            <a
+              href="/speaker"
+              title="Speakers">
               Speakers
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/coacher" title="Coacher">
+            <a
+              href="/coacher"
+              title="Coacher">
               Coacher
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/sponsor" title="Sponsors">
+            <a
+              href="/sponsor"
+              title="Sponsors">
               Sponsors
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/volunteer" title="Volunteers">
+            <a
+              href="/volunteer"
+              title="Volunteers">
               Volunteers
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/faq" title="FAQ">
+            <a
+              href="/faq"
+              title="FAQ">
               FAQ
             </a>
           </li>

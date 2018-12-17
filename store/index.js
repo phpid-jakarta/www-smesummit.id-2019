@@ -35,20 +35,20 @@ const createStore = () => {
           success && success()
         })
       },
-      postRegisterParticipant ({ commit, dispatch }, { token, data, success }) {
-        registerParticipant(token, data, success)
+      postRegisterParticipant ({ commit, dispatch }, { token, data, success, failed }) {
+        registerParticipant(token, data, success, failed)
       },
-      postRegisterCoacher ({ commit, dispatch }, { token, data, success }) {
-        registerCoacher(token, data, success)
+      postRegisterCoacher ({ commit, dispatch }, { token, data, success, failed }) {
+        registerCoacher(token, data, success, failed)
       },
-      postRegisterVolunteer ({ commit, dispatch }, { token, data, success }) {
-        registerVolunteer(token, data, success)
+      postRegisterVolunteer ({ commit, dispatch }, { token, data, success, failed }) {
+        registerVolunteer(token, data, success, failed)
       },
-      postRegisterSponsor ({ commit, dispatch }, { token, data, success }) {
-        registerSponsor(token, data, success)
+      postRegisterSponsor ({ commit, dispatch }, { token, data, success, failed }) {
+        registerSponsor(token, data, success, failed)
       },
-      postRegisterSpeaker ({ commit, dispatch }, { token, data, success }) {
-        registerSpeaker(token, data, success)
+      postRegisterSpeaker ({ commit, dispatch }, { token, data, success, failed }) {
+        registerSpeaker(token, data, success, failed)
       }
     }
   })

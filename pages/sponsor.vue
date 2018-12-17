@@ -121,6 +121,15 @@
           </div>
         </div>
       </form>
+
+      <div
+        v-show="isHaveError"
+        class="notification is-danger"
+        style="margin-top: 1em;">
+        <span>Please fill all required fields before submitting data.</span>
+        <br>
+        <span>{{ error }}</span>
+      </div>
     </section>
   </div>
 </template>
@@ -133,6 +142,7 @@ export default {
   name: 'RegisterSponsor',
   data () {
     return {
+      error: '',
       loadingToken: false,
       loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_SPONSOR}`,
@@ -144,7 +154,7 @@ export default {
         email_pic: '',
         phone: '',
         sponsor_type: '',
-        captcha_input: ''
+        captcha: ''
       }
     }
   },
@@ -163,7 +173,7 @@ export default {
       __isNotEmptyString(this.formData.email_pic) &&
       __isNotEmptyString(this.formData.phone) &&
       __isNotEmptyString(this.formData.sponsor_type) &&
-      __isNotEmptyString(this.formData.captcha_input)) {
+      __isNotEmptyString(this.formData.captcha)) {
         return true
       }
       return false
@@ -204,6 +214,11 @@ export default {
             setTimeout(() => {
               this.loadingSubmit = false
             }, 1000)
+          },
+          failed: (message) => {
+            this.error = message
+            this.isHaveError = true
+            this.loadingSubmit = false
           }
         })
       } else this.isHaveError = true
