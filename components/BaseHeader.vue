@@ -9,8 +9,7 @@
             class="brand-logo"
             src="/images/logo/SMESummit_Logo.png"
             alt=""
-            style="height: 60px;"
-          >
+            style="height: 60px;">
         </a>
       </div>
       <!-- DESKTOP MENU -->
@@ -19,42 +18,54 @@
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/about">About</a>
+              href="/about">
+              About
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/register">Register</a>
+              href="/register">
+              Register
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/sponsor">Sponsorship</a>
+              href="/sponsor">
+              Sponsorship
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/speaker">Speakers</a>
+              href="/speaker">
+              Speakers
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/#location">Location</a>
+              href="/#location">
+              Location
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/faq">FAQ</a>
+              href="/faq">
+              FAQ
+            </a>
           </p>
         </nav>
       </div>
-      <div class="level-item is-hidden-mobile"/>
+      <div class="level-item is-hidden-mobile" />
       <!-- BURGER MENU -->
       <div
         :class="{ 'is-active': isShowMenu }"
         class="level-item burger navbar-burger"
         @click="onClickBurger">
-        <span/> <span/> <span/>
+        <span /> <span /> <span />
       </div>
       <!-- MOBILE MENU -->
       <div
@@ -65,37 +76,51 @@
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/#home">Home</a>
+              href="/#home">
+              Home
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/about">About</a>
+              href="/about">
+              About
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/register">Register</a>
+              href="/register">
+              Register
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/sponsor">Sponsorship</a>
+              href="/sponsor">
+              Sponsorship
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/speaker">Speakers</a>
+              href="/speaker">
+              Speakers
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/#location">Location</a>
+              href="/#location">
+              Location
+            </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/faq">FAQ</a>
+              href="/faq">
+              FAQ
+            </a>
           </p>
         </nav>
       </div>

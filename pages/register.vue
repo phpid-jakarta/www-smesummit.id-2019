@@ -13,87 +13,101 @@
           class="hidden">
 
         <div class="field">
-          <label class="label">Name</label>
+          <label class="label">
+            Name
+          </label>
           <div class="control">
             <input
               v-model="formData.name"
               class="input"
               type="text"
               placeholder="Your Name"
-              required >
+              required>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Company Name</label>
+          <label class="label">
+            Company Name
+          </label>
           <div class="control">
             <input
               v-model="formData.company_name"
               class="input"
               type="text"
               placeholder="Your Company Name"
-              required >
+              required>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Company Sector</label>
+          <label class="label">
+            Company Sector
+          </label>
           <div class="control">
             <input
               v-model="formData.company_sector"
               class="input"
               type="text"
               placeholder="Your Company Sector"
-              required >
+              required>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Your Role/Position</label>
+          <label class="label">
+            Your Role/Position
+          </label>
           <div class="control">
             <input
               v-model="formData.position"
               class="input"
               type="text"
               placeholder="Ex: IT, Owner, etc"
-              required >
+              required>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Email</label>
+          <label class="label">
+            Email
+          </label>
           <div class="control">
             <input
               v-model="formData.email"
               class="input"
               type="email"
               placeholder="Ex: example@mail.com"
-              required
-            >
+              required>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Phone/WA/Telegram</label>
+          <label class="label">
+            Phone/WA/Telegram
+          </label>
           <div class="control">
             <input
               v-model="formData.phone"
               class="input"
               type="text"
               placeholder="Ex: 0812-123-456-789-00 or @your.telegram"
-              required
-            >
+              required>
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Which Sector Do You Want To Get Coached? </label>
+          <label class="label">
+            Which Sector Do You Want To Get Coached?
+          </label>
           <div class="control">
             <div class="select">
               <select v-model="formData.coached_sector">
                 <option
                   value=""
-                  disabled>Select dropdown</option>
+                  disabled>
+                  Select dropdown
+                </option>
                 <option>Digital Marketing</option>
                 <option>Startup Finance and Tax</option>
                 <option>Human Resources Management</option>
@@ -119,14 +133,15 @@
         </div>
 
         <div class="field">
-          <label class="label">Your Current Problem/Case</label>
+          <label class="label">
+            Your Current Problem/Case
+          </label>
           <div class="control">
             <textarea
               v-model="formData.problem_desc"
               class="textarea"
               placeholder="Ex: we already implemented IT in our company but still confused about its data analysis"
-              required
-            />
+              required />
           </div>
         </div>
 
@@ -150,13 +165,14 @@
         </div>
 
         <div class="field">
-          <label class="label">Input Captcha</label>
+          <label class="label">
+            Input Captcha
+          </label>
           <div class="control">
             <input
               v-model="formData.captcha_input"
               class="input"
-              type="text"
-            >
+              type="text">
           </div>
         </div>
 
@@ -173,7 +189,9 @@
           <div class="control">
             <a
               class="button is-text"
-              href="/">Cancel</a>
+              href="/">
+              Cancel
+            </a>
           </div>
         </div>
       </form>
@@ -184,7 +202,6 @@
         style="margin-top: 1em;">
         Please fill all required fields before submitting data.
       </div>
-
     </section>
   </div>
 </template>

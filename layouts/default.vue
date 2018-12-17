@@ -1,9 +1,9 @@
 <template>
   <div class="app nuxt-app">
-    <BaseHeader/>
-    <BaseHero/>
-    <nuxt/>
-    <BaseFooter/>
+    <BaseHeader />
+    <BaseHero />
+    <nuxt />
+    <BaseFooter />
   </div>
 </template>
 

@@ -9,59 +9,68 @@
 
       <form class="form">
         <div class="field">
-          <label class="label">Name</label>
+          <label class="label">
+            Name
+          </label>
           <div class="control">
             <input
               v-model="formData.name"
               class="input"
               type="text"
-              placeholder="Your Name" >
+              placeholder="Your Name">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Email</label>
+          <label class="label">
+            Email
+          </label>
           <div class="control">
             <input
               v-model="formData.email"
               class="input"
               type="email"
-              placeholder="Ex: example@mail.com"
-            >
+              placeholder="Ex: example@mail.com">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Phone/WA/Telegram</label>
+          <label class="label">
+            Phone/WA/Telegram
+          </label>
           <div class="control">
             <input
               v-model="formData.phone"
               class="input"
               type="text"
-              placeholder="Ex: 0812-123-456-789-00, @your.telegram"
-            >
+              placeholder="Ex: 0812-123-456-789-00, @your.telegram">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Tell Us why you interest to help</label>
+          <label class="label">
+            Tell Us why you interest to help
+          </label>
           <div class="control">
             <textarea
               v-model="formData.why_you_apply_desc"
               class="textarea"
-              placeholder="Ex: I always like to helping community in organizing an event"
-            />
+              placeholder="Ex: I always like to helping community in organizing an event" />
           </div>
         </div>
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">Submit</button>
+            <button class="button is-link">
+              Submit
+            </button>
           </div>
           <div class="control">
             <a
               class="button is-text"
-              href="/">Cancel</a>
+              href="/">
+              Cancel
+            </a>
           </div>
         </div>
       </form>

@@ -11,7 +11,7 @@
           <p>QUESTION</p>
           <button
             class="delete"
-            aria-label="delete"/>
+            aria-label="delete" />
         </div>
         <div class="message-body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -30,7 +30,7 @@
           <p>ANSWER</p>
           <button
             class="delete"
-            aria-label="delete"/>
+            aria-label="delete" />
         </div>
         <div class="message-body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
