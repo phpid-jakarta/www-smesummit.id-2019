@@ -19,7 +19,8 @@
               v-model="formData.name"
               class="input"
               type="text"
-              placeholder="Your Name" >
+              placeholder="Your Name"
+              required >
           </div>
         </div>
 
@@ -30,7 +31,8 @@
               v-model="formData.company_name"
               class="input"
               type="text"
-              placeholder="Your Company Name" >
+              placeholder="Your Company Name"
+              required >
           </div>
         </div>
 
@@ -41,7 +43,8 @@
               v-model="formData.company_sector"
               class="input"
               type="text"
-              placeholder="Your Company Sector" >
+              placeholder="Your Company Sector"
+              required >
           </div>
         </div>
 
@@ -52,7 +55,8 @@
               v-model="formData.position"
               class="input"
               type="text"
-              placeholder="Ex: IT, Owner, etc" >
+              placeholder="Ex: IT, Owner, etc"
+              required >
           </div>
         </div>
 
@@ -64,6 +68,7 @@
               class="input"
               type="email"
               placeholder="Ex: example@mail.com"
+              required
             >
           </div>
         </div>
@@ -76,6 +81,7 @@
               class="input"
               type="text"
               placeholder="Ex: 0812-123-456-789-00 or @your.telegram"
+              required
             >
           </div>
         </div>
@@ -119,6 +125,7 @@
               v-model="formData.problem_desc"
               class="textarea"
               placeholder="Ex: we already implemented IT in our company but still confused about its data analysis"
+              required
             />
           </div>
         </div>
@@ -128,6 +135,7 @@
             <img
               v-if="_captchaImage && _captchaImage !== ''"
               :src="_captchaImage"
+              style="width: 250px;"
               alt="_captcha">
           </div>
           <div>
@@ -169,12 +177,21 @@
           </div>
         </div>
       </form>
+
+      <div
+        v-show="isHaveError"
+        class="notification is-danger"
+        style="margin-top: 1em;">
+        Please fill all required fields before submitting data.
+      </div>
+
     </section>
   </div>
 </template>
 
 <script>
 import { API_ENDPOINT } from '../constant/index'
+import { __isNotEmptyString } from '../utils/index'
 
 export default {
   name: 'RegisterParticipants',
@@ -183,6 +200,7 @@ export default {
       loadingToken: false,
       loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
+      isHaveError: false,
       formData: {
         name: '',
         company_name: '',
@@ -202,6 +220,20 @@ export default {
     },
     _captchaImage () {
       return this.$store.state.captcha
+    },
+    isValidForm () {
+      if (__isNotEmptyString(this.formData.name) &&
+      __isNotEmptyString(this.formData.company_name) &&
+      __isNotEmptyString(this.formData.position) &&
+      __isNotEmptyString(this.formData.company_sector) &&
+      __isNotEmptyString(this.formData.coached_sector) &&
+      __isNotEmptyString(this.formData.email) &&
+      __isNotEmptyString(this.formData.phone) &&
+      __isNotEmptyString(this.formData.problem_desc) &&
+      __isNotEmptyString(this.formData.captcha_input)) {
+        return true
+      }
+      return false
     }
   },
   mounted () {
@@ -223,18 +255,25 @@ export default {
       this.requestToken()
     },
     doSubmit () {
-      this.loadingSubmit = true
-      const dataForSubmit = Object.assign({}, this.formData, { _token: this._token })
-      this.$store.dispatch('postRegisterParticipant', {
-        token: this._token,
-        data: dataForSubmit,
-        success: (res) => {
-          console.log(res)
-          setTimeout(() => {
-            this.loadingSubmit = false
-          }, 1000)
-        }
-      })
+      if (this.isValidForm) {
+        this.loadingSubmit = true
+        this.isHaveError = false
+        const dataForSubmit = Object.assign({}, this.formData, { _token: this._token })
+        this.$store.dispatch('postRegisterParticipant', {
+          token: this._token,
+          data: dataForSubmit,
+          success: (res) => {
+            if (res.data.message === 'register_success') {
+              this.$router.push('/')
+            } else {
+              this.isHaveError = true
+            }
+            setTimeout(() => {
+              this.loadingSubmit = false
+            }, 1000)
+          }
+        })
+      } else this.isHaveError = true
     }
   }
 }
