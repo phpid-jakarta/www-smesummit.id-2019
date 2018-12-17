@@ -1,17 +1,21 @@
+import axios from 'axios'
+
 import { API_ENDPOINT } from '../constant/index'
+
 const ACTION_SUBMIT = '?action=submit'
 
 export const registerParticipant = (token, data, success) => {
   const URL = `${API_ENDPOINT.REGISTER_PARTICIPANT}`
   const promiseRegister = token => {
-    fetch(`${URL}${ACTION_SUBMIT}`, {
-      method: 'POST',
+    axios({
+      url: `${URL}${ACTION_SUBMIT}`,
+      method: 'post',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
-    }).then(r => r.json())
+      data
+    })
   }
 
   promiseRegister(token)

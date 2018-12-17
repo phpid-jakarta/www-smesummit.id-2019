@@ -17,10 +17,12 @@
       id="register"
       class="register gradient-section clearfix">
       <h2 class="title has-text-centered title-section caption-text">
-        ARE YOU THESE PERSON ?
+        ARE YOU THIS PERSON ?
       </h2>
 
-      <h2 class="is-size-3 has-text-centered has-text-white typed-container"/>
+      <h2 class="is-size-3 has-text-centered has-text-white">
+        <span>&nbsp;</span><span class="typed-container"/>
+      </h2>
 
       <div class="level btn-call">
         <div class="level-item">

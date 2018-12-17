@@ -88,12 +88,25 @@
                 <option
                   value=""
                   disabled>Select dropdown</option>
-                <option>Technology</option>
                 <option>Digital Marketing</option>
-                <option>Human Capital</option>
-                <option>Financials</option>
-                <option>Regulations</option>
-                <option>Others</option>
+                <option>Startup Finance and Tax</option>
+                <option>Human Resources Management</option>
+                <option>Project Management</option>
+                <option>Security Audit</option>
+                <option>Cloud Solution</option>
+                <option>Startup Regulation</option>
+                <option>Skill Development</option>
+                <option>Enterprise Resource Planning (ERP)</option>
+                <option>Customer Relationship Management (CRM)</option>
+                <option>Learning Management System</option>
+                <option>Data Analytics</option>
+                <option>News Portal</option>
+                <option>UI/UX</option>
+                <option>Automation Industry</option>
+                <option>Hotel</option>
+                <option>Hospital & Clilic</option>
+                <option>Accounting</option>
+                <option>Mobile Application</option>
               </select>
             </div>
           </div>
@@ -105,7 +118,7 @@
             <textarea
               v-model="formData.problem_desc"
               class="textarea"
-              placeholder="Ex: we already implemented IT in our company but still confused about its scalability"
+              placeholder="Ex: we already implemented IT in our company but still confused about its data analysis"
             />
           </div>
         </div>
@@ -113,13 +126,14 @@
         <div class="field">
           <div>
             <img
-              v-if="!loading && _captchaImage !== ''"
+              v-if="_captchaImage && _captchaImage !== ''"
               :src="_captchaImage"
               alt="_captcha">
           </div>
           <div>
             <div
-              :class="{'is-loading': loading}"
+              :disabled="loadingToken"
+              :class="{'is-loading': loadingToken}"
               class="button is-link"
               @click="refreshCaptcha">
               Refresh Captcha
@@ -141,7 +155,8 @@
         <div class="field is-grouped">
           <div class="control">
             <div
-              :disabled="loading"
+              :disabled="loadingSubmit"
+              :class="{'is-loading': loadingSubmit}"
               class="button is-link"
               @click="doSubmit">
               Submit
@@ -165,7 +180,8 @@ export default {
   name: 'RegisterParticipants',
   data () {
     return {
-      loading: false,
+      loadingToken: false,
+      loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
       formData: {
         name: '',
@@ -193,12 +209,12 @@ export default {
   },
   methods: {
     requestToken () {
-      this.loading = true
+      this.loadingToken = true
       this.$store.dispatch('fetchNewToken', {
         url: this.url_api,
         success: () => {
           setTimeout(() => {
-            this.loading = false
+            this.loadingToken = false
           }, 1000)
         }
       })
@@ -207,14 +223,15 @@ export default {
       this.requestToken()
     },
     doSubmit () {
-      this.loading = true
+      this.loadingSubmit = true
       const dataForSubmit = Object.assign({}, this.formData, { _token: this._token })
       this.$store.dispatch('postRegisterParticipant', {
         token: this._token,
         data: dataForSubmit,
-        success: () => {
+        success: (res) => {
+          console.log(res)
           setTimeout(() => {
-            this.loading = false
+            this.loadingSubmit = false
           }, 1000)
         }
       })

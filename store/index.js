@@ -17,13 +17,13 @@ const createStore = () => {
         state.token = data
       },
       setCaptcha (state, data) {
-        state.captcha = `${API_ENDPOINT.CAPTCHA_IMAGE(data)}`
+        state.captcha = `${API_ENDPOINT.CAPTCHA_IMAGE(encodeURIComponent(data))}`
       }
     },
     actions: {
       fetchNewToken ({ commit }, { url, success }) {
         getToken(url).then(response => {
-          const token = response.data.token
+          const token = response.data.data.token
           commit('setToken', token)
           commit('setCaptcha', token)
           success && success()
