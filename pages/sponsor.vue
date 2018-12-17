@@ -112,7 +112,6 @@
   </div>
 </template>
 
-
 <script>
 import { API_ENDPOINT } from '../constant/index'
 import { __isNotEmptyString } from '../utils/index'

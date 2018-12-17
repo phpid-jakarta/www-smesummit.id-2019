@@ -133,7 +133,7 @@
               type="text"
               placeholder="Your topics"
               required
-            />
+            >
           </div>
         </div>
 
@@ -213,7 +213,6 @@ export default {
         company_name: '',
         position: '',
         company_sector: '',
-        email: '',
         photo: '',
         latest_education: '',
         experience: '',
