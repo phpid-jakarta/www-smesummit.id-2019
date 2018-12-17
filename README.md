@@ -1,10 +1,13 @@
-# STATIC
+# www-nontech-summit-2019
 
-**This directory is not required, you can delete it if you don't want to use it.**
+Website for Small-Medium Enterprise Non-Tech Company Summit 2019 - Organized by PHP Indonesia
 
-This directory contains your static files.
-Each file inside this directory is mapped to `/`.
+[![Travis](https://img.shields.io/travis/phpid-jakarta/www-smesummit.id-2019.svg)](https://travis-ci.org/phpid-jakarta/www-smesummit.id-2019)
 
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
+## Dev Env Demo
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#static).
+[https://smesummit.netlify.com](https://smesummit.netlify.com)
+
+------
+
+Copyright © 2018 By PHP Indonesia Team
