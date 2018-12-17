@@ -4,11 +4,12 @@
       <div class="level-item has-text-centered">
         <a
           class=""
+          title="SME Summit Logo"
           href="/#home">
           <img
             class="brand-logo"
             src="/images/logo/SMESummit_Logo.png"
-            alt=""
+            alt="SME Summit Logo"
             style="height: 60px;">
         </a>
       </div>
@@ -18,42 +19,48 @@
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/about">
+              href="/about"
+              title="About">
               About
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/register">
+              href="/register"
+              title="Register">
               Register
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/sponsor">
+              href="/sponsor"
+              title="Sponsorship">
               Sponsorship
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/speaker">
+              href="/speaker"
+              title="Speakers">
               Speakers
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/#location">
+              href="/#location"
+              title="Location">
               Location
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/faq">
+              href="/faq"
+              title="FAQ">
               FAQ
             </a>
           </p>
@@ -76,49 +83,56 @@
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/#home">
+              href="/#home"
+              title="Home">
               Home
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/about">
+              href="/about"
+              title="About">
               About
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/register">
+              href="/register"
+              title="Register">
               Register
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/sponsor">
+              href="/sponsor"
+              title="Sponsorship">
               Sponsorship
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/speaker">
+              href="/speaker"
+              title="Speakers">
               Speakers
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/#location">
+              href="/#location"
+              title="Location">
               Location
             </a>
           </p>
           <p class="level-item has-text-centered">
             <a
               class="link"
-              href="/faq">
+              href="/faq"
+              title="FAQ">
               FAQ
             </a>
           </p>

@@ -3,7 +3,7 @@
     <div class="columns">
       <div class="column">
         <p class="has-text-weight-bold">
-          Organized by:
+          Organized by
         </p>
 
         <figure class="image">
@@ -39,32 +39,32 @@
         </p>
         <ul class="sitemap__wrapper">
           <li class="sitemap__item">
-            <a href="/register">
+            <a href="/register" title="Register">
               Register
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/speaker">
+            <a href="/speaker" title="Speakers">
               Speakers
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/coacher">
+            <a href="/coacher" title="Coacher">
               Coacher
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/sponsor">
+            <a href="/sponsor" title="Sponsors">
               Sponsors
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/volunteer">
+            <a href="/volunteer" title="Volunteers">
               Volunteers
             </a>
           </li>
           <li class="sitemap__item">
-            <a href="/faq">
+            <a href="/faq" title="FAQ">
               FAQ
             </a>
           </li>

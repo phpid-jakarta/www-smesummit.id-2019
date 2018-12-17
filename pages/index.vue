@@ -68,6 +68,7 @@
               <a
                 v-if="speaker.in"
                 :href="speaker.in"
+                :title="`${speaker.name} Linkedin`"
                 target="_blank"
                 rel="noopener">
                 <svg
@@ -82,6 +83,7 @@
               <a
                 v-if="speaker.fb"
                 :href="speaker.fb"
+                :title="`${speaker.name} Facebook`"
                 target="_blank"
                 rel="noopener">
                 <svg
@@ -95,6 +97,7 @@
               <a
                 v-if="speaker.tw"
                 :href="speaker.tw"
+                :title="`${speaker.name} Twitter`"
                 target="_blank"
                 rel="noopener">
                 <svg
@@ -109,6 +112,7 @@
               <a
                 v-if="speaker.insta"
                 :href="speaker.insta"
+                :title="`${speaker.name} Instagram`"
                 target="_blank"
                 rel="noopener">
                 <svg
@@ -145,6 +149,7 @@
       <div class="has-text-centered">
         <img
           class="sponsors_item"
+          alt="Biznet Gio"
           src="/images/sponsor/biznet-gio-logo.svg">
       </div>
 
@@ -168,6 +173,7 @@
       <div class="has-text-centered">
         <img
           class="sponsors_item"
+          alt="Codepolitan"
           src="/images/media-partner/codepolitan_logo.png">
       </div>
     </section>
