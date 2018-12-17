@@ -9,73 +9,83 @@
 
       <form class="form">
         <div class="field">
-          <label class="label">Company Name</label>
+          <label class="label">
+            Company Name
+          </label>
           <div class="control">
             <input
               v-model="formData.company_name"
               class="input"
               type="text"
-              placeholder="Your Company Name" >
+              placeholder="Your Company Name">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Company Public Logo URL</label>
+          <label class="label">
+            Company Public Logo URL
+          </label>
           <div class="control">
             <input
               v-model="formData.company_logo"
               class="input"
               type="text"
-              placeholder="Your Company Public Logo URL"
-            >
+              placeholder="Your Company Public Logo URL">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Your Company Bussiness Sector</label>
+          <label class="label">
+            Your Company Bussiness Sector
+          </label>
           <div class="control">
             <input
               v-model="formData.company_sector"
               class="input"
               type="text"
-              placeholder="Your Company Bussiness Sector"
-            >
+              placeholder="Your Company Bussiness Sector">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">PIC Email</label>
+          <label class="label">
+            PIC Email
+          </label>
           <div class="control">
             <input
               v-model="formData.email_pic"
               class="input"
               type="email"
-              placeholder="Ex: example@mail.com"
-            >
+              placeholder="Ex: example@mail.com">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">PIC Phone/WA/Telegram</label>
+          <label class="label">
+            PIC Phone/WA/Telegram
+          </label>
           <div class="control">
             <input
               v-model="formData.phone"
               class="input"
               type="text"
-              placeholder="Ex: 0812-123-456-789-00, @your.telegram"
-            >
+              placeholder="Ex: 0812-123-456-789-00, @your.telegram">
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Sponsorship Grade</label>
+          <label class="label">
+            Sponsorship Grade
+          </label>
           <div class="control">
             <div class="select">
               <select
                 v-model="formData.sponsor_type">
                 <option
                   value=""
-                  disabled>Select dropdown</option>
+                  disabled>
+                  Select dropdown
+                </option>
                 <option>Platinum</option>
                 <option>Gold</option>
                 <option>Silver</option>
@@ -86,25 +96,28 @@
 
         <div class="field">
           <label
-            class="label"
-          >Tell Us Why You Interest to Give Sponsorship</label
-          >
+            class="label">
+            Tell Us Why You Interest to Give Sponsorship
+          </label>
           <div class="control">
             <textarea
               class="textarea"
-              placeholder="Ex: we like helping others to run bussiness"
-            />
+              placeholder="Ex: we like helping others to run bussiness" />
           </div>
         </div>
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">Submit</button>
+            <button class="button is-link">
+              Submit
+            </button>
           </div>
           <div class="control">
             <a
               class="button is-text"
-              href="/">Cancel</a>
+              href="/">
+              Cancel
+            </a>
           </div>
         </div>
       </form>
