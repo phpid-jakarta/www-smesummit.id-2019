@@ -236,6 +236,37 @@ section#register {
     width: 200px !important;
   }
 }
+
+.image.is-200x200 {
+  height: 200px;
+  width: 200px;
+}
+.speakers{
+  .level{
+    flex-wrap: wrap;
+  }
+  .level-item{
+    margin: 1em .5em;
+  }
+}
+.speaker{
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__name {
+    padding: 1em;
+    text-align: center;
+    h2{
+      font-size: 2rem;
+    }
+    h3{
+      font-size: 1rem;
+    }
+  }
+}
 // media screen on mobile
 @media screen and (max-width: 768px) {
   .header_wrapper{

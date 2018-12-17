@@ -133,7 +133,7 @@
               type="text"
               placeholder="Your topics"
               required
-            />
+            >
           </div>
         </div>
 
