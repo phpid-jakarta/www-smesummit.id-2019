@@ -8,11 +8,11 @@
           <picture>
             <source
               type="image/webp"
-              srcset="/images/organizer/phpid-300x122.webp"
+              srcset="/images/organizer/logo-phpid-putih300.webp"
             >
             <img
               class="organizer__logo"
-              src="/images/organizer/phpid-300x122.png"
+              src="/images/organizer/logo-phpid-putih300.png"
               alt="PHP Indonesia"
             >
           </picture>
