@@ -170,7 +170,7 @@
           </label>
           <div class="control">
             <input
-              v-model="formData.captcha_input"
+              v-model="formData.captcha"
               class="input"
               type="text">
           </div>
@@ -200,7 +200,9 @@
         v-show="isHaveError"
         class="notification is-danger"
         style="margin-top: 1em;">
-        Please fill all required fields before submitting data.
+        <span>Please fill all required fields before submitting data.</span>
+        <br>
+        <span>{{ error }}</span>
       </div>
     </section>
   </div>
@@ -214,6 +216,7 @@ export default {
   name: 'RegisterParticipants',
   data () {
     return {
+      error: '',
       loadingToken: false,
       loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
@@ -227,7 +230,7 @@ export default {
         email: '',
         phone: '',
         problem_desc: '',
-        captcha_input: ''
+        captcha: ''
       }
     }
   },
@@ -247,7 +250,7 @@ export default {
       __isNotEmptyString(this.formData.email) &&
       __isNotEmptyString(this.formData.phone) &&
       __isNotEmptyString(this.formData.problem_desc) &&
-      __isNotEmptyString(this.formData.captcha_input)) {
+      __isNotEmptyString(this.formData.captcha)) {
         return true
       }
       return false
@@ -273,6 +276,7 @@ export default {
     },
     doSubmit () {
       if (this.isValidForm) {
+        this.error = ''
         this.loadingSubmit = true
         this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData, { _token: this._token })
@@ -288,6 +292,11 @@ export default {
             setTimeout(() => {
               this.loadingSubmit = false
             }, 1000)
+          },
+          failed: (message) => {
+            this.error = message
+            this.isHaveError = true
+            this.loadingSubmit = false
           }
         })
       } else this.isHaveError = true

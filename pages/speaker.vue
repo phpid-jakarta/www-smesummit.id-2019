@@ -176,7 +176,7 @@
           </label>
           <div class="control">
             <input
-              v-model="formData.captcha_input"
+              v-model="formData.captcha"
               class="input"
               type="text">
           </div>
@@ -206,7 +206,9 @@
         v-show="isHaveError"
         class="notification is-danger"
         style="margin-top: 1em;">
-        Please fill all required fields before submitting data.
+        <span>Please fill all required fields before submitting data.</span>
+        <br>
+        <span>{{ error }}</span>
       </div>
     </section>
   </div>
@@ -220,6 +222,7 @@ export default {
   name: 'RegisterSpeakers',
   data () {
     return {
+      error: '',
       loadingToken: false,
       loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_SPEAKER}`,
@@ -235,7 +238,7 @@ export default {
         email: '',
         phone: '',
         topic: '',
-        captcha_input: ''
+        captcha: ''
       }
     }
   },
@@ -257,7 +260,7 @@ export default {
       __isNotEmptyString(this.formData.experience) &&
       __isNotEmptyString(this.formData.phone) &&
       __isNotEmptyString(this.formData.topic) &&
-      __isNotEmptyString(this.formData.captcha_input)) {
+      __isNotEmptyString(this.formData.captcha)) {
         return true
       }
       return false
@@ -298,6 +301,11 @@ export default {
             setTimeout(() => {
               this.loadingSubmit = false
             }, 1000)
+          },
+          failed: (message) => {
+            this.error = message
+            this.isHaveError = true
+            this.loadingSubmit = false
           }
         })
       } else this.isHaveError = true
