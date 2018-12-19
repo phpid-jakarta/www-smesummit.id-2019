@@ -261,16 +261,16 @@
 <script>
 import { API_ENDPOINT } from '../constant/index'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
+import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterParticipants',
+  mixins: [
+    PageMixin
+  ],
   data () {
     return {
-      error: '',
-      loadingToken: false,
-      loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
-      isHaveError: false,
       formData: {
         name: '',
         company_name: '',
@@ -294,35 +294,7 @@ export default {
       isValidForm: false
     }
   },
-  computed: {
-    _token () {
-      return this.$store.state.token
-    },
-    _captchaImage () {
-      return this.$store.state.captcha
-    }
-  },
-  mounted () {
-    this.requestToken()
-  },
   methods: {
-    getErrorMinMax (min, max) {
-      return `This field should be at least ${min} character and maximum ${max} character`
-    },
-    requestToken () {
-      this.loadingToken = true
-      this.$store.dispatch('fetchNewToken', {
-        url: this.url_api,
-        success: () => {
-          setTimeout(() => {
-            this.loadingToken = false
-          }, 1000)
-        }
-      })
-    },
-    refreshCaptcha () {
-      this.requestToken()
-    },
     checkFormValidation () {
       this.isValidFormName = isRequiredWithMinMax(3, 255, this.formData.name)
       this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)
@@ -356,21 +328,8 @@ export default {
         this.$store.dispatch('postRegisterParticipant', {
           token: this._token,
           data: dataForSubmit,
-          success: (res) => {
-            if (res.data.message === 'register_success') {
-              this.$router.push('/')
-            } else {
-              this.isHaveError = true
-            }
-            setTimeout(() => {
-              this.loadingSubmit = false
-            }, 1000)
-          },
-          failed: (message) => {
-            this.error = message
-            this.isHaveError = true
-            this.loadingSubmit = false
-          }
+          success: this.onSuccessSubmit,
+          failed: this.onErrorSubmit
         })
       } else this.isHaveError = true
     }

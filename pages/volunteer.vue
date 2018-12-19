@@ -16,6 +16,7 @@
             <input
               v-model="formData.name"
               class="input"
+              :class="{'is-danger': !isValidFormName}"
               type="text"
               placeholder="Your Name">
           </div>
@@ -29,6 +30,7 @@
             <input
               v-model="formData.email"
               class="input"
+              :class="{'is-danger': !isValidFormEmail}"
               type="email"
               placeholder="Ex: example@mail.com">
           </div>
@@ -42,6 +44,7 @@
             <input
               v-model="formData.phone"
               class="input"
+              :class="{'is-danger': !isValidFormPhone}"
               type="text"
               placeholder="Ex: 0812-123-456-789-00, @your.telegram">
           </div>
@@ -55,8 +58,46 @@
             <textarea
               v-model="formData.why_you_apply_desc"
               class="textarea"
+              :class="{'is-danger': !isValidFormWhyApply}"
               placeholder="Ex: I always like to helping community in organizing an event" />
           </div>
+        </div>
+
+        <div class="field">
+          <div>
+            <img
+              v-if="_captchaImage && _captchaImage !== ''"
+              :src="_captchaImage"
+              style="width: 250px;"
+              alt="_captcha">
+          </div>
+          <div>
+            <div
+              :disabled="loadingToken"
+              :class="{'is-loading': loadingToken}"
+              class="button is-link"
+              @click="refreshCaptcha">
+              Refresh Captcha
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Input Captcha
+          </label>
+          <div class="control">
+            <input
+              v-model="formData.captcha"
+              class="input"
+              :class="{'is-danger': !isValidFormCaptcha}"
+              type="text">
+          </div>
+          <p
+            v-show="!isValidFormTopic"
+            class="help is-danger">
+            {{ getErrorMinMax(6, 10) }}
+          </p>
         </div>
 
         <div class="field is-grouped">
@@ -89,85 +130,59 @@
 
 <script>
 import { API_ENDPOINT } from '../constant/index'
-import { __isNotEmptyString } from '../utils/index'
+import { isRequiredWithMinMax, isEmail } from '../utils/validation'
+import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterCoacher',
+  mixins: [
+    PageMixin
+  ],
   data () {
     return {
-      error: '',
-      loadingToken: false,
-      loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_VOLUNTEER}`,
-      isHaveError: false,
       formData: {
         name: '',
         email: '',
         phone: '',
         why_you_apply_desc: '',
         captcha: ''
-      }
+      },
+      isValidFormName: true,
+      isValidFormEmail: true,
+      isValidFormPhone: true,
+      isValidFormWhyApply: true,
+      isValidFormCaptcha: true,
+      isValidForm: false
     }
   },
-  computed: {
-    _token () {
-      return this.$store.state.token
-    },
-    _captchaImage () {
-      return this.$store.state.captcha
-    },
-    isValidForm () {
-      if (__isNotEmptyString(this.formData.name) &&
-      __isNotEmptyString(this.formData.email) &&
-      __isNotEmptyString(this.formData.phone) &&
-      __isNotEmptyString(this.formData.why_you_apply_desc) &&
-      __isNotEmptyString(this.formData.captcha)) {
+  methods: {
+    checkFormValidation () {
+      this.isValidFormName = isRequiredWithMinMax(3, 255, this.formData.name)
+      this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
+      this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
+      this.isValidFormWhyApply = isRequiredWithMinMax(3, 255, this.formData.why_you_apply_desc)
+      this.isValidFormCaptcha = isRequiredWithMinMax(5, 10, this.formData.captcha)
+
+      if (this.isValidFormName &&
+      this.isValidFormEmail &&
+      this.isValidFormPhone &&
+      this.isValidFormWhyApply &&
+      this.isValidFormCaptcha) {
         return true
       }
       return false
-    }
-  },
-  mounted () {
-    this.requestToken()
-  },
-  methods: {
-    requestToken () {
-      this.loadingToken = true
-      this.$store.dispatch('fetchNewToken', {
-        url: this.url_api,
-        success: () => {
-          setTimeout(() => {
-            this.loadingToken = false
-          }, 1000)
-        }
-      })
-    },
-    refreshCaptcha () {
-      this.requestToken()
     },
     doSubmit () {
-      if (this.isValidForm) {
+      if (this.checkFormValidation()) {
         this.loadingSubmit = true
         this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData)
         this.$store.dispatch('postRegisterVolunteer', {
           token: this._token,
           data: dataForSubmit,
-          success: (res) => {
-            if (res.data.message === 'register_success') {
-              this.$router.push('/')
-            } else {
-              this.isHaveError = true
-            }
-            setTimeout(() => {
-              this.loadingSubmit = false
-            }, 1000)
-          },
-          failed: (message) => {
-            this.error = message
-            this.isHaveError = true
-            this.loadingSubmit = false
-          }
+          success: this.onSuccessSubmit,
+          failed: this.onErrorSubmit
         })
       } else this.isHaveError = true
     }
