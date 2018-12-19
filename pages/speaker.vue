@@ -20,10 +20,16 @@
             <input
               v-model="formData.name"
               class="input"
+              :class="{'is-danger': !isValidFormName}"
               type="text"
               placeholder="Your Name"
               required>
           </div>
+          <p
+            v-show="!isValidFormName"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -34,10 +40,16 @@
             <input
               v-model="formData.company_name"
               class="input"
+              :class="{'is-danger': !isValidFormCompanyName}"
               type="text"
               placeholder="Your Company Name"
               required>
           </div>
+          <p
+            v-show="!isValidFormCompanyName"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -48,10 +60,16 @@
             <input
               v-model="formData.company_sector"
               class="input"
+              :class="{'is-danger': !isValidFormCompanySector}"
               type="text"
               placeholder="Your Company Sector"
               required>
           </div>
+          <p
+            v-show="!isValidFormCompanySector"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -62,10 +80,16 @@
             <input
               v-model="formData.position"
               class="input"
+              :class="{'is-danger': !isValidFormPosition}"
               type="text"
               placeholder="Ex: IT, Owner, etc"
               required>
           </div>
+          <p
+            v-show="!isValidFormPosition"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -76,10 +100,16 @@
             <input
               v-model="formData.email"
               class="input"
+              :class="{'is-danger': !isValidFormEmail}"
               type="email"
               placeholder="Ex: example@mail.com"
               required>
           </div>
+          <p
+            v-show="!isValidFormEmail"
+            class="help is-danger">
+            Your email is not valid. <br> {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -90,10 +120,16 @@
             <input
               v-model="formData.phone"
               class="input"
+              :class="{'is-danger': !isValidFormPhone}"
               type="text"
               placeholder="Ex: 0812-123-456-789-00 or @your.telegram"
               required>
           </div>
+          <p
+            v-show="!isValidFormPhone"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -104,10 +140,16 @@
             <input
               v-model="formData.photo"
               class="input"
+              :class="{'is-danger': !isValidFormPhoto}"
               type="text"
               placeholder="Ex: https://avatars2.githubusercontent.com/u/7221389?s=460&v=4"
               required>
           </div>
+          <p
+            v-show="!isValidFormPhoto"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -118,10 +160,16 @@
             <input
               v-model="formData.latest_education"
               class="input"
+              :class="{'is-danger': !isValidFormLatestEducation}"
               type="text"
               placeholder="Ex: MBA - Some Institute of Technology"
               required>
           </div>
+          <p
+            v-show="!isValidFormLatestEducation"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -132,9 +180,15 @@
             <textarea
               v-model="formData.experience"
               class="textarea"
+              :class="{'is-danger': !isValidFormExperience}"
               placeholder="Tell us your awesome experience."
               required />
           </div>
+          <p
+            v-show="!isValidFormExperience"
+            class="help is-danger">
+            {{ getErrorMinMax(20, 1024) }}
+          </p>
         </div>
 
         <div class="field">
@@ -145,10 +199,16 @@
             <input
               v-model="formData.topic"
               class="input"
+              :class="{'is-danger': !isValidFormTopic}"
               type="text"
               placeholder="Your topics"
               required>
           </div>
+          <p
+            v-show="!isValidFormTopic"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -178,8 +238,14 @@
             <input
               v-model="formData.captcha"
               class="input"
+              :class="{'is-danger': !isValidFormCaptcha}"
               type="text">
           </div>
+          <p
+            v-show="!isValidFormTopic"
+            class="help is-danger">
+            {{ getErrorMinMax(6, 10) }}
+          </p>
         </div>
 
         <div class="field is-grouped">
@@ -216,17 +282,17 @@
 
 <script>
 import { API_ENDPOINT } from '../constant/index'
-import { __isNotEmptyString } from '../utils/index'
+import { isRequiredWithMinMax, isEmail } from '../utils/validation'
+import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterSpeakers',
+  mixins: [
+    PageMixin
+  ],
   data () {
     return {
-      error: '',
-      loadingToken: false,
-      loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_SPEAKER}`,
-      isHaveError: false,
       formData: {
         name: '',
         company_name: '',
@@ -239,74 +305,60 @@ export default {
         phone: '',
         topic: '',
         captcha: ''
-      }
+      },
+      isValidFormName: true,
+      isValidFormCompanyName: true,
+      isValidFormPosition: true,
+      isValidFormCompanySector: true,
+      isValidFormPhoto: true,
+      isValidFormLatestEducation: true,
+      isValidFormExperience: true,
+      isValidFormEmail: true,
+      isValidFormPhone: true,
+      isValidFormTopic: true,
+      isValidFormCaptcha: true,
+      isValidForm: false
     }
   },
-  computed: {
-    _token () {
-      return this.$store.state.token
-    },
-    _captchaImage () {
-      return this.$store.state.captcha
-    },
-    isValidForm () {
-      if (__isNotEmptyString(this.formData.name) &&
-      __isNotEmptyString(this.formData.company_name) &&
-      __isNotEmptyString(this.formData.position) &&
-      __isNotEmptyString(this.formData.company_sector) &&
-      __isNotEmptyString(this.formData.email) &&
-      __isNotEmptyString(this.formData.photo) &&
-      __isNotEmptyString(this.formData.latest_education) &&
-      __isNotEmptyString(this.formData.experience) &&
-      __isNotEmptyString(this.formData.phone) &&
-      __isNotEmptyString(this.formData.topic) &&
-      __isNotEmptyString(this.formData.captcha)) {
+  methods: {
+    checkFormValidation () {
+      this.isValidFormName = isRequiredWithMinMax(3, 255, this.formData.name)
+      this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)
+      this.isValidFormPosition = isRequiredWithMinMax(3, 255, this.formData.position)
+      this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.company_sector)
+      this.isValidFormPhoto = isRequiredWithMinMax(3, 255, this.formData.photo)
+      this.isValidFormLatestEducation = isRequiredWithMinMax(3, 255, this.formData.latest_education)
+      this.isValidFormExperience = isRequiredWithMinMax(20, 1024, this.formData.experience)
+      this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
+      this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
+      this.isValidFormTopic = isRequiredWithMinMax(3, 255, this.formData.topic)
+      this.isValidFormCaptcha = isRequiredWithMinMax(5, 10, this.formData.captcha)
+
+      if (this.isValidFormName &&
+      this.isValidFormCompanyName &&
+      this.isValidFormPosition &&
+      this.isValidFormCompanySector &&
+      this.isValidFormPhoto &&
+      this.isValidFormLatestEducation &&
+      this.isValidFormExperience &&
+      this.isValidFormEmail &&
+      this.isValidFormPhone &&
+      this.isValidFormTopic &&
+      this.isValidFormCaptcha) {
         return true
       }
       return false
-    }
-  },
-  mounted () {
-    this.requestToken()
-  },
-  methods: {
-    requestToken () {
-      this.loadingToken = true
-      this.$store.dispatch('fetchNewToken', {
-        url: this.url_api,
-        success: () => {
-          setTimeout(() => {
-            this.loadingToken = false
-          }, 1000)
-        }
-      })
-    },
-    refreshCaptcha () {
-      this.requestToken()
     },
     doSubmit () {
-      if (this.isValidForm) {
+      if (this.checkFormValidation()) {
         this.loadingSubmit = true
         this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData)
         this.$store.dispatch('postRegisterSpeaker', {
           token: this._token,
           data: dataForSubmit,
-          success: (res) => {
-            if (res.data.message === 'register_success') {
-              this.$router.push('/')
-            } else {
-              this.isHaveError = true
-            }
-            setTimeout(() => {
-              this.loadingSubmit = false
-            }, 1000)
-          },
-          failed: (message) => {
-            this.error = message
-            this.isHaveError = true
-            this.loadingSubmit = false
-          }
+          success: this.onSuccessSubmit,
+          failed: this.onErrorSubmit
         })
       } else this.isHaveError = true
     }
