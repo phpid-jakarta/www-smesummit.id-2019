@@ -4,6 +4,7 @@
     <BaseHero />
     <nuxt />
     <BaseFooter />
+    <BaseToast/>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import BaseHeader from '../components/BaseHeader'
 import BaseHero from '../components/BaseHero'
 import BaseFooter from '../components/BaseFooter'
+import BaseToast from '../components/BaseToast'
 
 require('intersection-observer')
 require('particles.js')
@@ -20,7 +22,8 @@ export default {
   components: {
     BaseHeader,
     BaseHero,
-    BaseFooter
+    BaseFooter,
+    BaseToast
   }
 }
 </script>
