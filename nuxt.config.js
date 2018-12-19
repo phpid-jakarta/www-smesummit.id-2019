@@ -72,7 +72,8 @@ module.exports = {
         '/register',
         '/speaker',
         '/sponsor',
-        '/volunteer'
+        '/volunteer',
+        '/organizer'
       ]
       return res
     }
