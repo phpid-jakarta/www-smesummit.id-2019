@@ -15,7 +15,12 @@ const createStore = () => {
   return new Vuex.Store({
     state: () => ({
       token: '',
-      captcha: ''
+      captcha: '',
+      notification: {
+        show: false,
+        title: '',
+        message: ''
+      }
     }),
     getters: {},
     mutations: {
@@ -24,6 +29,9 @@ const createStore = () => {
       },
       setCaptcha (state, data) {
         state.captcha = `${API_ENDPOINT.CAPTCHA_IMAGE(encodeURIComponent(data))}`
+      },
+      setNotification (state, data) {
+        state.notification = data
       }
     },
     actions: {
@@ -49,6 +57,12 @@ const createStore = () => {
       },
       postRegisterSpeaker ({ commit, dispatch }, { token, data, success, failed }) {
         registerSpeaker(token, data, success, failed)
+      },
+      showNotification ({ commit }, { title = '', message = '' }) {
+        commit('setNotification', { show: true, title, message })
+        setTimeout(() => {
+          commit('setNotification', { show: false, title: '', message: '' })
+        }, 3000)
       }
     }
   })

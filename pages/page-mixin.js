@@ -38,8 +38,14 @@ export default {
       this.requestToken()
     },
     onSuccessSubmit (res) {
-      if (res.data.message === 'register_success') {
-        this.$router.push('/')
+      if (res.data.data.message === 'register_success') {
+        this.$store.dispatch('showNotification', {
+          title: 'Success Message',
+          message: 'Success submitting your data'
+        })
+        setTimeout(() => {
+          this.$router.push('/')
+        }, 1000)
       } else {
         this.isHaveError = true
       }
