@@ -22,8 +22,8 @@ const generalPost = (url, token, data, success, failed) => {
       success && success(res)
     })
     .catch(err => {
-      console.error('failed with error: ', err.response)
-      failed && failed(err.response.data.message)
+      console.error('failed with error: ', err.response.data)
+      failed && failed(err.response.data.data.message)
     })
 }
 
