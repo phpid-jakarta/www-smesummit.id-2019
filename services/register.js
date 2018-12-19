@@ -6,7 +6,7 @@ const ACTION_SUBMIT = '?action=submit'
 
 const generalPost = (url, token, data, success, failed) => {
   const promiseRegister = tokenString => {
-    axios({
+    return axios({
       url: `${url}${ACTION_SUBMIT}`,
       method: 'post',
       headers: {

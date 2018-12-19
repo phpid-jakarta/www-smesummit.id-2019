@@ -20,10 +20,16 @@
             <input
               v-model="formData.name"
               class="input"
+              :class="{'is-danger': !isValidFormName}"
               type="text"
               placeholder="Your Name"
               required>
           </div>
+          <p
+            v-show="!isValidFormName"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -34,10 +40,16 @@
             <input
               v-model="formData.company_name"
               class="input"
+              :class="{'is-danger': !isValidFormCompanyName}"
               type="text"
               placeholder="Your Company Name"
               required>
           </div>
+          <p
+            v-show="!isValidFormCompanyName"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -48,10 +60,16 @@
             <input
               v-model="formData.company_sector"
               class="input"
+              :class="{'is-danger': !isValidFormCompanySector}"
               type="text"
               placeholder="Your Company Sector"
               required>
           </div>
+          <p
+            v-show="!isValidFormCompanySector"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -62,10 +80,16 @@
             <input
               v-model="formData.position"
               class="input"
+              :class="{'is-danger': !isValidFormPosition}"
               type="text"
               placeholder="Ex: IT, Owner, etc"
               required>
           </div>
+          <p
+            v-show="!isValidFormPosition"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -76,10 +100,16 @@
             <input
               v-model="formData.email"
               class="input"
+              :class="{'is-danger': !isValidFormEmail}"
               type="email"
               placeholder="Ex: example@mail.com"
               required>
           </div>
+          <p
+            v-show="!isValidFormEmail"
+            class="help is-danger">
+            Your email is not valid. <br> {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -90,10 +120,16 @@
             <input
               v-model="formData.phone"
               class="input"
+              :class="{'is-danger': !isValidFormPhone}"
               type="text"
               placeholder="Ex: 0812-123-456-789-00 or @your.telegram"
               required>
           </div>
+          <p
+            v-show="!isValidFormPhone"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -130,6 +166,11 @@
               </select>
             </div>
           </div>
+          <p
+            v-show="!isValidFormCoachedSector"
+            class="help is-danger">
+            This field is required.
+          </p>
         </div>
 
         <div class="field">
@@ -140,9 +181,14 @@
             <textarea
               v-model="formData.problem_desc"
               class="textarea"
+              :class="{'is-danger': !isValidFormProblemDesc}"
               placeholder="Ex: we already implemented IT in our company but still confused about its data analysis"
               required />
-          </div>
+          </div><p
+            v-show="!isValidFormProblemDesc"
+            class="help is-danger">
+            {{ getErrorMinMax(20, 1024) }}
+          </p>
         </div>
 
         <div class="field">
@@ -173,7 +219,11 @@
               v-model="formData.captcha"
               class="input"
               type="text">
-          </div>
+          </div><p
+            v-show="!isValidFormCaptcha"
+            class="help is-danger">
+            {{ getErrorMinMax(6, 10) }}
+          </p>
         </div>
 
         <div class="field is-grouped">
@@ -210,7 +260,7 @@
 
 <script>
 import { API_ENDPOINT } from '../constant/index'
-import { __isNotEmptyString } from '../utils/index'
+import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 
 export default {
   name: 'RegisterParticipants',
@@ -231,7 +281,17 @@ export default {
         phone: '',
         problem_desc: '',
         captcha: ''
-      }
+      },
+      isValidFormName: true,
+      isValidFormCompanyName: true,
+      isValidFormPosition: true,
+      isValidFormCompanySector: true,
+      isValidFormCoachedSector: true,
+      isValidFormEmail: true,
+      isValidFormPhone: true,
+      isValidFormProblemDesc: true,
+      isValidFormCaptcha: true,
+      isValidForm: false
     }
   },
   computed: {
@@ -240,26 +300,15 @@ export default {
     },
     _captchaImage () {
       return this.$store.state.captcha
-    },
-    isValidForm () {
-      if (__isNotEmptyString(this.formData.name) &&
-      __isNotEmptyString(this.formData.company_name) &&
-      __isNotEmptyString(this.formData.position) &&
-      __isNotEmptyString(this.formData.company_sector) &&
-      __isNotEmptyString(this.formData.coached_sector) &&
-      __isNotEmptyString(this.formData.email) &&
-      __isNotEmptyString(this.formData.phone) &&
-      __isNotEmptyString(this.formData.problem_desc) &&
-      __isNotEmptyString(this.formData.captcha)) {
-        return true
-      }
-      return false
     }
   },
   mounted () {
     this.requestToken()
   },
   methods: {
+    getErrorMinMax (min, max) {
+      return `This field should be at least ${min} character and maximum ${max} character`
+    },
     requestToken () {
       this.loadingToken = true
       this.$store.dispatch('fetchNewToken', {
@@ -274,8 +323,32 @@ export default {
     refreshCaptcha () {
       this.requestToken()
     },
+    checkFormValidation () {
+      this.isValidFormName = isRequiredWithMinMax(3, 255, this.formData.name)
+      this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)
+      this.isValidFormPosition = isRequiredWithMinMax(3, 255, this.formData.position)
+      this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.company_sector)
+      this.isValidFormCoachedSector = isRequiredWithMinMax(3, 255, this.formData.coached_sector)
+      this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
+      this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
+      this.isValidFormProblemDesc = isRequiredWithMinMax(20, 1024, this.formData.problem_desc)
+      this.isValidFormCaptcha = isRequiredWithMinMax(5, 10, this.formData.captcha)
+
+      if (this.isValidFormName &&
+      this.isValidFormCompanyName &&
+      this.isValidFormPosition &&
+      this.isValidFormCompanySector &&
+      this.isValidFormCoachedSector &&
+      this.isValidFormEmail &&
+      this.isValidFormPhone &&
+      this.isValidFormProblemDesc &&
+      this.isValidFormCaptcha) {
+        return true
+      }
+      return false
+    },
     doSubmit () {
-      if (this.isValidForm) {
+      if (this.checkFormValidation()) {
         this.error = ''
         this.loadingSubmit = true
         this.isHaveError = false
