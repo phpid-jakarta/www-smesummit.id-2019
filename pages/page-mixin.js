@@ -40,13 +40,14 @@ export default {
     onSuccessSubmit (res) {
       if (res.data.data.message === 'register_success') {
         this.$store.dispatch('showNotification', {
-          title: 'Success Message',
-          message: 'Success submitting your data'
+          title: 'Thank You',
+          message: 'The data was successfully saved in our server.'
         })
         setTimeout(() => {
           this.$router.push('/')
         }, 1000)
       } else {
+        this.requestToken()
         this.isHaveError = true
       }
       setTimeout(() => {
@@ -54,6 +55,7 @@ export default {
       }, 1000)
     },
     onErrorSubmit (message) {
+      this.requestToken()
       this.error = message
       this.isHaveError = true
       this.loadingSubmit = false
