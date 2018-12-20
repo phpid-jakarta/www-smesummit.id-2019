@@ -116,9 +116,9 @@
                   disabled>
                   Select dropdown
                 </option>
-                <option>Platinum</option>
-                <option>Gold</option>
-                <option>Silver</option>
+                <option value="platinum">Platinum</option>
+                <option value="gold">Gold</option>
+                <option value="silver">Silver</option>
               </select>
             </div>
           </div>
