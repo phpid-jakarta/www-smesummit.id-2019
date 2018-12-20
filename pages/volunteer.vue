@@ -179,6 +179,7 @@ export default {
     },
     doSubmit () {
       if (this.checkFormValidation()) {
+        this.error = ''
         this.loadingSubmit = true
         this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData)

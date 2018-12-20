@@ -16,9 +16,15 @@
             <input
               v-model="formData.company_name"
               class="input"
+              :class="{'is-danger': !isValidFormCompanyName}"
               type="text"
               placeholder="Your Company Name">
           </div>
+          <p
+            v-show="!isValidFormCompanyName"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -29,9 +35,15 @@
             <input
               v-model="formData.company_logo"
               class="input"
+              :class="{'is-danger': !isValidFormCompanyLogo}"
               type="text"
               placeholder="Your Company Public Logo URL">
           </div>
+          <p
+            v-show="!isValidFormCompanyLogo"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -42,9 +54,15 @@
             <input
               v-model="formData.company_sector"
               class="input"
+              :class="{'is-danger': !isValidFormCompanySector}"
               type="text"
               placeholder="Your Company Bussiness Sector">
           </div>
+          <p
+            v-show="!isValidFormCompanySector"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -55,9 +73,15 @@
             <input
               v-model="formData.email_pic"
               class="input"
+              :class="{'is-danger': !isValidFormEmailPic}"
               type="email"
               placeholder="Ex: example@mail.com">
           </div>
+          <p
+            v-show="!isValidFormEmailPic"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -68,9 +92,15 @@
             <input
               v-model="formData.phone"
               class="input"
+              :class="{'is-danger': !isValidFormPhone}"
               type="text"
               placeholder="Ex: 0812-123-456-789-00, @your.telegram">
           </div>
+          <p
+            v-show="!isValidFormPhone"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
@@ -92,25 +122,57 @@
               </select>
             </div>
           </div>
+          <p
+            v-show="!isValidFormSponsorType"
+            class="help is-danger">
+            {{ getErrorMinMax(4, 255) }}
+          </p>
         </div>
 
         <div class="field">
-          <label
-            class="label">
-            Tell Us Why You Interest to Give Sponsorship
+          <div>
+            <img
+              v-if="_captchaImage && _captchaImage !== ''"
+              :src="_captchaImage"
+              style="width: 250px;"
+              alt="_captcha">
+          </div>
+          <div>
+            <div
+              :disabled="loadingToken"
+              :class="{'is-loading': loadingToken}"
+              class="button is-link"
+              @click="refreshCaptcha">
+              Refresh Captcha
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Input Captcha
           </label>
           <div class="control">
-            <textarea
-              class="textarea"
-              placeholder="Ex: we like helping others to run bussiness" />
-          </div>
+            <input
+              v-model="formData.captcha"
+              class="input"
+              type="text">
+          </div><p
+            v-show="!isValidFormCaptcha"
+            class="help is-danger">
+            {{ getErrorMinMax(6, 10) }}
+          </p>
         </div>
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">
+            <div
+              :disabled="loadingSubmit"
+              :class="{'is-loading': loadingSubmit}"
+              class="button is-link"
+              @click="doSubmit">
               Submit
-            </button>
+            </div>
           </div>
           <div class="control">
             <a
@@ -136,17 +198,17 @@
 
 <script>
 import { API_ENDPOINT } from '../constant/index'
-import { __isNotEmptyString } from '../utils/index'
+import { isRequiredWithMinMax, isEmail } from '../utils/validation'
+import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterSponsor',
+  mixins: [
+    PageMixin
+  ],
   data () {
     return {
-      error: '',
-      loadingToken: false,
-      loadingSubmit: false,
       url_api: `${API_ENDPOINT.REGISTER_SPONSOR}`,
-      isHaveError: false,
       formData: {
         company_name: '',
         company_logo: '',
@@ -155,71 +217,49 @@ export default {
         phone: '',
         sponsor_type: '',
         captcha: ''
-      }
+      },
+      isValidFormCompanyName: true,
+      isValidFormCompanyLogo: true,
+      isValidFormCompanySector: true,
+      isValidFormEmailPic: true,
+      isValidFormPhone: true,
+      isValidFormSponsorType: true,
+      isValidFormCaptcha: true,
+      isValidForm: false
     }
   },
-  computed: {
-    _token () {
-      return this.$store.state.token
-    },
-    _captchaImage () {
-      return this.$store.state.captcha
-    },
-    isValidForm () {
-      if (__isNotEmptyString(this.formData.name) &&
-      __isNotEmptyString(this.formData.company_name) &&
-      __isNotEmptyString(this.formData.company_sector) &&
-      __isNotEmptyString(this.formData.company_logo) &&
-      __isNotEmptyString(this.formData.email_pic) &&
-      __isNotEmptyString(this.formData.phone) &&
-      __isNotEmptyString(this.formData.sponsor_type) &&
-      __isNotEmptyString(this.formData.captcha)) {
+  methods: {
+    checkFormValidation () {
+      this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)
+      this.isValidFormCompanyLogo = isRequiredWithMinMax(3, 255, this.formData.company_logo)
+      this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.company_sector)
+      this.isValidFormEmailPic = isRequiredWithMinMax(3, 255, this.formData.email_pic) && isEmail(this.formData.email_pic)
+      this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
+      this.isValidFormSponsorType = isRequiredWithMinMax(3, 255, this.formData.sponsor_type)
+      this.isValidFormCaptcha = isRequiredWithMinMax(5, 10, this.formData.captcha)
+
+      if (this.isValidFormCompanyName &&
+      this.isValidFormCompanyLogo &&
+      this.isValidFormCompanySector &&
+      this.isValidFormEmailPic &&
+      this.isValidFormPhone &&
+      this.isValidFormSponsorType &&
+      this.isValidFormCaptcha) {
         return true
       }
       return false
-    }
-  },
-  mounted () {
-    this.requestToken()
-  },
-  methods: {
-    requestToken () {
-      this.loadingToken = true
-      this.$store.dispatch('fetchNewToken', {
-        url: this.url_api,
-        success: () => {
-          setTimeout(() => {
-            this.loadingToken = false
-          }, 1000)
-        }
-      })
-    },
-    refreshCaptcha () {
-      this.requestToken()
     },
     doSubmit () {
-      if (this.isValidForm) {
+      if (this.checkFormValidation()) {
+        this.error = ''
         this.loadingSubmit = true
         this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData)
         this.$store.dispatch('postRegisterSponsor', {
           token: this._token,
           data: dataForSubmit,
-          success: (res) => {
-            if (res.data.message === 'register_success') {
-              this.$router.push('/')
-            } else {
-              this.isHaveError = true
-            }
-            setTimeout(() => {
-              this.loadingSubmit = false
-            }, 1000)
-          },
-          failed: (message) => {
-            this.error = message
-            this.isHaveError = true
-            this.loadingSubmit = false
-          }
+          success: this.onSuccessSubmit,
+          failed: this.onErrorSubmit
         })
       } else this.isHaveError = true
     }
