@@ -48,6 +48,7 @@ export default {
         }, 1000)
       } else {
         this.requestToken()
+        this.formData.captcha = ''
         this.isHaveError = true
       }
       setTimeout(() => {
@@ -56,6 +57,7 @@ export default {
     },
     onErrorSubmit (message) {
       this.requestToken()
+      this.formData.captcha = ''
       this.error = message
       this.isHaveError = true
       this.loadingSubmit = false
