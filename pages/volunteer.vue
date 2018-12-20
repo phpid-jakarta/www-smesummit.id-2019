@@ -94,7 +94,7 @@
               type="text">
           </div>
           <p
-            v-show="!isValidFormTopic"
+            v-show="!isValidFormCaptcha"
             class="help is-danger">
             {{ getErrorMinMax(6, 10) }}
           </p>
@@ -102,9 +102,13 @@
 
         <div class="field is-grouped">
           <div class="control">
-            <button class="button is-link">
+            <div
+              :disabled="loadingSubmit"
+              :class="{'is-loading': loadingSubmit}"
+              class="button is-link"
+              @click="doSubmit">
               Submit
-            </button>
+            </div>
           </div>
           <div class="control">
             <a
