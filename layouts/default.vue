@@ -4,7 +4,7 @@
     <BaseHero />
     <nuxt />
     <BaseFooter />
-    <BaseToast/>
+    <BaseToast />
   </div>
 </template>
 
