@@ -33,10 +33,10 @@ export default {
     }
   },
   mounted () {
-    this.fetchFAQ()
+    this.fetchData()
   },
   methods: {
-    fetchFAQ () {
+    fetchData () {
       axios({
         url: '/faq.json',
         method: 'get'

@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "position": "Ketua Pelaksana",
+      "name": "Peter J. Kambey",
+      "email": "peter@smesummit.id"
+    },
+    {
+      "position": "Sekretaris",
+      "name": "Aulia Rahmah",
+      "email": "aulia@smesummit.id"
+    },
+    {
+      "position": "Sekretaris",
+      "name": "Salma Salsabilla",
+      "email": "salma@smesummit.id"
+    },
+    {
+      "position": "Bendahara",
+      "name": "Christine Napitupulu",
+      "email": "christine@smesummit.id"
+    },
+    {
+      "position": "Divisi Acara/Pembicara",
+      "name": "Arga Dinata",
+      "email": "arga@smesummit.id"
+    },
+    {
+      "position": "Divisi Acara/Pembicara",
+      "name": "Nofriza Nindyasari",
+      "email": "nofriza@smesummit.id"
+    },
+    {
+      "position": "Divisi Promosi/Dokumentasi",
+      "name": "Kresna Galuh",
+      "email": "kresna@smesummit.id"
+    },
+    {
+      "position": "Divisi Kepesertaan/Flow Control",
+      "name": "Nur Hidayat",
+      "email": "nur@smesummit.id"
+    },
+    {
+      "position": "Divisi Kepesertaan/Flow Control",
+      "name": "Irfan Maulana",
+      "email": "irfan@smesummit.id"
+    },
+    {
+      "position": "Divisi Perlengkapan & Logistik Acara",
+      "name": "Ariep RK",
+      "email": "ariep@smesummit.id"
+    },
+    {
+      "position": "Divisi Perlengkapan (Transportasi/Konsumsi/Akomodasi)",
+      "name": "-",
+      "email": "-"
+    },
+    {
+      "position": "Divisi Sponsorship & Partnership",
+      "name": "-",
+      "email": "-"
+    }
+  ]
+}
