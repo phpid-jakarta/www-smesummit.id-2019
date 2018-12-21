@@ -1,9 +1,64 @@
 {
- "data": [{
-   "question": "Lorem ipsum",
-   "answer": "Sit dolor amet"
- },{
-  "question": "Lorem ipsum",
-  "answer": "Sit dolor amet"
- }]
+  "data": {
+    "general": [
+      {
+        "question": "Acara apaan sih ini?",
+        "answer": "Ini adalah acara untuk mengumpulkan dan membuka wawasan perusahaan UKM non-teknologi, startup, atau perusahaan menengah yang ingin bertransformasi di dunia online digital. Topik seminar dirancang agar mereka mendapat pemahaman bagaimana cara untuk meningkatkan penjualan melalui pemasaran online, bagaimana mekanisme keuangan dan pembayaran online, karyawan dan talent spesialist seperti apa yang perlu direkrut dan apa regulasi dan insentif yang diberikan pemerintah untuk membantu UKM menjadi lebih besar dan berkembang"
+      },
+      {
+        "question": "Ada Coaching Clinics buat apaan?",
+        "answer": "Setiap peserta akan mendapatkan kesempatan untuk berdiskusi langsung tatap mata dan privasi dengan menceritakan masalah dan hambatan yang terjadi di kantornya saat ini dengan konsultan dan pakar yang sesuai yang dapat memberikan konsultasi gratis solusi terbaik terhadap masalah yang sedang dihadapi. Misalkan konsultasi sekuriti, konsultasi cloud, konsultasi digital marketing atau bisa memilih 15 topik yang disediakan."
+      },
+      {
+        "question": "Darimana saya mendapat informasi update terkait perkembangan event?",
+        "answer": "<ul><li>Melalui web: <a href=\"https://smesummit.id\">https://smesummit.id</a> dan <a href=\"https://phpindonesia.id\">https://phpindonesia.id</a></li><li></li>Melalui email yang dibroadcast, melalui Facebook group PHP Indonesia <a href=\"https://www.facebook.com/groups/35688476100\">https://www.facebook.com/groups/35688476100</a></li><li></li>Melalui Android Apps yang khusus dibuat untuk event ini. Akan diumumkan kemudian</li>"
+      }
+    ],
+    "attendants": [
+      {
+        "question": "Bayar nggak?",
+        "answer": "Pastinya bayar. Harga dirancang agar dapat dijangkau oleh perusahaan/personal. Jika menginginkan harga diskon early-bird 50%, daftar segera dengan mengisi form pre-registrasi berminat untuk menjadi peserta. Kode diskon akan dikirim ke email peminat. - <a href=\"https://www.smesummit.id/register\">https://www.smesummit.id/register</a>"
+      },
+      {
+        "question": "Peserta luar kota boleh nggak?",
+        "answer": "Boleh sekali. malah (dalam jumlah terbatas dan diseleksi) ada insentif khusus untuk peserta perusahaan luar kota."
+      },
+      {
+        "question": "Gimana urut-urutan pendaftaran?",
+        "answer": "Desember hingga akhir Januari akan dilakukan pre-registrasi peminat. Februari hingga hari H-1 penerimaan peserta dan penerimaan pembayaran biaya pendaftaran"
+      }
+    ],
+    "coaching": [
+      {
+        "question": "Boleh nggak mendaftar coaching clinics dengan topik berbeda?",
+        "answer": "Tidak. Satu perusahaan hanya boleh mendaftar untuk satu topik coaching clinics untuk memberi kesempatan pada peserta lain mendapat kesempatan yang sama."
+      }
+    ],
+    "sponsor": [
+      {
+        "question": "Masih ada slot untuk Sponsor Platinum?",
+        "answer": "Tidak"
+      },
+      {
+        "question": "Apa perbedaan Sponsor Gold dan Silver?",
+        "answer": "Sampai FAQ ini dibuat, belum didefinisikan secara lengkap  perbedaan level sponsorship karena baru akan diumumkan di bulan Januari 2019. Namun jika anda berminat menjadi sponsor anda sudah bisa mengisi di link berikut ini nanti akan di follow-up lebih lanjut oleh panitia - <a href=\"https://www.smesummit.id/sponsor\">https://www.smesummit.id/sponsor</a>"
+      }
+    ],
+    "speaker": [
+      {
+        "question": "Saya tertarik untuk menjadi pemateri di sme summit ini. Apa persyaratannya?",
+        "answer": "Dari 7 slot speaker yang tersedia, masih ada 4 slot kosong. Jika berminat menjadi pembicara silahkan mengisi form berikut ini dan setiap peminat akan diseleksi tim panitia - <a href=\"https://www.smesummit.id/speaker\">https://www.smesummit.id/speaker</a>"
+      },
+      {
+        "question": "Adakah fee untuk pemateri?",
+        "answer": "Tidak ada. Karena ini adalah acara yang digagas oleh komunitas sukarela PHP Indonesia yang seluruh budget acaranya ditanggung oleh sponsor dan tidak ada pembagian keuntungan untuk penyelenggara maupun panitia. Namun pemateri diijinkan untuk melakukan soft-promotion jika terpilih menjadi pemateri SMESummit."
+      }
+    ],
+    "volunteer": [
+      {
+        "question": "Mau dunk ikut bantu-bantu acara ini?",
+        "answer": "Boleh. Silahkan mendaftar disini tapi volunteer akan dipilih dan dibatasi - <a href=\"https://www.smesummit.id/volunteer\">https://www.smesummit.id/volunteer</a>"
+      }
+    ]
+  }
 }

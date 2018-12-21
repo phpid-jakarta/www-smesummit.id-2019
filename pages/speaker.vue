@@ -196,18 +196,17 @@
             Your Topic
           </label>
           <div class="control">
-            <input
+            <textarea
               v-model="formData.topic"
-              class="input"
+              class="textarea"
               :class="{'is-danger': !isValidFormTopic}"
-              type="text"
-              placeholder="Your topics"
-              required>
+              placeholder="Describe your topic"
+              required />
           </div>
           <p
             v-show="!isValidFormTopic"
             class="help is-danger">
-            {{ getErrorMinMax(4, 255) }}
+            {{ getErrorMinMax(10, 1024) }}
           </p>
         </div>
 
