@@ -57,13 +57,78 @@
             Company Sector
           </label>
           <div class="control">
-            <input
-              v-model="formData.company_sector"
-              class="input"
-              :class="{'is-danger': !isValidFormCompanySector}"
-              type="text"
-              placeholder="Your Company Sector"
-              required>
+            <div class="select">
+              <select
+                v-model="formData.company_sector"
+                required>
+                <option
+                  value=""
+                  disabled>
+                  Select dropdown
+                </option>
+                <option>
+                  PERTANIAN, KEHUTANAN, dan PERIKANAN
+                </option>
+                <option>
+                  PERTAMBANGAN dan PENGGALIAN
+                </option>
+                <option>
+                  INDUSTRI PENGOLAHAN
+                </option>
+                <option>
+                  PENGADAAN LISTRIK, GAS, UAP / AIR PANAS, dan UDARA DINGIN
+                </option>
+                <option>
+                  PENGELOLAAN AIR, PENGELOLAAN AIR LIMBAH, PENGELOLAAN dan DAUR ULANG SAMPAH, dan AKTIVITAS REMEDIASI
+                </option>
+                <option>
+                  KONSTRUKSI
+                </option>
+                <option>
+                  PERDAGANGAN BESAR dan ECERAN; REPARASI dan PERAWATAN MOBIL dan MOTOR
+                </option>
+                <option>
+                  PENGANGKUTAN dan PERGUDANGAN
+                </option>
+                <option>
+                  PENYEDIAAN AKOMODASI dan PENYEDIAAN MAKAN MINUM
+                </option>
+                <option>
+                  INFORMASI dan KOMUNIKASI
+                </option>
+                <option>
+                  KEUANGAN dan ASURANSI
+                </option>
+                <option>
+                  REAL ESTAT
+                </option>
+                <option>
+                  PROFESIONAL, ILMIAH, dan TEKNIS
+                </option>
+                <option>
+                  PENYEWAAN dan SEWA GUNA USAHA TANPA HAK OPSI, KETENAGAKERJAAN, AGEN PERJALANAN, dan PENUNJANG USAHA LAINNYA
+                </option>
+                <option>
+                  ADMINISTRASI PEMERINTAHAN, PERTAHANAN, dan JAMINAN SOSIAL WAJIB
+                </option>
+                <option>
+                  PENDIDIKAN
+                </option>
+                <option>
+                  KESEHATAN MANUSIA dan AKTIVITAS SOSIAL
+                </option>
+                <option>
+                  KESENIAN, HIBURAN, dan REKREASI
+                </option>
+                <option>
+                  JASA LAINNYA
+                </option>
+                <option>
+                  INDUSTRI RUMAH TANGGA
+                </option>
+                <option>BADAN INTERNASIONAL dan BADAN EKSTRA INTERNASIONAL LAINNYA</option>
+              </select>
+            </div>
           </div>
           <p
             v-show="!isValidFormCompanySector"
@@ -77,13 +142,81 @@
             Your Role/Position
           </label>
           <div class="control">
-            <input
-              v-model="formData.position"
-              class="input"
-              :class="{'is-danger': !isValidFormPosition}"
-              type="text"
-              placeholder="Ex: IT, Owner, etc"
-              required>
+            <div class="select">
+              <select
+                v-model="formData.position"
+                required>
+                <option
+                  value=""
+                  disabled>
+                  Select dropdown
+                </option>
+                <option>
+                  DIREKTUR UTAMA
+                </option>
+                <option>
+                  DIREKTUR IT
+                </option>
+                <option>
+                  DIREKTUR KEUANGAN
+                </option>
+                <option>
+                  DIREKTUR SALES & MARKETING
+                </option>
+                <option>
+                  DIREKTUR OPERASIONAL
+                </option>
+                <option>
+                  DIREKTUR LAINNYA
+                </option>
+                <option>
+                  MANAJER IT
+                </option>
+                <option>
+                  MANAJER KEUANGAN
+                </option>
+                <option>
+                  MANAJER SALES & MARKETING
+                </option>
+                <option>
+                  MANAJER HRD
+                </option>
+                <option>
+                  MANAJER LAINNYA
+                </option>
+                <option>
+                  SUPERVISOR IT
+                </option>
+                <option>
+                  SUPERVISOR KEUANGAN
+                </option>
+                <option>
+                  SUPERVISOR SALES & MARKETING
+                </option>
+                <option>
+                  SUPERVISOR HRD
+                </option>
+                <option>
+                  SUPERVISOR LAINNYA
+                </option>
+                <option>
+                  STAF IT
+                </option>
+                <option>
+                  STAF KEUANGAN
+                </option>
+                <option>
+                  STAF SALES & MARKETING
+                </option>
+                <option>
+                  STAF HRD
+                </option>
+                <option>
+                  STAF LAINNYA
+                </option>
+                <option>JABATAN LAINNYA</option>
+              </select>
+            </div>
           </div>
           <p
             v-show="!isValidFormPosition"
