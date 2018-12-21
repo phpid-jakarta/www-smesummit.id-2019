@@ -64,69 +64,13 @@
                 <option
                   value=""
                   disabled>
-                  Select dropdown
+                  Select available company sector
                 </option>
-                <option>
-                  PERTANIAN, KEHUTANAN, dan PERIKANAN
+                <option
+                  v-for="item in companySectorList"
+                  :key="item">
+                  {{ item }}
                 </option>
-                <option>
-                  PERTAMBANGAN dan PENGGALIAN
-                </option>
-                <option>
-                  INDUSTRI PENGOLAHAN
-                </option>
-                <option>
-                  PENGADAAN LISTRIK, GAS, UAP / AIR PANAS, dan UDARA DINGIN
-                </option>
-                <option>
-                  PENGELOLAAN AIR, PENGELOLAAN AIR LIMBAH, PENGELOLAAN dan DAUR ULANG SAMPAH, dan AKTIVITAS REMEDIASI
-                </option>
-                <option>
-                  KONSTRUKSI
-                </option>
-                <option>
-                  PERDAGANGAN BESAR dan ECERAN; REPARASI dan PERAWATAN MOBIL dan MOTOR
-                </option>
-                <option>
-                  PENGANGKUTAN dan PERGUDANGAN
-                </option>
-                <option>
-                  PENYEDIAAN AKOMODASI dan PENYEDIAAN MAKAN MINUM
-                </option>
-                <option>
-                  INFORMASI dan KOMUNIKASI
-                </option>
-                <option>
-                  KEUANGAN dan ASURANSI
-                </option>
-                <option>
-                  REAL ESTAT
-                </option>
-                <option>
-                  PROFESIONAL, ILMIAH, dan TEKNIS
-                </option>
-                <option>
-                  PENYEWAAN dan SEWA GUNA USAHA TANPA HAK OPSI, KETENAGAKERJAAN, AGEN PERJALANAN, dan PENUNJANG USAHA LAINNYA
-                </option>
-                <option>
-                  ADMINISTRASI PEMERINTAHAN, PERTAHANAN, dan JAMINAN SOSIAL WAJIB
-                </option>
-                <option>
-                  PENDIDIKAN
-                </option>
-                <option>
-                  KESEHATAN MANUSIA dan AKTIVITAS SOSIAL
-                </option>
-                <option>
-                  KESENIAN, HIBURAN, dan REKREASI
-                </option>
-                <option>
-                  JASA LAINNYA
-                </option>
-                <option>
-                  INDUSTRI RUMAH TANGGA
-                </option>
-                <option>BADAN INTERNASIONAL dan BADAN EKSTRA INTERNASIONAL LAINNYA</option>
               </select>
             </div>
           </div>
@@ -149,72 +93,13 @@
                 <option
                   value=""
                   disabled>
-                  Select dropdown
+                  Select available position
                 </option>
-                <option>
-                  DIREKTUR UTAMA
+                <option
+                  v-for="item in positionList"
+                  :key="item">
+                  {{ item }}
                 </option>
-                <option>
-                  DIREKTUR IT
-                </option>
-                <option>
-                  DIREKTUR KEUANGAN
-                </option>
-                <option>
-                  DIREKTUR SALES & MARKETING
-                </option>
-                <option>
-                  DIREKTUR OPERASIONAL
-                </option>
-                <option>
-                  DIREKTUR LAINNYA
-                </option>
-                <option>
-                  MANAJER IT
-                </option>
-                <option>
-                  MANAJER KEUANGAN
-                </option>
-                <option>
-                  MANAJER SALES & MARKETING
-                </option>
-                <option>
-                  MANAJER HRD
-                </option>
-                <option>
-                  MANAJER LAINNYA
-                </option>
-                <option>
-                  SUPERVISOR IT
-                </option>
-                <option>
-                  SUPERVISOR KEUANGAN
-                </option>
-                <option>
-                  SUPERVISOR SALES & MARKETING
-                </option>
-                <option>
-                  SUPERVISOR HRD
-                </option>
-                <option>
-                  SUPERVISOR LAINNYA
-                </option>
-                <option>
-                  STAF IT
-                </option>
-                <option>
-                  STAF KEUANGAN
-                </option>
-                <option>
-                  STAF SALES & MARKETING
-                </option>
-                <option>
-                  STAF HRD
-                </option>
-                <option>
-                  STAF LAINNYA
-                </option>
-                <option>JABATAN LAINNYA</option>
               </select>
             </div>
           </div>
@@ -275,27 +160,13 @@
                 <option
                   value=""
                   disabled>
-                  Select dropdown
+                  Select available coacher clinic
                 </option>
-                <option>Digital Marketing</option>
-                <option>Startup Finance and Tax</option>
-                <option>Human Resources Management</option>
-                <option>Project Management</option>
-                <option>Security Audit</option>
-                <option>Cloud Solution</option>
-                <option>Startup Regulation</option>
-                <option>Skill Development</option>
-                <option>Enterprise Resource Planning (ERP)</option>
-                <option>Customer Relationship Management (CRM)</option>
-                <option>Learning Management System</option>
-                <option>Data Analytics</option>
-                <option>News Portal</option>
-                <option>UI/UX</option>
-                <option>Automation Industry</option>
-                <option>Hotel</option>
-                <option>Hospital & Clilic</option>
-                <option>Accounting</option>
-                <option>Mobile Application</option>
+                <option
+                  v-for="item in coacherSectorList"
+                  :key="item">
+                  {{ item }}
+                </option>
               </select>
             </div>
           </div>
@@ -392,6 +263,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { API_ENDPOINT } from '../constant/index'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from './page-mixin'
@@ -424,10 +296,38 @@ export default {
       isValidFormPhone: true,
       isValidFormProblemDesc: true,
       isValidFormCaptcha: true,
-      isValidForm: false
+      isValidForm: false,
+      positionList: [],
+      companySectorList: [],
+      coacherSectorList: []
     }
   },
+  created () {
+    this.fetchStaticData()
+  },
   methods: {
+    fetchStaticData () {
+      axios({
+        url: '/coacher_sector.json',
+        method: 'get'
+      }).then(response => {
+        this.coacherSectorList = response.data.data
+      })
+
+      axios({
+        url: '/company_sector.json',
+        method: 'get'
+      }).then(response => {
+        this.companySectorList = response.data.data
+      })
+
+      axios({
+        url: '/position.json',
+        method: 'get'
+      }).then(response => {
+        this.positionList = response.data.data
+      })
+    },
     checkFormValidation () {
       this.isValidFormName = isRequiredWithMinMax(3, 255, this.formData.name)
       this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)

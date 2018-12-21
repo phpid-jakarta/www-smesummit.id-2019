@@ -75,6 +75,13 @@
           </li>
           <li class="sitemap__item">
             <a
+              href="/organizer"
+              title="Organizer">
+              Organizer
+            </a>
+          </li>
+          <li class="sitemap__item">
+            <a
               href="/faq"
               title="FAQ">
               FAQ
