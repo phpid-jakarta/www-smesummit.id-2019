@@ -129,6 +129,16 @@
             </div>
           </div>
           <p
+            v-show="formData.sponsor_type === 'gold'"
+            class="help">
+
+          </p>
+          <p
+            v-show="formData.sponsor_type === 'silver'"
+            class="help">
+
+          </p>
+          <p
             v-show="!isValidFormSponsorType"
             class="help is-danger">
             {{ getErrorMinMax(4, 255) }}

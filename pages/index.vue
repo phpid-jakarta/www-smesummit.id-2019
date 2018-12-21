@@ -147,10 +147,20 @@
         SPONSORS
       </h2>
       <div class="has-text-centered">
-        <img
-          class="sponsors_item"
-          alt="Biznet Gio"
-          src="/images/sponsor/biznet-gio-logo.svg">
+        <div class="level">
+          <div class="level-item">
+            <img
+              class="sponsors_item"
+              alt="Biznet Gio"
+              src="/images/sponsor/biznet-gio-logo.svg">
+          </div>
+          <div class="level-item">
+            <img
+              class="sponsors_item"
+              alt="Biznet Networks"
+              src="/images/sponsor/biznet-network-logo.png">
+          </div>
+        </div>
       </div>
 
       <div class="level btn-call">
