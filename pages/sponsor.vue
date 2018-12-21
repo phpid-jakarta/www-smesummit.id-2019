@@ -130,14 +130,10 @@
           </div>
           <p
             v-show="formData.sponsor_type === 'gold'"
-            class="help">
-
-          </p>
+            class="help" />
           <p
             v-show="formData.sponsor_type === 'silver'"
-            class="help">
-
-          </p>
+            class="help" />
           <p
             v-show="!isValidFormSponsorType"
             class="help is-danger">
