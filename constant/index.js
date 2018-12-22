@@ -22,6 +22,17 @@ export const SPEAKERS = [{
     webp: '/images/speaker/ken-ratri-iswari.webp'
   }
 }, {
+  name: 'Dondy Bappedyanto',
+  title: 'CEO at Biznet Gio',
+  sector: 'Technology Sector',
+  fb: '',
+  tw: 'https://twitter.com/dondyb',
+  in: 'https://www.linkedin.com/in/dondyb/',
+  insta: 'https://www.instagram.com/dondyb/',
+  photo: {
+    jpeg: '/images/speaker/dondy-bappedyanto.jpeg'
+  }
+}, {
   name: 'Rendy Maulana',
   title: 'CEO of Qwords',
   sector: 'Regulation Sector',
@@ -33,18 +44,7 @@ export const SPEAKERS = [{
     jpeg: '/images/speaker/rendy-maulana.jpeg'
   }
 }, {
-  name: 'Awesome Speaker',
-  title: 'Awesome Company',
-  sector: 'Technology Sector',
-  fb: 'https://www.facebook.com/',
-  tw: 'https://twitter.com/',
-  in: 'https://www.linkedin.com/in/',
-  insta: 'https://www.instagram.com/',
-  photo: {
-    jpeg: '/images/person.png'
-  }
-}, {
-  name: 'Awesome Speaker',
+  name: 'Speaker',
   title: 'Awesome Company',
   sector: 'Financial Sector',
   fb: 'https://www.facebook.com/',
@@ -55,9 +55,20 @@ export const SPEAKERS = [{
     jpeg: '/images/person.png'
   }
 }, {
-  name: 'Awesome Speaker',
+  name: 'Speaker',
   title: 'Awesome Company',
   sector: 'Marketing Sector',
+  fb: 'https://www.facebook.com/',
+  tw: 'https://twitter.com/',
+  in: 'https://www.linkedin.com/in/',
+  insta: 'https://www.instagram.com/',
+  photo: {
+    jpeg: '/images/person.png'
+  }
+}, {
+  name: 'Speaker',
+  title: 'Awesome Company',
+  sector: 'Other Sector',
   fb: 'https://www.facebook.com/',
   tw: 'https://twitter.com/',
   in: 'https://www.linkedin.com/in/',
