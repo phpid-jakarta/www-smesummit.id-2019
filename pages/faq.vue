@@ -13,7 +13,7 @@
 
       <article
         v-for="(faq, index) in faqList.general"
-        :key="index"
+        :key="'faq-general' + index"
         class="message is-info">
         <div class="message-header">
           <p>{{ faq.question }}</p>
@@ -30,7 +30,7 @@
 
       <article
         v-for="(faq, index) in faqList.attendants"
-        :key="index"
+        :key="'faq-attendant' + index"
         class="message is-info">
         <div class="message-header">
           <p>{{ faq.question }}</p>
@@ -47,7 +47,7 @@
 
       <article
         v-for="(faq, index) in faqList.coaching"
-        :key="index"
+        :key="'faq-coaching' + index"
         class="message is-info">
         <div class="message-header">
           <p>{{ faq.question }}</p>
@@ -64,7 +64,7 @@
 
       <article
         v-for="(faq, index) in faqList.sponsor"
-        :key="index"
+        :key="'faq-sponsor' + index"
         class="message is-info">
         <div class="message-header">
           <p>{{ faq.question }}</p>
@@ -81,7 +81,7 @@
 
       <article
         v-for="(faq, index) in faqList.speaker"
-        :key="index"
+        :key="'faq-speaker' + index"
         class="message is-info">
         <div class="message-header">
           <p>{{ faq.question }}</p>
@@ -98,7 +98,7 @@
 
       <article
         v-for="(faq, index) in faqList.volunteer"
-        :key="index"
+        :key="'faq-volunteer' + index"
         class="message is-info">
         <div class="message-header">
           <p>{{ faq.question }}</p>

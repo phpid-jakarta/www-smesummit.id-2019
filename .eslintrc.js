@@ -29,6 +29,7 @@ module.exports = {
         'nuxt-link',
         'no-ssr'
       ]
-    }]
+    }],
+    "vue/no-v-html": "off"
   }
 }
