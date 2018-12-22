@@ -12,7 +12,15 @@
       {
         "question": "Darimana saya mendapat informasi update terkait perkembangan event?",
         "answer": "<ul><li>Melalui web: <a href=\"https://smesummit.id\">https://smesummit.id</a> dan <a href=\"https://phpindonesia.id\">https://phpindonesia.id</a></li><li></li>Melalui email yang dibroadcast, melalui Facebook group PHP Indonesia <a href=\"https://www.facebook.com/groups/35688476100\">https://www.facebook.com/groups/35688476100</a></li><li></li>Melalui Android Apps yang khusus dibuat untuk event ini. Akan diumumkan kemudian</li>"
-      }
+      },
+      {
+        "question": "Apa keuntungan yang akan saya dapatkan diacara ini?",
+        "answer": "Banyak. Wawasan anda tentang dunia digital dan manfaatnya akan bertambah. Masalah yang anda hadapi sekarang di perusahaan dapat dibantu/diselesaikan oleh konsultan terbaik. Membangun jaringan teman/partner/bisnis dengan konsultan dan peserta lain.  Dan banyak manfaat lainnya."
+      },
+      {
+        "question": "Apa dan siapa nih PHP Indonesia?",
+        "answer": "PHP Indonesia adalah komunitas pemrograman komputer terbesar di Indonesia, yang terdiri dari 150.000 member dengan kepengurusan di 34 Dashboard Daerah. Info selengkapnya bisa dibaca disini: <a href=\"https://phpindonesia.id\">https://phpindonesia.id</a>"
+      }      
     ],
     "attendants": [
       {
@@ -26,6 +34,10 @@
       {
         "question": "Gimana urut-urutan pendaftaran?",
         "answer": "Desember hingga akhir Januari akan dilakukan pre-registrasi peminat. Februari hingga hari H-1 penerimaan peserta dan penerimaan pembayaran biaya pendaftaran"
+      },
+      {
+        "question": "Kami dari startup teknologi, bisa tidak ikutan acara ini?",
+        "answer": "Sangat bisa. Karena dari event ini ada akan mendapatkan insight dari sektor-sektor diluar teknologi seperti marketing, finansial, talent management, regulasi dan insentif pemerintah yang justru juga dibutuhkan oleh perusahaan startup teknologi"
       }
     ],
     "coaching": [
@@ -52,6 +64,10 @@
       {
         "question": "Adakah fee untuk pemateri?",
         "answer": "Tidak ada. Karena ini adalah acara yang digagas oleh komunitas sukarela PHP Indonesia yang seluruh budget acaranya ditanggung oleh sponsor dan tidak ada pembagian keuntungan untuk penyelenggara maupun panitia. Namun pemateri diijinkan untuk melakukan soft-promotion jika terpilih menjadi pemateri SMESummit."
+      },
+      {
+        "question": "Saya berminat menjadi konsultan yang mengisi Coaching Clinics? Gimana caranya",
+        "answer": "Pengisi Coaching Clinics adalah sekaligus sponsor Gold/Silver. Dengan demikian membayar biaya sponsorship. Cek FAQ#SPONSOR"
       }
     ],
     "volunteer": [
