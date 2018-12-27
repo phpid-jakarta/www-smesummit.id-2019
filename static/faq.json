@@ -11,7 +11,7 @@
       },
       {
         "question": "Darimana saya mendapat informasi update terkait perkembangan event?",
-        "answer": "<ul><li>Melalui web: <a href=\"https://www.smesummit.id\">https://www.smesummit.id</a> dan <a href=\"https://phpindonesia.id\">https://phpindonesia.id</a></li><li></li>Melalui email yang dibroadcast, melalui Facebook group <a href=\"https://www.facebook.com/groups/35688476100\">PHP Indonesia</a></li><li></li>Melalui Android Apps yang khusus dibuat untuk event ini. Akan diumumkan kemudian</li>"
+        "answer": "<ul><li>Melalui web: <a href=\"https://www.smesummit.id\">https://www.smesummit.id</a> dan <a href=\"https://phpindonesia.id\">https://phpindonesia.id</a></li><li>Melalui email yang dibroadcast, melalui Facebook group <a href=\"https://www.facebook.com/groups/35688476100\">PHP Indonesia</a></li><li>Melalui Android Apps yang khusus dibuat untuk event ini. Akan diumumkan kemudian</li>"
       },
       {
         "question": "Apa keuntungan yang akan saya dapatkan diacara ini?",
@@ -20,7 +20,7 @@
       {
         "question": "Apa dan siapa nih PHP Indonesia?",
         "answer": "PHP Indonesia adalah komunitas pemrograman komputer terbesar di Indonesia, yang terdiri dari 150.000 member dengan kepengurusan di 34 Dashboard Daerah. Info selengkapnya bisa dibaca disini: <a href=\"https://phpindonesia.id\">https://phpindonesia.id</a>"
-      }      
+      }
     ],
     "attendants": [
       {
@@ -67,7 +67,7 @@
       },
       {
         "question": "Saya berminat menjadi konsultan yang mengisi Coaching Clinics? Gimana caranya",
-        "answer": "Pengisi Coaching Clinics adalah sekaligus sponsor Gold/Silver. Dengan demikian membayar biaya sponsorship. Cek <a href=\"#sponsor\">FAQ Sponsor</a>"
+        "answer": "Pengisi Coaching Clinics adalah sekaligus sponsor Gold/Silver. Dengan demikian membayar biaya sponsorship. Cek <a href=\"#faq-sponsor\">FAQ Sponsor</a>"
       }
     ],
     "volunteer": [

@@ -7,7 +7,9 @@
         FREQUENTLY ASKED QUESTIONS (FAQ)
       </h2>
 
-      <h3 class="subtitle title-section caption-text">
+      <h3
+        id="faq-general"
+        class="subtitle title-section caption-text">
         GENERAL
       </h3>
 
@@ -24,7 +26,9 @@
         </div>
       </article>
 
-      <h3 class="subtitle title-section caption-text">
+      <h3
+        id="faq-attendant"
+        class="subtitle title-section caption-text">
         ATTENDANT
       </h3>
 
@@ -41,7 +45,9 @@
         </div>
       </article>
 
-      <h3 class="subtitle title-section caption-text">
+      <h3
+        id="faq-coaching-clinic"
+        class="subtitle title-section caption-text">
         COACHING CLINIC
       </h3>
 
@@ -58,7 +64,9 @@
         </div>
       </article>
 
-      <h3 class="subtitle title-section caption-text">
+      <h3
+        id="faq-sponsor"
+        class="subtitle title-section caption-text">
         SPONSOR
       </h3>
 
@@ -75,7 +83,9 @@
         </div>
       </article>
 
-      <h3 class="subtitle title-section caption-text">
+      <h3
+        id="faq-speaker"
+        class="subtitle title-section caption-text">
         SPEAKER
       </h3>
 
@@ -92,7 +102,9 @@
         </div>
       </article>
 
-      <h3 class="subtitle title-section caption-text">
+      <h3
+        id="faq-volunteer"
+        class="subtitle title-section caption-text">
         VOLUNTEER
       </h3>
 
@@ -146,7 +158,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.subtitle{
+h3.subtitle{
   padding-top: 2em;
 }
 </style>
@@ -155,6 +167,12 @@ export default {
 .message-body{
   a {
     color: #209cee !important;
+  }
+}
+.faq{
+  /deep/ ul li {
+    list-style-type: disc;
+    margin-left: 1em;
   }
 }
 </style>

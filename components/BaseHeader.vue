@@ -17,36 +17,36 @@
       <div class="level-item has-text-centered is-hidden-mobile">
         <nav class="level">
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/about"
+              to="/about"
               title="About">
               About
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/register"
+              to="/register"
               title="Register">
               Register
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/sponsor"
+              to="/sponsor"
               title="Sponsorship">
               Sponsorship
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/speaker"
+              to="/speaker"
               title="Speakers">
               Speakers
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
             <a
@@ -57,12 +57,12 @@
             </a>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/faq"
+              to="/faq"
               title="FAQ">
               FAQ
-            </a>
+            </nuxt-link>
           </p>
         </nav>
       </div>
@@ -89,36 +89,36 @@
             </a>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/about"
+              to="/about"
               title="About">
               About
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/register"
+              to="/register"
               title="Register">
               Register
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/sponsor"
+              to="/sponsor"
               title="Sponsorship">
               Sponsorship
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/speaker"
+              to="/speaker"
               title="Speakers">
               Speakers
-            </a>
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
             <a
@@ -129,12 +129,12 @@
             </a>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/faq"
+              to="/faq"
               title="FAQ">
               FAQ
-            </a>
+            </nuxt-link>
           </p>
         </nav>
       </div>
