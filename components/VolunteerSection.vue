@@ -14,11 +14,11 @@
 
     <div class="level btn-call">
       <div class="level-item">
-        <a
+        <nuxt-link
           class="button is-outlined is-large is-info caption-text"
-          href="/volunteer">
+          to="/volunteer">
           Become Volunteer
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </section>

@@ -92,11 +92,11 @@
 
     <div class="level btn-call">
       <div class="level-item">
-        <a
+        <nuxt-link
           class="button is-outlined is-large is-info caption-text"
-          href="/speaker">
+          to="/speaker">
           Become Speaker
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </section>

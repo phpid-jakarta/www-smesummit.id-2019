@@ -53,53 +53,53 @@
         </p>
         <ul class="sitemap__wrapper">
           <li class="sitemap__item">
-            <a
-              href="/register"
+            <nuxt-link
+              to="/register"
               title="Register">
               Register
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/speaker"
+            <nuxt-link
+              to="/speaker"
               title="Speakers">
               Speakers
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/coacher"
+            <nuxt-link
+              to="/coacher"
               title="Coacher">
               Coacher
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/sponsor"
+            <nuxt-link
+              to="/sponsor"
               title="Sponsors">
               Sponsors
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/volunteer"
+            <nuxt-link
+              to="/volunteer"
               title="Volunteers">
               Volunteers
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/organizer"
+            <nuxt-link
+              to="/organizer"
               title="Organizer">
               Organizer
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/faq"
+            <nuxt-link
+              to="/faq"
               title="FAQ">
               FAQ
-            </a>
+            </nuxt-link>
           </li>
         </ul>
       </div>
