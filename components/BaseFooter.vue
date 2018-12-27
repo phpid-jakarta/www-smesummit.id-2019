@@ -8,13 +8,27 @@
 
         <figure class="image">
           <picture>
-            <source
-              type="image/webp"
-              srcset="/images/organizer/logo-phpid-putih300.webp">
             <img
+              v-lazy="'/images/organizer/logo-phpid-putih300.png'"
               class="organizer__logo"
-              src="/images/organizer/logo-phpid-putih300.png"
+              src="/images/placeholder.png"
               alt="PHP Indonesia">
+          </picture>
+        </figure>
+
+        <br>
+
+        <p class="has-text-weight-bold">
+          Connected by
+        </p>
+
+        <figure class="image">
+          <picture>
+            <img
+              v-lazy="'/images/organizer/logo-livelife-white.png'"
+              class="organizer__logo"
+              src="/images/placeholder.png"
+              alt="Livelife">
           </picture>
         </figure>
       </div>
@@ -134,6 +148,7 @@
       </div>
     </div>
 
+    <div><p>This website is crafted by PHPID Community</p></div>
     <div><p>Copyright © 2019, All Rights Reserved.</p></div>
   </footer>
 </template>

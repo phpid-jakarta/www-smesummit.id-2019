@@ -6,8 +6,11 @@
       <h2 class="title has-text-centered title-section caption-text">
         About
       </h2>
-      <p class="is-size-3">
+      <p class="is-size-4">
         {{ aboutTitle }}
+        <nuxt-link to="/faq">
+          Read more in FAQ
+        </nuxt-link>
       </p>
     </section>
   </div>
