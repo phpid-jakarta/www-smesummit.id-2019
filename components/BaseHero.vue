@@ -13,7 +13,7 @@
                   class="is-size-1 has-text-white caption-text">
                   SME Summit 2019
                 </h1>
-                <h2 class="is-size-3 has-text-white caption-text">
+                <h2 class="is-size-4 has-text-white caption-text">
                   IT TRANSFORMATION FOR NON-TECH COMPANY
                 </h2>
                 <br>
