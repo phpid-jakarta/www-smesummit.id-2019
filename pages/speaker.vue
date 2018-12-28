@@ -286,6 +286,11 @@ import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterSpeakers',
+  head () {
+    return {
+      title: 'Register for Speaker | SME Summit 2019'
+    }
+  },
   mixins: [
     PageMixin
   ],

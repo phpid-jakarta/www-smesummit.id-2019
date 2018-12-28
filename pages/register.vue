@@ -3,6 +3,9 @@
     <section
       id="reg-attendants"
       class="section reg-attendants">
+      <BenefitList
+        :items="benefits" />
+
       <h2 class="title has-text-centered title-section caption-text">
         REGISTER FOR ATTENDANTS
       </h2>
@@ -170,11 +173,6 @@
               </select>
             </div>
           </div>
-          <p
-            v-show="!isValidFormCoachedSector"
-            class="help is-danger">
-            This field is required.
-          </p>
         </div>
 
         <div class="field">
@@ -264,17 +262,30 @@
 
 <script>
 import axios from 'axios'
+
+import BenefitList from '../components/BenefitList'
+
+import { BENEFITS } from '../constant/benefit'
 import { API_ENDPOINT } from '../constant/index'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterParticipants',
+  head () {
+    return {
+      title: 'Register for Participants | SME Summit 2019'
+    }
+  },
+  components: {
+    BenefitList
+  },
   mixins: [
     PageMixin
   ],
   data () {
     return {
+      benefits: BENEFITS,
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
       formData: {
         name: '',
@@ -291,7 +302,6 @@ export default {
       isValidFormCompanyName: true,
       isValidFormPosition: true,
       isValidFormCompanySector: true,
-      isValidFormCoachedSector: true,
       isValidFormEmail: true,
       isValidFormPhone: true,
       isValidFormProblemDesc: true,
@@ -333,7 +343,6 @@ export default {
       this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)
       this.isValidFormPosition = isRequiredWithMinMax(3, 255, this.formData.position)
       this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.company_sector)
-      this.isValidFormCoachedSector = isRequiredWithMinMax(3, 255, this.formData.coached_sector)
       this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
       this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
       this.isValidFormProblemDesc = isRequiredWithMinMax(20, 1024, this.formData.problem_desc)
@@ -343,7 +352,6 @@ export default {
       this.isValidFormCompanyName &&
       this.isValidFormPosition &&
       this.isValidFormCompanySector &&
-      this.isValidFormCoachedSector &&
       this.isValidFormEmail &&
       this.isValidFormPhone &&
       this.isValidFormProblemDesc &&

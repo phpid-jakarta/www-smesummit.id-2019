@@ -36,6 +36,11 @@ import axios from 'axios'
 
 export default {
   name: 'OrganizerPage',
+  head () {
+    return {
+      title: 'Organizers | SME Summit 2019'
+    }
+  },
   data () {
     return {
       organizerList: []
