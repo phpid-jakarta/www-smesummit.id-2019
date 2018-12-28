@@ -170,11 +170,6 @@
               </select>
             </div>
           </div>
-          <p
-            v-show="!isValidFormCoachedSector"
-            class="help is-danger">
-            This field is required.
-          </p>
         </div>
 
         <div class="field">
@@ -291,7 +286,6 @@ export default {
       isValidFormCompanyName: true,
       isValidFormPosition: true,
       isValidFormCompanySector: true,
-      isValidFormCoachedSector: true,
       isValidFormEmail: true,
       isValidFormPhone: true,
       isValidFormProblemDesc: true,
@@ -333,7 +327,6 @@ export default {
       this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)
       this.isValidFormPosition = isRequiredWithMinMax(3, 255, this.formData.position)
       this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.company_sector)
-      this.isValidFormCoachedSector = isRequiredWithMinMax(3, 255, this.formData.coached_sector)
       this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
       this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
       this.isValidFormProblemDesc = isRequiredWithMinMax(20, 1024, this.formData.problem_desc)
@@ -343,7 +336,6 @@ export default {
       this.isValidFormCompanyName &&
       this.isValidFormPosition &&
       this.isValidFormCompanySector &&
-      this.isValidFormCoachedSector &&
       this.isValidFormEmail &&
       this.isValidFormPhone &&
       this.isValidFormProblemDesc &&
