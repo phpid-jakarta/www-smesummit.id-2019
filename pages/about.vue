@@ -21,6 +21,11 @@ import { ABOUT_DESC } from '../constant/index'
 
 export default {
   name: 'AboutPage',
+  head () {
+    return {
+      title: 'About | SME Summit 2019'
+    }
+  },
   data () {
     return {
       aboutTitle: ABOUT_DESC

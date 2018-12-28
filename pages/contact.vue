@@ -60,7 +60,12 @@
 
 <script>
 export default {
-
+  name: 'PageContact',
+  head () {
+    return {
+      title: 'Contact Us | SME Summit 2019'
+    }
+  }
 }
 </script>
 

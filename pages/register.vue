@@ -3,6 +3,9 @@
     <section
       id="reg-attendants"
       class="section reg-attendants">
+      <BenefitList
+        :items="benefits" />
+
       <h2 class="title has-text-centered title-section caption-text">
         REGISTER FOR ATTENDANTS
       </h2>
@@ -259,17 +262,30 @@
 
 <script>
 import axios from 'axios'
+
+import BenefitList from '../components/BenefitList'
+
+import { BENEFITS } from '../constant/benefit'
 import { API_ENDPOINT } from '../constant/index'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterParticipants',
+  head () {
+    return {
+      title: 'Register for Participants | SME Summit 2019'
+    }
+  },
+  components: {
+    BenefitList
+  },
   mixins: [
     PageMixin
   ],
   data () {
     return {
+      benefits: BENEFITS,
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
       formData: {
         name: '',

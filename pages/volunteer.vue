@@ -139,6 +139,11 @@ import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterCoacher',
+  head () {
+    return {
+      title: 'Register for Volunteer | SME Summit 2019'
+    }
+  },
   mixins: [
     PageMixin
   ],

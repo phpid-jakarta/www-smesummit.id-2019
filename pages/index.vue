@@ -13,6 +13,9 @@
       </div>
     </section>
 
+    <BenefitList
+      :items="benefits" />
+
     <section
       id="register"
       class="register gradient-section clearfix">
@@ -56,6 +59,7 @@
 import Typed from 'typed.js'
 
 import BaseImageList from '../components/BaseImageList'
+import BenefitList from '../components/BenefitList'
 import SpeakerList from '../components/SpeakerList'
 import VolunteerSection from '../components/VolunteerSection'
 import LocationSection from '../components/LocationSection'
@@ -65,11 +69,13 @@ import { SPEAKERS } from '../constant/speaker'
 import { SPONSORS } from '../constant/sponsor'
 import { PARTNERS } from '../constant/media-partner'
 import { TARGETS } from '../constant/target'
+import { BENEFITS } from '../constant/benefit'
 
 export default {
   name: 'IndexPage',
   components: {
     BaseImageList,
+    BenefitList,
     SpeakerList,
     VolunteerSection,
     LocationSection
@@ -79,7 +85,8 @@ export default {
       aboutTitle: ABOUT_DESC,
       speakers: SPEAKERS,
       sponsors: SPONSORS,
-      partners: PARTNERS
+      partners: PARTNERS,
+      benefits: BENEFITS
     }
   },
   mounted () {

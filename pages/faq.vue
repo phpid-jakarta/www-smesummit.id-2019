@@ -129,6 +129,11 @@ import axios from 'axios'
 
 export default {
   name: 'FaqPage',
+  head () {
+    return {
+      title: 'Frequently Asked Question | SME Summit 2019'
+    }
+  },
   data () {
     return {
       faqList: {
