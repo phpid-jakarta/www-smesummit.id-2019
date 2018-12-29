@@ -125,6 +125,9 @@
                 <option value="silver">
                   Silver
                 </option>
+                <option value="media_partner">
+                  Media Partner
+                </option>
               </select>
             </div>
           </div>
