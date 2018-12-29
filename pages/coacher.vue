@@ -321,8 +321,7 @@ export default {
       isValidFormEmail: true,
       isValidFormPhone: true,
       isValidFormTopic: true,
-      isValidFormCaptcha: true,
-      isValidForm: false
+      isValidFormCaptcha: true
     }
   },
   methods: {
@@ -355,7 +354,7 @@ export default {
       return false
     },
     doSubmit () {
-      if (this.isValidForm) {
+      if (this.checkFormValidation()) {
         this.error = ''
         this.loadingSubmit = true
         this.isHaveError = false
