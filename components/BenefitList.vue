@@ -45,8 +45,18 @@ export default {
   }
   .level-item{
     display: block;
-    max-width: 200px;
     padding: 1em .5em;
+
+    // on desktop
+    @media screen and (min-width: 768px) {
+      max-width: 200px;
+    }
+
+    // on mobile
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
     img{
       width: 200px;
     }
