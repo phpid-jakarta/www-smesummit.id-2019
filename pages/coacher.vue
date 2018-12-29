@@ -172,7 +172,7 @@
           </p>
         </div>
 
-        <!-- <div class="field">
+        <div class="field">
           <label class="label">
             Experience
           </label>
@@ -189,7 +189,7 @@
             class="help is-danger">
             {{ getErrorMinMax(20, 1024) }}
           </p>
-        </div> -->
+        </div>
 
         <div class="field">
           <label class="label">
@@ -305,7 +305,7 @@ export default {
         company_sector: '',
         photo: '',
         last_education: '',
-        // experience: '',
+        experience: '',
         email: '',
         phone: '',
         topic: '',
@@ -332,7 +332,7 @@ export default {
       this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.company_sector)
       this.isValidFormPhoto = isRequiredWithMinMax(3, 255, this.formData.photo)
       this.isValidFormLatestEducation = isRequiredWithMinMax(3, 255, this.formData.last_education)
-      // this.isValidFormExperience = isRequiredWithMinMax(20, 1024, this.formData.experience)
+      this.isValidFormExperience = isRequiredWithMinMax(20, 1024, this.formData.experience)
       this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
       this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
       this.isValidFormTopic = isRequiredWithMinMax(3, 255, this.formData.topic)
@@ -344,7 +344,7 @@ export default {
       this.isValidFormCompanySector &&
       this.isValidFormPhoto &&
       this.isValidFormLatestEducation &&
-      // this.isValidFormExperience &&
+      this.isValidFormExperience &&
       this.isValidFormEmail &&
       this.isValidFormPhone &&
       this.isValidFormTopic &&
