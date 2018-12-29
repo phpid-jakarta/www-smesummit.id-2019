@@ -58,7 +58,7 @@
           </label>
           <div class="control">
             <input
-              v-model="formData.sector"
+              v-model="formData.company_sector"
               class="input"
               :class="{'is-danger': !isValidFormCompanySector}"
               type="text"
@@ -302,7 +302,7 @@ export default {
         name: '',
         company_name: '',
         position: '',
-        sector: '',
+        company_sector: '',
         photo: '',
         last_education: '',
         experience: '',
@@ -329,7 +329,7 @@ export default {
       this.isValidFormName = isRequiredWithMinMax(3, 255, this.formData.name)
       this.isValidFormCompanyName = isRequiredWithMinMax(3, 255, this.formData.company_name)
       this.isValidFormPosition = isRequiredWithMinMax(3, 255, this.formData.position)
-      this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.sector)
+      this.isValidFormCompanySector = isRequiredWithMinMax(3, 255, this.formData.company_sector)
       this.isValidFormPhoto = isRequiredWithMinMax(3, 255, this.formData.photo)
       this.isValidFormLatestEducation = isRequiredWithMinMax(3, 255, this.formData.last_education)
       this.isValidFormExperience = isRequiredWithMinMax(20, 1024, this.formData.experience)
