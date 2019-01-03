@@ -200,6 +200,16 @@
       </form>
 
       <div
+        class="notification is-info"
+        style="margin-top: 1em;">
+        <span>More information about sponsorship, you can contact our PIC</span>
+        <br>
+        <span>Name: {{ ARGA.name }}</span>
+        <br>
+        <span>Phone: {{ ARGA.phone }}</span>
+      </div>
+
+      <div
         v-show="isHaveError"
         class="notification is-danger"
         style="margin-top: 1em;">
@@ -213,6 +223,7 @@
 
 <script>
 import { API_ENDPOINT } from '../constant/index'
+import { ARGA } from '../constant/contact'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from './page-mixin'
 
@@ -245,7 +256,8 @@ export default {
       isValidFormPhone: true,
       isValidFormSponsorType: true,
       isValidFormCaptcha: true,
-      isValidForm: false
+      isValidForm: false,
+      ARGA
     }
   },
   methods: {
