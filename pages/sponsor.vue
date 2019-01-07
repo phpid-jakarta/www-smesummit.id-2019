@@ -3,6 +3,9 @@
     <section
       id="reg-sponsor"
       class="section reg-sponsor">
+      <BaseImageList
+        :items="sponsors" />
+
       <h2 class="title has-text-centered title-section caption-text">
         REGISTER FOR SPONSORSHIP
       </h2>
@@ -222,7 +225,9 @@
 </template>
 
 <script>
+import BaseImageList from '../components/BaseImageList'
 import { API_ENDPOINT } from '../constant/index'
+import { SPONSORS } from '../constant/sponsor'
 import { ARGA } from '../constant/contact'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from './page-mixin'
@@ -233,6 +238,9 @@ export default {
     return {
       title: 'Register for Sponsor | SME Summit 2019'
     }
+  },
+  components: {
+    BaseImageList
   },
   mixins: [
     PageMixin
@@ -257,7 +265,8 @@ export default {
       isValidFormSponsorType: true,
       isValidFormCaptcha: true,
       isValidForm: false,
-      ARGA
+      ARGA,
+      sponsors: SPONSORS
     }
   },
   methods: {

@@ -50,6 +50,20 @@
           </div>
         </div>
 
+
+        <div class="field">
+          <label class="label">
+            City/District
+          </label>
+          <div class="control">
+            <input
+              v-model="formData.city"
+              class="input"
+              type="text"
+              placeholder="Ex: DKI Jakarta">
+          </div>
+        </div>
+
         <div class="field">
           <label class="label">
             Tell Us why you interest to help
