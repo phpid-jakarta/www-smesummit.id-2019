@@ -3,6 +3,9 @@
     <section
       id="reg-speakers"
       class="section reg-speakers">
+      <SpeakerList
+        :items="speakers" />
+
       <h2 class="title has-text-centered title-section caption-text">
         REGISTER FOR SPEAKERS
       </h2>
@@ -268,6 +271,16 @@
       </form>
 
       <div
+        class="notification is-info"
+        style="margin-top: 1em;">
+        <span>More information about speaker, you can contact our PIC</span>
+        <br>
+        <span>Name: {{ ARGA.name }}</span>
+        <br>
+        <span>Phone: {{ ARGA.phone }}</span>
+      </div>
+
+      <div
         v-show="isHaveError"
         class="notification is-danger"
         style="margin-top: 1em;">
@@ -280,7 +293,10 @@
 </template>
 
 <script>
+import SpeakerList from '../components/SpeakerList'
+import { SPEAKERS } from '../constant/speaker'
 import { API_ENDPOINT } from '../constant/index'
+import { ARGA } from '../constant/contact'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from './page-mixin'
 
@@ -290,6 +306,9 @@ export default {
     return {
       title: 'Register for Speaker | SME Summit 2019'
     }
+  },
+  components: {
+    SpeakerList
   },
   mixins: [
     PageMixin
@@ -321,7 +340,9 @@ export default {
       isValidFormPhone: true,
       isValidFormTopic: true,
       isValidFormCaptcha: true,
-      isValidForm: false
+      isValidForm: false,
+      ARGA,
+      speakers: SPEAKERS
     }
   },
   methods: {

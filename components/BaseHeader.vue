@@ -49,12 +49,12 @@
             </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/#location"
-              title="Location">
-              Location
-            </a>
+              to="/contact"
+              title="Contact">
+              Contact
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
             <nuxt-link
@@ -63,6 +63,16 @@
               title="FAQ">
               FAQ
             </nuxt-link>
+          </p>
+          <p class="level-item has-text-centered">
+            <a
+              class="link"
+              href="https://smesummit2019.wordpress.com/"
+              target="_blank"
+              rel="noopener"
+              title="Blog">
+              Blog
+            </a>
           </p>
         </nav>
       </div>
@@ -121,12 +131,12 @@
             </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <a
+            <nuxt-link
               class="link"
-              href="/#location"
-              title="Location">
-              Location
-            </a>
+              to="/contact"
+              title="Contact">
+              Contact
+            </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
             <nuxt-link
@@ -135,6 +145,16 @@
               title="FAQ">
               FAQ
             </nuxt-link>
+          </p>
+          <p class="level-item has-text-centered">
+            <a
+              class="link"
+              href="https://smesummit2019.wordpress.com/"
+              target="_blank"
+              rel="noopener"
+              title="Blog">
+              Blog
+            </a>
           </p>
         </nav>
       </div>
