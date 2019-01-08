@@ -19,7 +19,8 @@ export const SPEAKERS = [{
   in: 'https://www.linkedin.com/in/dondyb/',
   insta: 'https://www.instagram.com/dondyb/',
   photo: {
-    jpeg: '/images/speaker/dondy-bappedyanto.jpeg'
+    jpeg: '/images/speaker/dondy-bappedyanto.jpeg',
+    webp: '/images/speaker/dondy-bappedyanto.webp'
   }
 }, {
   name: 'Rendy Maulana',
@@ -30,29 +31,32 @@ export const SPEAKERS = [{
   in: 'https://www.linkedin.com/in/rendy/',
   insta: 'https://www.instagram.com/rendy/',
   photo: {
-    jpeg: '/images/speaker/rendy-maulana.jpeg'
+    jpeg: '/images/speaker/rendy-maulana.jpeg',
+    webp: '/images/speaker/rendy-maulana.webp'
   }
 }, {
   name: 'Yopie Suryadi',
   title: 'Founder, Chief MTarget.co',
   sector: 'Digital Marketing',
-  fb: 'https://www.facebook.com/',
-  tw: 'https://twitter.com/',
-  in: 'https://www.linkedin.com/in/',
-  insta: 'https://www.instagram.com/',
+  fb: '',
+  tw: 'https://twitter.com/yopiesuryadi',
+  in: 'https://www.linkedin.com/in/yopiesuryadi',
+  insta: 'https://www.instagram.com/yopiesuryadi',
   photo: {
-    jpeg: '/images/person.png'
+    jpeg: '/images/speaker/yopie-suryadi.jpg',
+    webp: '/images/speaker/yopie-suryadi.webp'
   }
 }, {
   name: 'Melvin Mumpuni CFP',
   title: 'Founder Finansialku.com',
   sector: 'Financial Sector',
-  fb: 'https://www.facebook.com/',
-  tw: 'https://twitter.com/',
-  in: 'https://www.linkedin.com/in/',
-  insta: 'https://www.instagram.com/',
+  fb: '',
+  tw: 'https://twitter.com/melvinmumpuni',
+  in: 'https://www.linkedin.com/in/melvinmumpuni',
+  insta: '',
   photo: {
-    jpeg: '/images/person.png'
+    jpeg: '/images/speaker/melvin-mumpuni.jpg',
+    webp: '/images/speaker/melvin-mumpuni.webp'
   }
 }, {
   name: 'Joy Gabriel',
