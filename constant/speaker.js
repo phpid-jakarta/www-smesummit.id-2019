@@ -12,7 +12,7 @@ export const SPEAKERS = [{
   }
 }, {
   name: 'Dondy Bappedyanto',
-  title: 'CEO at Biznet Gio',
+  title: 'CEO Biznet Gio',
   sector: 'Technology Sector',
   fb: '',
   tw: 'https://twitter.com/dondyb',
@@ -23,7 +23,7 @@ export const SPEAKERS = [{
   }
 }, {
   name: 'Rendy Maulana',
-  title: 'CEO of Qwords',
+  title: 'CEO Qwords',
   sector: 'Regulation Sector',
   fb: 'https://www.facebook.com/rendy.maulana',
   tw: '',
@@ -33,8 +33,19 @@ export const SPEAKERS = [{
     jpeg: '/images/speaker/rendy-maulana.jpeg'
   }
 }, {
-  name: 'Speaker',
-  title: 'Awesome Company',
+  name: 'Yopie Suryadi',
+  title: 'Founder, Chief MTarget.co',
+  sector: 'Digital Marketing',
+  fb: 'https://www.facebook.com/',
+  tw: 'https://twitter.com/',
+  in: 'https://www.linkedin.com/in/',
+  insta: 'https://www.instagram.com/',
+  photo: {
+    jpeg: '/images/person.png'
+  }
+}, {
+  name: 'Melvin Mumpuni CFP',
+  title: 'Founder Finansialku.com',
   sector: 'Financial Sector',
   fb: 'https://www.facebook.com/',
   tw: 'https://twitter.com/',
@@ -44,20 +55,9 @@ export const SPEAKERS = [{
     jpeg: '/images/person.png'
   }
 }, {
-  name: 'Speaker',
-  title: 'Awesome Company',
-  sector: 'Marketing Sector',
-  fb: 'https://www.facebook.com/',
-  tw: 'https://twitter.com/',
-  in: 'https://www.linkedin.com/in/',
-  insta: 'https://www.instagram.com/',
-  photo: {
-    jpeg: '/images/person.png'
-  }
-}, {
-  name: 'Speaker',
-  title: 'Awesome Company',
-  sector: 'Other Sector',
+  name: 'Joy Gabriel',
+  title: 'IT Supervisor Telkom Indonesia',
+  sector: 'Technology Sector',
   fb: 'https://www.facebook.com/',
   tw: 'https://twitter.com/',
   in: 'https://www.linkedin.com/in/',
