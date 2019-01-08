@@ -90,7 +90,9 @@
       </div>
     </div>
 
-    <div class="level btn-call">
+    <div
+      v-if="showButton"
+      class="level btn-call">
       <div class="level-item">
         <nuxt-link
           class="button is-outlined is-large is-info caption-text"
@@ -109,6 +111,10 @@ export default {
     items: {
       type: Array,
       default: () => []
+    },
+    showButton: {
+      type: Boolean,
+      default: true
     }
   }
 }
