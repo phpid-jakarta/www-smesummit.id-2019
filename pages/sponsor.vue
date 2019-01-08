@@ -4,7 +4,8 @@
       id="reg-sponsor"
       class="section reg-sponsor">
       <BaseImageList
-        :items="sponsors" />
+        :items="sponsors"
+        :show-button="false" />
 
       <h2 class="title has-text-centered title-section caption-text">
         REGISTER FOR SPONSORSHIP

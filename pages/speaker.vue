@@ -4,7 +4,8 @@
       id="reg-speakers"
       class="section reg-speakers">
       <SpeakerList
-        :items="speakers" />
+        :items="speakers"
+        :show-button="false" />
 
       <h2 class="title has-text-centered title-section caption-text">
         REGISTER FOR SPEAKERS
