@@ -6,20 +6,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "27f48476a6dbd4a0ed61c89d84719e7e"
   },
   {
-    "url": "/_nuxt/243afeb2a0acc2670b35.js",
-    "revision": "220f78e3aca096d7c2ab8c7ff764b55a"
-  },
-  {
-    "url": "/_nuxt/3287cd137cdc4834fb50.js",
-    "revision": "1f10162054f896c15cf6074515b2ac1b"
-  },
-  {
     "url": "/_nuxt/341e8cc597b36b19f296.js",
     "revision": "cbfd1856f8de8f99344b2701d4f9d89e"
-  },
-  {
-    "url": "/_nuxt/3b43e7095821f19a6d1e.js",
-    "revision": "7bc31fa35b32a79d4a04ea9053478492"
   },
   {
     "url": "/_nuxt/4aee7baa26f00083430f.js",
@@ -30,12 +18,12 @@ workbox.precaching.precacheAndRoute([
     "revision": "a65359759b1b6315ea672bf5ddf0cec9"
   },
   {
-    "url": "/_nuxt/5a57993ce5e4fcc4ab20.js",
-    "revision": "c60be307dd36919d8d5db470e1629b66"
+    "url": "/_nuxt/579a2ccd919569a4070a.js",
+    "revision": "bffcdb4c9ab2d1509068f328fddf7b36"
   },
   {
-    "url": "/_nuxt/7a56f30ac56353db6506.js",
-    "revision": "c4c3ae5d27e05ee33fe6ede5fc8c1490"
+    "url": "/_nuxt/5a57993ce5e4fcc4ab20.js",
+    "revision": "c60be307dd36919d8d5db470e1629b66"
   },
   {
     "url": "/_nuxt/9a9258960d6b3e6d2610.js",
@@ -50,16 +38,24 @@ workbox.precaching.precacheAndRoute([
     "revision": "87c65851283e5036c57bdf7624bd4aef"
   },
   {
-    "url": "/_nuxt/ac24886e4d6dac9229e5.js",
-    "revision": "0dae0913df205766d12c1907e602b4d2"
+    "url": "/_nuxt/ab7c53156f4b534aadf7.js",
+    "revision": "37060e63528eeb68597b37adaab85f60"
   },
   {
     "url": "/_nuxt/c126cc68ef203367db8c.js",
     "revision": "658889fe38b183e491de3fd2413aaca4"
   },
   {
+    "url": "/_nuxt/c814226f52dae5f705fc.js",
+    "revision": "139e28c0d39adc526ed2068485f97e12"
+  },
+  {
     "url": "/_nuxt/c89906b26f18e400d21c.js",
     "revision": "6e27991921c0be46a7fdb7d0ad71d2e5"
+  },
+  {
+    "url": "/_nuxt/cd08d0dd9c4803e41028.js",
+    "revision": "419ae9d67cc4494e9f76df5310d44df6"
   },
   {
     "url": "/_nuxt/cec8a53476e3ddce9b4d.js",
@@ -68,6 +64,10 @@ workbox.precaching.precacheAndRoute([
   {
     "url": "/_nuxt/d0776e336c8089334ea0.js",
     "revision": "214e97d117a5626bf6108350a643f4af"
+  },
+  {
+    "url": "/_nuxt/dc942a3cab32c60de071.js",
+    "revision": "845bde796f0a58c16bf5429272cb0b8f"
   }
 ], {
   "cacheId": "smesummit.id",
