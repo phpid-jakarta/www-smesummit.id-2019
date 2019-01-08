@@ -60,13 +60,14 @@ export const SPEAKERS = [{
   }
 }, {
   name: 'Joy Gabriel',
-  title: 'IT Supervisor Telkom Indonesia',
+  title: 'Data Analytics Telkom Indonesia',
   sector: 'Technology Sector',
-  fb: 'https://www.facebook.com/',
-  tw: 'https://twitter.com/',
-  in: 'https://www.linkedin.com/in/',
-  insta: 'https://www.instagram.com/',
+  fb: 'https://www.facebook.com/joygeneroso',
+  tw: '',
+  in: 'https://www.linkedin.com/in/joygabriel',
+  insta: '',
   photo: {
-    jpeg: '/images/person.png'
+    jpeg: '/images/speaker/joy-gabriel.jpeg',
+    webp: '/images/speaker/joy-gabriel.webp'
   }
 }]
