@@ -43,7 +43,7 @@ export const SPEAKERS = [{
   in: 'https://www.linkedin.com/in/yopiesuryadi',
   insta: 'https://www.instagram.com/yopiesuryadi',
   photo: {
-    jpeg: '/images/speaker/yopie-suryadi.jpg',
+    jpeg: '/images/speaker/yopie-suryadi.jpeg',
     webp: '/images/speaker/yopie-suryadi.webp'
   }
 }, {
