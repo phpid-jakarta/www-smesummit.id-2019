@@ -102,7 +102,8 @@
             <nuxt-link
               class="link"
               to="/about"
-              title="About">
+              title="About"
+              @click.native="hideMenu">
               About
             </nuxt-link>
           </p>
@@ -110,7 +111,8 @@
             <nuxt-link
               class="link"
               to="/register"
-              title="Register">
+              title="Register"
+              @click.native="hideMenu">
               Register
             </nuxt-link>
           </p>
@@ -118,7 +120,8 @@
             <nuxt-link
               class="link"
               to="/sponsor"
-              title="Sponsorship">
+              title="Sponsorship"
+              @click.native="hideMenu">
               Sponsorship
             </nuxt-link>
           </p>
@@ -126,7 +129,8 @@
             <nuxt-link
               class="link"
               to="/speaker"
-              title="Speakers">
+              title="Speakers"
+              @click.native="hideMenu">
               Speakers
             </nuxt-link>
           </p>
@@ -134,7 +138,8 @@
             <nuxt-link
               class="link"
               to="/contact"
-              title="Contact">
+              title="Contact"
+              @click.native="hideMenu">
               Contact
             </nuxt-link>
           </p>
@@ -142,7 +147,8 @@
             <nuxt-link
               class="link"
               to="/faq"
-              title="FAQ">
+              title="FAQ"
+              @click.native="hideMenu">
               FAQ
             </nuxt-link>
           </p>
@@ -177,6 +183,9 @@ export default {
   methods: {
     onClickBurger () {
       this.isShowMenu = !this.isShowMenu
+    },
+    hideMenu () {
+      this.isShowMenu = false
     }
   }
 }
