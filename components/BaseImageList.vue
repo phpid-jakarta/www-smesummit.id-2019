@@ -12,11 +12,17 @@
           v-for="(item, index) in items"
           :key="listType + index"
           class="level-item">
-          <img
-            v-lazy="item.logo"
-            class="sponsors_item"
-            :alt="item.name"
-            src="/images/placeholder.png">
+          <a
+            :href="item.link + '?utm_source=www-smesummit-id?utm_medium=banner'"
+            :title="item.name"
+            target="_blank"
+            rel="noopener">
+            <img
+              v-lazy="item.logo"
+              class="sponsors_item"
+              :alt="item.name"
+              src="/images/placeholder.png">
+          </a>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { ABOUT_DESC } from '../constant/index'
+import { DESC } from '../constant/index'
 
 export default {
   name: 'AboutPage',
@@ -28,7 +28,7 @@ export default {
   },
   data () {
     return {
-      aboutTitle: ABOUT_DESC
+      aboutTitle: DESC.ABOUT
     }
   }
 }

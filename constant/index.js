@@ -9,4 +9,10 @@ export const API_ENDPOINT = {
   REGISTER_SPEAKER: `${BASE_API_URL}/speaker_register.php`
 }
 
-export const ABOUT_DESC = `SME Summit 2019 is a conference and mentoring panel session organized by PHP Indonesia which aims to help the technological transformation in non-tech companies, small and medium enterprises and traditional companies, shift the paradigm that IT division is only as a support division in the company into a profit-center division and helping to transform your stagnant companies into exponential growth companies.`
+export const DESC = {
+  TITLE: 'SME Summit 2019',
+  TAGLINE: 'DIGITAL TRANSFORMATION FOR NON-TECH COMPANY',
+  PLACE_N_DATE: 'Jakarta, 25 April 2019',
+  VENUE: 'Ballroom Ayana Hotel Midplaza, Jakarta',
+  ABOUT: `SME Summit 2019 is a conference and mentoring panel session organized by PHP Indonesia which aims to help the technological transformation in non-tech companies, small and medium enterprises and traditional companies, shift the paradigm that IT division is only as a support division in the company into a profit-center division and helping to transform your stagnant companies into exponential growth companies.`
+}
