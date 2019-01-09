@@ -16,7 +16,7 @@ $overlay-theme: rgba(38, 121, 214, .4);
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT Sans Caption', sans-serif;
 }
 .hidden{
   display: none;
@@ -127,6 +127,7 @@ body {
   }
   .title-section {
     color: $theme;
+    margin-bottom: 2em;
   }
 }
 
@@ -266,6 +267,17 @@ section#register {
     }
     h3{
       font-size: 1rem;
+    }
+  }
+}
+
+.sponsor,
+.media-partner{
+  .level > .level-item {
+    margin-bottom: 2em;
+
+    img {
+      width: 250px;
     }
   }
 }

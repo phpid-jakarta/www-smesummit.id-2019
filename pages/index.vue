@@ -64,7 +64,7 @@ import SpeakerList from '../components/SpeakerList'
 import VolunteerSection from '../components/VolunteerSection'
 import LocationSection from '../components/LocationSection'
 
-import { ABOUT_DESC } from '../constant/index'
+import { DESC } from '../constant/index'
 import { SPEAKERS } from '../constant/speaker'
 import { SPONSORS } from '../constant/sponsor'
 import { PARTNERS } from '../constant/media-partner'
@@ -82,7 +82,8 @@ export default {
   },
   data () {
     return {
-      aboutTitle: ABOUT_DESC,
+      DESC,
+      aboutTitle: DESC.ABOUT,
       speakers: SPEAKERS,
       sponsors: SPONSORS,
       partners: PARTNERS,

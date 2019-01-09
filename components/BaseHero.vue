@@ -11,10 +11,10 @@
                 <h1
                   id="conf_title"
                   class="is-size-1 has-text-white caption-text">
-                  SME Summit 2019
+                  {{ DESC.TITLE }}
                 </h1>
                 <h2 class="is-size-4 has-text-white caption-text">
-                  IT TRANSFORMATION FOR NON-TECH COMPANY
+                  {{ DESC.TAGLINE }}
                 </h2>
                 <br>
                 <p
@@ -29,7 +29,7 @@
                     <path
                       d="M424 96h-40v24c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8V96H160v24c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8V96H88c-22 0-40 18-40 40v272c0 22 18 40 40 40h336c22 0 40-18 40-40V136c0-22-18-40-40-40zm8 300c0 11-9 20-20 20H100c-11 0-20-9-20-20V216c0-4.4 3.6-8 8-8h336c4.4 0 8 3.6 8 8v180zM160 72c0-4.4-3.6-8-8-8h-16c-4.4 0-8 3.6-8 8v24h32V72zm224 0c0-4.4-3.6-8-8-8h-16c-4.4 0-8 3.6-8 8v24h32V72z" />
                   </svg>
-                  Jakarta, 25 April 2019
+                  {{ DESC.PLACE_N_DATE }}
                 </p>
                 <p
                   class="is-size-5"
@@ -43,7 +43,7 @@
                     <path
                       d="M256 48c-79.5 0-144 59.9-144 133.7 0 104 144 282.3 144 282.3s144-178.3 144-282.3C400 107.9 335.5 48 256 48zm0 190.9c-25.9 0-46.9-21-46.9-46.9s21-46.9 46.9-46.9 46.9 21 46.9 46.9-21 46.9-46.9 46.9z" />
                   </svg>
-                  Ballroom Ayana Hotel Midplaza, Jakarta
+                  {{ DESC.VENUE }}
                 </p>
               </div>
             </div>
@@ -56,8 +56,15 @@
 </template>
 
 <script>
+import { DESC } from '../constant/index'
+
 export default {
   name: 'BaseHero',
+  data () {
+    return {
+      DESC
+    }
+  },
   mounted () {
     /* eslint-disable */
     if ('IntersectionObserver' in window) {
