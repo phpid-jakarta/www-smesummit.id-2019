@@ -52,6 +52,33 @@
 
         <div class="field">
           <label class="label">
+            Facebook Link
+          </label>
+          <div class="control">
+            <input
+              v-model="formData.fb_link"
+              class="input"
+              type="text"
+              placeholder="Ex: https://www.facebook.com/mazipanneh">
+          </div>
+        </div>
+
+
+        <div class="field">
+          <label class="label">
+            Instagram Link
+          </label>
+          <div class="control">
+            <input
+              v-model="formData.ig_link"
+              class="input"
+              type="text"
+              placeholder="Ex: https://www.instagram.com/maz_ipan/">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
             City/District
           </label>
           <div class="control">
@@ -167,6 +194,8 @@ export default {
         name: '',
         email: '',
         phone: '',
+        fb_link: '',
+        ig_link: '',
         why_you_apply_desc: '',
         captcha: ''
       },

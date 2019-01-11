@@ -1,8 +1,8 @@
 {
   "name": "smesummit.id",
   "version": "1.0.0",
-  "description": "Small-Medium Enterprise Summit 2019 - IT Transformation for Non-Tech company",
-  "author": "Irfan Maulana",
+  "description": "Small-Medium Enterprise Summit 2019 - Digital Transformation for Non-Tech company",
+  "author": "SME Summit",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
