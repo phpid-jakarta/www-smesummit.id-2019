@@ -298,6 +298,7 @@ import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterCoacher',
+  layout: 'no-hero',
   head () {
     return {
       title: 'Register for Coacher | SME Summit 2019'

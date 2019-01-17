@@ -13,11 +13,16 @@
         </nuxt-link>
       </p>
     </section>
+
+    <BenefitList
+      :items="benefits" />
   </div>
 </template>
 
 <script>
+import BenefitList from '../components/BenefitList'
 import { DESC } from '../constant/index'
+import { BENEFITS } from '../constant/benefit'
 
 export default {
   name: 'AboutPage',
@@ -26,9 +31,13 @@ export default {
       title: 'About | SME Summit 2019'
     }
   },
+  components: {
+    BenefitList
+  },
   data () {
     return {
-      aboutTitle: DESC.ABOUT
+      aboutTitle: DESC.ABOUT,
+      benefits: BENEFITS
     }
   }
 }

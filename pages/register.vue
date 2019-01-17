@@ -272,6 +272,7 @@ import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterParticipants',
+  layout: 'no-hero',
   head () {
     return {
       title: 'Register for Participants | SME Summit 2019'

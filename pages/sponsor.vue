@@ -235,6 +235,7 @@ import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterSponsor',
+  layout: 'no-hero',
   head () {
     return {
       title: 'Register for Sponsor | SME Summit 2019'

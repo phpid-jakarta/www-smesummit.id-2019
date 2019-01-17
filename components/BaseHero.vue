@@ -13,7 +13,7 @@
                   class="is-size-1 has-text-white caption-text">
                   {{ DESC.TITLE }}
                 </h1>
-                <h2 class="is-size-4 has-text-white caption-text">
+                <h2 class="is-size-4 has-text-white">
                   {{ DESC.TAGLINE }}
                 </h2>
                 <br>

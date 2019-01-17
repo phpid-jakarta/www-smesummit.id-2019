@@ -63,7 +63,6 @@
           </div>
         </div>
 
-
         <div class="field">
           <label class="label">
             Instagram Link
@@ -179,6 +178,7 @@ import PageMixin from './page-mixin'
 
 export default {
   name: 'RegisterCoacher',
+  layout: 'no-hero',
   head () {
     return {
       title: 'Register for Volunteer | SME Summit 2019'
