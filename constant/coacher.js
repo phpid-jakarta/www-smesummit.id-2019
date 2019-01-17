@@ -1,13 +1,13 @@
 export const COACHERS = [{
   sector: 'Talent Management',
   company: 'GeekHunter',
-  coacher: 'TBA',
+  coacher: 'Ali Pasha Kusumah',
   position: 'HRBP & Project Manager'
 }, {
   sector: 'Cloud Solution',
   company: 'Biznet Gio Cloud',
-  coacher: 'Cornelius Hertadi',
-  position: 'VP Sales Marketing'
+  coacher: 'Yusuf Hadiwinata',
+  position: 'Senior Operation Manager'
 }, {
   sector: 'CRM & Customer Loyalty',
   company: 'Algo Studio',
