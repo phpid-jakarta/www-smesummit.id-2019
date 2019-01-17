@@ -3,7 +3,7 @@
     id="speakers"
     class="section speakers">
     <h2 class="title has-text-centered title-section caption-text">
-      SPEAKERS
+      AWESOME SPEAKERS
     </h2>
     <div class="level">
       <div

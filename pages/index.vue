@@ -7,7 +7,7 @@
         ABOUT SME SUMMIT 2019
       </h2>
       <div class="has-text-centered">
-        <p>
+        <p class="is-size-5">
           {{ aboutTitle }}
         </p>
       </div>
@@ -47,7 +47,7 @@
     <BaseImageList
       :items="partners"
       list-type="media-partner"
-      list-title="MEDIA PARTNER"
+      list-title="OFFICIAL MEDIA PARTNER"
       :show-button="false" />
 
     <VolunteerSection />

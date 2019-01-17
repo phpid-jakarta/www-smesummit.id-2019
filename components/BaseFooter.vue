@@ -15,22 +15,6 @@
               alt="PHP Indonesia">
           </picture>
         </figure>
-
-        <br>
-
-        <p class="has-text-weight-bold">
-          Connected by
-        </p>
-
-        <figure class="image">
-          <picture>
-            <img
-              v-lazy="'/images/organizer/logo-livelife-white.png'"
-              class="organizer__logo"
-              src="/images/placeholder.png"
-              alt="Livelife">
-          </picture>
-        </figure>
       </div>
       <div class="column is-two-fifths sitemap">
         <p class="has-text-weight-bold">
@@ -39,10 +23,10 @@
         <div class="sitemap__wrapper">
           <div class="sitemap__item">
             Ballroom Ayana Hotel Midplaza, Jakarta
-                                           <br>
-                                           <small class="is-size-7">
-                                             Jl. Jenderal Sudirman Kav. 10-11 Jakarta Pusat, Jakarta 10220, Indonesia
-                                           </small>
+            <br>
+            <small class="is-size-7">
+              Jl. Jenderal Sudirman Kav. 10-11 Jakarta Pusat, Jakarta 10220, Indonesia
+            </small>
           </div>
         </div>
       </div>
@@ -101,18 +85,25 @@
             </a>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/#speakers"
-              title="Speakers">
-              Speakers
-            </a>
+            <nuxt-link
+              to="/accepted-speaker"
+              title="Speaker">
+              Speaker
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/#sponsor"
+            <nuxt-link
+              to="/accepted-coacher"
+              title="Coacher">
+              Coacher
+            </nuxt-link>
+          </li>
+          <li class="sitemap__item">
+            <nuxt-link
+              to="/accepted-sponsor"
               title="Sponsors">
               Sponsors
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
             <nuxt-link

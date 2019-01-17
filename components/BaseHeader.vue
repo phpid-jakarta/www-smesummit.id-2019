@@ -1,5 +1,7 @@
 <template>
-  <header class="header_sticky">
+  <header
+    class="header_sticky"
+    :class="{ 'is--have-bg': isHaveBg }">
     <nav class="level header_wrapper">
       <div class="level-item has-text-centered">
         <a
@@ -25,27 +27,69 @@
             </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
-            <nuxt-link
-              class="link"
-              to="/register"
-              title="Register">
+            <span class="link">
               Register
-            </nuxt-link>
+            </span>
+            <ul class="sub-menu">
+              <li>
+                <nuxt-link
+                  to="/register"
+                  title="Register for Attendant">
+                  Register for Attendant
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link
+                  to="/sponsor"
+                  title="Register for Sponsor">
+                  Register for Sponsor
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link
+                  to="/speaker"
+                  title="Register for Speaker">
+                  Register for Speaker
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link
+                  to="/coacher"
+                  title="Register for Coacher">
+                  Register for Coacher
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link
+                  to="/volunteer"
+                  title="Register for Volunteer">
+                  Register for Volunteer
+                </nuxt-link>
+              </li>
+            </ul>
           </p>
           <p class="level-item has-text-centered">
             <nuxt-link
               class="link"
-              to="/sponsor"
-              title="Sponsorship">
-              Sponsorship
-            </nuxt-link>
-          </p>
-          <p class="level-item has-text-centered">
-            <nuxt-link
-              class="link"
-              to="/speaker"
+              to="/accepted-speaker"
               title="Speakers">
               Speakers
+            </nuxt-link>
+          </p>
+          <p class="level-item has-text-centered">
+            <nuxt-link
+              class="link"
+              to="/accepted-coacher"
+              title="Coachers">
+              Coachers
+            </nuxt-link>
+          </p>
+          <p class="level-item has-text-centered">
+            <nuxt-link
+              class="link"
+              to="/accepted-sponsor"
+              title="Sponsors">
+              Sponsors
             </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
@@ -119,19 +163,28 @@
           <p class="level-item has-text-centered">
             <nuxt-link
               class="link"
-              to="/sponsor"
-              title="Sponsorship"
+              to="/accepted-speaker"
+              title="Speakers"
               @click.native="hideMenu">
-              Sponsorship
+              Speakers
             </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
             <nuxt-link
               class="link"
-              to="/speaker"
-              title="Speakers"
+              to="/accepted-coacher"
+              title="Coachers"
               @click.native="hideMenu">
-              Speakers
+              Coachers
+            </nuxt-link>
+          </p>
+          <p class="level-item has-text-centered">
+            <nuxt-link
+              class="link"
+              to="/accepted-sponsor"
+              title="Sponsorship"
+              @click.native="hideMenu">
+              Sponsorship
             </nuxt-link>
           </p>
           <p class="level-item has-text-centered">
@@ -171,6 +224,12 @@
 <script>
 export default {
   name: 'BaseHeader',
+  props: {
+    isHaveBg: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       isShowMenu: false

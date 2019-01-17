@@ -16,7 +16,7 @@ $overlay-theme: rgba(38, 121, 214, .4);
 }
 
 body {
-  font-family: 'PT Sans Caption', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .hidden{
   display: none;
@@ -37,9 +37,9 @@ body {
 }
 
 .caption-text {
-  font-family: 'PT Sans Caption', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  font-weight: 600;
 }
 
 .is--have-bg {
@@ -74,6 +74,48 @@ body {
 
     &:hover {
       background-color: $overlay-theme;
+    }
+  }
+  .level-item {
+    &:hover {
+      & > .sub-menu {
+        display: block;
+      }
+    }
+  }
+  .sub-menu{
+    display: none;
+    background: #111111;
+    border-radius: .3rem .3rem .3rem .3rem;
+    box-shadow: none !important;
+    padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    width: 300px;
+
+    li {
+      float: left;
+      position: relative;
+
+      a {
+        color: white;
+        display: block;
+        font-weight: 700;
+        line-height: 1.1;
+        padding: 1rem 1.5rem;
+        text-align: left;
+        width: 300px;
+      }
+    }
+
+    &:before{
+      border: .6rem solid transparent;
+      border-bottom-color: #111111;
+      content: "";
+      display: block;
+      position: absolute;
+      left: calc(50% - 0.6rem);
+      bottom: calc(100%);
     }
   }
 }
@@ -206,6 +248,7 @@ section#register {
     color: #fff;
   }
 }
+
 .burger {
   color: #000;
   cursor: pointer;

@@ -15,10 +15,12 @@
           <img
             v-lazy="benefit.logo"
             src="/images/placeholder.png"
-            alt="Idea">
+            :alt="benefit.title ">
           <div class="item__text">
             <h4>{{ benefit.title }}</h4>
-            <p>{{ benefit.text }}</p>
+            <p class="is-size-6">
+              {{ benefit.text }}
+            </p>
           </div>
         </div>
       </div>

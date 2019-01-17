@@ -36,6 +36,7 @@ import axios from 'axios'
 
 export default {
   name: 'OrganizerPage',
+  layout: 'no-hero',
   head () {
     return {
       title: 'Organizers | SME Summit 2019'
