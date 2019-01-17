@@ -40,7 +40,7 @@
 
 			body, #bodyTable{background-color:#E1E1E1;}
 			#emailHeader{background-color:#E1E1E1;}
-			#emailBody{background-color:#FFFFFF;}
+			#emailBody{background-color:#E1E1E1;}
 			#emailFooter{background-color:#E1E1E1;}
 			.nestedContainer{background-color:#F8F8F8; border:1px solid #CCCCCC;}
 			.emailButton{background-color:#205478; border-collapse:separate;}
@@ -183,25 +183,14 @@
 															<!-- CONTENT TABLE // -->
 															<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
 																<tr>
-																	<td align="left" valign="middle" id="invisibleIntroduction" class="flexibleContainerBox" style="display:none !important; mso-hide:all;">
-																		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
-																			<tr>
-																				<td align="left" class="textContent">
-																					<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-																						The introduction of your message preview goes here. Try to make it short.
-																					</div>
-																				</td>
-																			</tr>
-																		</table>
-																	</td>
 																	<td align="right" valign="middle" class="flexibleContainerBox">
 																		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
 																			<tr>
-																				<td align="left" class="textContent">
-																					<!-- CONTENT // -->
-																					<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-																						If you can't see this message, <a href="#" target="_blank" style="text-decoration:none;border-bottom:1px solid #828282;color:#828282;"><span style="color:#828282;">view&nbsp;it&nbsp;in&nbsp;your&nbsp;browser</span></a>.
-																					</div>
+																				<td align="center" class="textContent">
+                                          <!-- CONTENT // -->
+                                          <img src="https://www.smesummit.id/images/logo/SMESummit_Logo100.png"
+                                          alt="SME Summit Logo"
+                                          style="width: 70px;background-color: #fff;padding: .5em;border-radius: 0.5em;">
 																				</td>
 																			</tr>
 																		</table>
@@ -230,7 +219,8 @@
 							<tr>
 								<td align="center" valign="top">
 									<!-- CENTERING TABLE // -->
-									<table border="0" class="gradient" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;">
+                  <table border="0" class="gradient" cellpadding="0" cellspacing="0" width="100%"
+                    style="color:#FFFFFF;border-top-left-radius: 0.5em;border-top-right-radius: 0.5em;">
 										<tr>
 											<td align="center" valign="top">
 												<!-- FLEXIBLE CONTAINER // -->
@@ -307,7 +297,6 @@
                                           </h3>
                                           <div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">
                                             {{ Message_Text }}
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis viverra blandit. Vivamus dictum vehicula purus ac consequat. In aliquet magna vitae purus gravida porttitor. Vestibulum commodo luctus nisi, eu dapibus felis lacinia eget. Pellentesque a sem in massa tempor tincidunt non vitae ligula. Duis pharetra porttitor mauris, porttitor scelerisque sapien bibendum sit amet. Donec dapibus imperdiet sem, a vestibulum lorem.
                                           </div>
 																				</td>
 																			</tr>
@@ -337,7 +326,7 @@
 										<tr>
 											<td align="center" valign="top">
 												<!-- FLEXIBLE CONTAINER // -->
-												<table border="0" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
+												<table border="0" bgColor="#FFFFFF" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
 													<tr>
 														<td style="padding-top:0;" align="center" valign="top" width="500" class="flexibleContainerCell">
 
@@ -345,7 +334,9 @@
 															<table align="left" border="0" cellpadding="0" cellspacing="0" class="flexibleContainer">
 																<tr>
 																	<td align="left" valign="top" class="textContent">
-																		<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-top:10px;color:#5F5F5F;line-height:135%;">Pellentesque habitant morbi tristique senectus netus malesuada et fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</div>
+                                    <div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-top:10px;color:#5F5F5F;line-height:135%;">
+                                      {{ Message_Footer }}
+                                    </div>
 																	</td>
 																</tr>
 															</table>
@@ -436,12 +427,16 @@
 																			</tr>
 																		</table>
 																	</td>
-																	<td align="right" valign="top" class="flexibleContainerBox" style="background-color:#27ae60;">
+																	<td align="right" valign="top" class="flexibleContainerBox" style="background-color:#7b7b7b;">
 																		<table class="flexibleContainerBoxNext" border="0" cellpadding="30" cellspacing="0" width="100%" style="max-width:100%;">
 																			<tr>
 																				<td align="left" class="textContent">
-																					<h3 style="color:#FFFFFF;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:left;">Right Column</h3>
-																					<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis.</div>
+                                          <h3 style="color:#FFFFFF;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:left;">
+                                            Keep Updates
+                                          </h3>
+                                          <div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;">
+                                            Follow Facebook group <a href="https://www.facebook.com/groups/35688476100" style="color: #FFFFFF;">PHP Indonesia</a> or Instagram <a href="https://www.instagram.com/phpid/" style="color: #FFFFFF;">@phpid</a> and post your picture with tag <a href="https://www.instagram.com/explore/tags/smesummit2019/" style="color: #FFFFFF;">#smesummit2019</a>
+                                          </div>
 																				</td>
 																			</tr>
 																		</table>
@@ -535,6 +530,10 @@
 															<table border="0" cellpadding="30" cellspacing="0" width="100%">
 																<tr>
 																	<td valign="top" bgcolor="#E1E1E1">
+
+                                    <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
+                                      If you can't see this message, <a href="#" target="_blank" style="text-decoration:none;border-bottom:1px solid #828282;color:#828282;"><span style="color:#828282;">view&nbsp;it&nbsp;in&nbsp;your&nbsp;browser</span></a>.
+                                    </div>
 
 																		<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
 																			<div>Copyright &#169; 2019 <a href="http://www.smesummit.id/" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">SME Summit 2019</span></a>. All&nbsp;rights&nbsp;reserved.</div>
