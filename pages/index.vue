@@ -42,7 +42,14 @@
       :items="speakers" />
 
     <BaseImageList
-      :items="sponsors" />
+      :items="sponsors"
+      list-sub-title="MAIN SPONSOR"
+      :show-button="false" />
+
+    <BaseImageList
+      :items="silver_sponsor"
+      list-title=""
+      list-sub-title="SILVER SPONSOR" />
 
     <BaseImageList
       :items="partners"
@@ -66,7 +73,7 @@ import LocationSection from '../components/LocationSection'
 
 import { DESC } from '../constant/index'
 import { SPEAKERS } from '../constant/speaker'
-import { SPONSORS } from '../constant/sponsor'
+import { MAIN_SPONSORS, SILVER_SPONSORS } from '../constant/sponsor'
 import { PARTNERS } from '../constant/media-partner'
 import { TARGETS } from '../constant/target'
 import { BENEFITS } from '../constant/benefit'
@@ -85,7 +92,8 @@ export default {
       DESC,
       aboutTitle: DESC.ABOUT,
       speakers: SPEAKERS,
-      sponsors: SPONSORS,
+      sponsors: MAIN_SPONSORS,
+      silver_sponsor: SILVER_SPONSORS,
       partners: PARTNERS,
       benefits: BENEFITS
     }

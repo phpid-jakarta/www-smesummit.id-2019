@@ -3,14 +3,21 @@
     <section
       class="section">
       <BaseImageList
-        :items="sponsors" />
+        :items="sponsors"
+        list-sub-title="MAIN SPONSOR"
+        :show-button="false" />
+
+      <BaseImageList
+        :items="silver_sponsor"
+        list-title=""
+        list-sub-title="SILVER SPONSOR" />
     </section>
   </div>
 </template>
 
 <script>
 import BaseImageList from '../components/BaseImageList'
-import { SPONSORS } from '../constant/sponsor'
+import { MAIN_SPONSORS, SILVER_SPONSORS } from '../constant/sponsor'
 export default {
   name: 'AcceptedSponsor',
   layout: 'no-hero',
@@ -24,7 +31,8 @@ export default {
   },
   data () {
     return {
-      sponsors: SPONSORS
+      sponsors: MAIN_SPONSORS,
+      silver_sponsor: SILVER_SPONSORS
     }
   }
 }

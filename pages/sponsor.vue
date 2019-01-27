@@ -5,6 +5,13 @@
       class="section reg-sponsor">
       <BaseImageList
         :items="sponsors"
+        list-sub-title="MAIN SPONSOR"
+        :show-button="false" />
+
+      <BaseImageList
+        :items="silver_sponsor"
+        list-title=""
+        list-sub-title="SILVER SPONSOR"
         :show-button="false" />
 
       <h2 class="title has-text-centered title-section caption-text">
@@ -228,7 +235,7 @@
 <script>
 import BaseImageList from '../components/BaseImageList'
 import { API_ENDPOINT } from '../constant/index'
-import { SPONSORS } from '../constant/sponsor'
+import { MAIN_SPONSORS, SILVER_SPONSORS } from '../constant/sponsor'
 import { ARGA } from '../constant/contact'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from './page-mixin'
@@ -268,7 +275,8 @@ export default {
       isValidFormCaptcha: true,
       isValidForm: false,
       ARGA,
-      sponsors: SPONSORS
+      sponsors: MAIN_SPONSORS,
+      silver_sponsor: SILVER_SPONSORS
     }
   },
   methods: {
