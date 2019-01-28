@@ -294,7 +294,7 @@
 import { API_ENDPOINT } from '../constant/index'
 import { ARGA } from '../constant/contact'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
-import PageMixin from './page-mixin'
+import PageMixin from '../mixins/page-mixin'
 
 export default {
   name: 'RegisterCoacher',

@@ -268,7 +268,7 @@ import BenefitList from '../components/BenefitList'
 import { BENEFITS } from '../constant/benefit'
 import { API_ENDPOINT } from '../constant/index'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
-import PageMixin from './page-mixin'
+import PageMixin from '../mixins/page-mixin'
 
 export default {
   name: 'RegisterParticipants',

@@ -1,6 +1,28 @@
 const pkg = require('./package')
 const appTitle = 'SME Summit 2019'
 
+const routes = [
+  '/',
+  '/about',
+  '/accepted-attendant',
+  '/accepted-coacher',
+  '/accepted-speaker',
+  '/accepted-sponsor',
+  '/accepted-volunteer',
+  '/banner',
+  '/coacher',
+  '/contact',
+  '/developers',
+  '/faq',
+  '/organizer',
+  '/payment-confirmation',
+  '/register',
+  '/speaker',
+  '/sponsor',
+  '/volunteer'
+
+]
+
 module.exports = {
   mode: 'spa',
 
@@ -71,22 +93,7 @@ module.exports = {
   ],
 
   generate: {
-    routes: () => {
-      let res = [
-        '/',
-        '/about',
-        '/coacher',
-        '/contact',
-        '/faq',
-        '/register',
-        '/speaker',
-        '/sponsor',
-        '/volunteer',
-        '/organizer',
-        '/banner'
-      ]
-      return res
-    }
+    routes
   },
   /*
   ** Nuxt.js modules
@@ -94,8 +101,21 @@ module.exports = {
   modules: [
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://www.smesummit.id',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: true, // Enable me when using nuxt generate
+    exclude: [
+      '/loading-mixin',
+      '/page-mixin'
+    ]
+  },
 
   /*
   ** Build configuration
