@@ -182,7 +182,15 @@
       </div>
     </div>
 
-    <div><p>This website is crafted by PHPID Community</p></div>
+    <div>
+      <p>
+        This website is crafted by <nuxt-link
+          to="/developers"
+          title="Developers">
+          PHP ID Developers Team
+        </nuxt-link>
+      </p>
+    </div>
     <div><p>Copyright © 2019, All Rights Reserved.</p></div>
   </footer>
 </template>

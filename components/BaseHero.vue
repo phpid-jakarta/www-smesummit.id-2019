@@ -67,6 +67,8 @@ export default {
   },
   mounted () {
     /* eslint-disable */
+    particlesJS.load('particle', '/particle.json')
+    /* eslint-disable */
     if ('IntersectionObserver' in window) {
       const about = document.querySelector('#conf_title')
       const lazyImageObserver = new IntersectionObserver(function (entries) {

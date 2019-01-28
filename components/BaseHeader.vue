@@ -235,10 +235,6 @@ export default {
       isShowMenu: false
     }
   },
-  mounted () {
-    /* eslint-disable */
-    particlesJS.load('particle', '/particle.json')
-  },
   methods: {
     onClickBurger () {
       this.isShowMenu = !this.isShowMenu
