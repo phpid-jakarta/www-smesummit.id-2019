@@ -25,7 +25,9 @@ module.exports = {
       { name: 'twitter:image:src', content: '/images/favicon/SMESummit_Logo.png' },
       { name: 'twitter:title', content: `${appTitle}` },
       { name: 'twitter:description', content: pkg.description },
-      { name: 'twitter:url', content: 'https://smesummit.id' }
+      { name: 'twitter:url', content: 'https://smesummit.id' },
+
+      { name: 'google-site-verification', content: 'MaylAUmEH8YMJho2_8uhwoGzDwLQ7R4Os3tCg7v-W3A' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -48,7 +50,12 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#2779d6' },
+  // loading: '~/components/loading.vue',
+  loading: {
+    color: '#f00',
+    height: '5px',
+    continuous: true
+  },
 
   /*
   ** Global CSS

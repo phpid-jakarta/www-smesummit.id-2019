@@ -324,6 +324,17 @@ section#register {
     }
   }
 }
+
+
+.sponsor{
+  .level > .level-item {
+    margin-right: 2em;
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
 // media screen on mobile
 @media screen and (max-width: 768px) {
   .header_wrapper{

@@ -6,6 +6,11 @@
     <h2 class="title has-text-centered title-section caption-text">
       {{ listTitle }}
     </h2>
+    <h3
+      v-if="listSubTitle !== ''"
+      class="title has-text-centered title-section caption-text">
+      {{ listSubTitle }}
+    </h3>
     <div class="has-text-centered">
       <div class="level">
         <div
@@ -56,6 +61,10 @@ export default {
     listTitle: {
       type: String,
       default: 'SPONSOR'
+    },
+    listSubTitle: {
+      type: String,
+      default: ''
     },
     showButton: {
       type: Boolean,

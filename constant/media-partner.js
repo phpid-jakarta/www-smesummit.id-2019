@@ -6,4 +6,8 @@ export const PARTNERS = [{
   name: 'Tech In Asia',
   logo: '/images/media-partner/techinasia.svg',
   link: 'https://id.techinasia.com/'
+}, {
+  name: 'Daily Social',
+  logo: '/images/media-partner/dailysocial.png',
+  link: 'https://dailysocial.id/'
 }]
