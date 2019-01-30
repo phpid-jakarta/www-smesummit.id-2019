@@ -2,7 +2,7 @@
 
 Website for Small-Medium Enterprise Non-Tech Company Summit 2019 - Organized by PHP Indonesia
 
-[![Travis](https://img.shields.io/travis/phpid-jakarta/www-smesummit.id-2019.svg)](https://travis-ci.org/phpid-jakarta/www-smesummit.id-2019)
+![](https://img.shields.io/badge/craftedby-PHPID-brightgreen.svg)[![Travis](https://img.shields.io/travis/phpid-jakarta/www-smesummit.id-2019.svg)](https://travis-ci.org/phpid-jakarta/www-smesummit.id-2019) 
 
 ## Repo
 
