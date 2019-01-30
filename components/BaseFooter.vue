@@ -106,6 +106,13 @@
             </nuxt-link>
           </li>
           <li class="sitemap__item">
+            <a
+              href="/tickets"
+              title="Tickets">
+              Tickets
+            </a>
+          </li>
+          <li class="sitemap__item">
             <nuxt-link
               to="/payment-confirmation"
               title="Payment Confirmation">
