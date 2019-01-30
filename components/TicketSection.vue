@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="title has-text-centered title-section caption-text">
-      TICKETS NORMAL
+      TICKETS FOR 1 ATTENDANT
     </h2>
     <div class="level">
       <div
