@@ -51,3 +51,8 @@ export const registerSpeaker = (token, data, success, failed) => {
   const URL = `${API_ENDPOINT.REGISTER_SPEAKER}`
   generalPost(URL, token, data, success, failed)
 }
+
+export const paymentConfirmation = (token, data, success, failed) => {
+  const URL = `${API_ENDPOINT.PAYMENT_CONFIRMATION}`
+  generalPost(URL, token, data, success, failed)
+}

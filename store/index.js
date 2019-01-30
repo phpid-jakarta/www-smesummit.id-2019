@@ -8,7 +8,8 @@ import {
   registerSponsor,
   registerVolunteer,
   registerCoacher,
-  registerSpeaker
+  registerSpeaker,
+  paymentConfirmation
 } from '../services/register'
 
 const createStore = () => {
@@ -57,6 +58,9 @@ const createStore = () => {
       },
       postRegisterSpeaker ({ commit, dispatch }, { token, data, success, failed }) {
         registerSpeaker(token, data, success, failed)
+      },
+      postPaymentConfirmation ({ commit, dispatch }, { token, data, success, failed }) {
+        paymentConfirmation(token, data, success, failed)
       },
       showNotification ({ commit }, { title = '', message = '' }) {
         commit('setNotification', { show: true, title, message })
