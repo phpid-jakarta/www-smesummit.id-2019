@@ -107,6 +107,13 @@
           </li>
           <li class="sitemap__item">
             <nuxt-link
+              to="/payment-confirmation"
+              title="Payment Confirmation">
+              Payment Confirmation
+            </nuxt-link>
+          </li>
+          <li class="sitemap__item">
+            <nuxt-link
               to="/organizer"
               title="Organizer">
               Organizers
@@ -187,7 +194,7 @@
         This website is crafted by <nuxt-link
           to="/developers"
           title="Developers">
-          PHP ID Developers Team
+          PHP ID Team
         </nuxt-link>
       </p>
     </div>

@@ -301,10 +301,10 @@ export default {
       return false
     },
     doSubmit () {
+      this.error = ''
+      this.isHaveError = false
       if (this.checkFormValidation()) {
-        this.error = ''
         this.loadingSubmit = true
-        this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData)
         this.$store.dispatch('postRegisterSponsor', {
           token: this._token,
