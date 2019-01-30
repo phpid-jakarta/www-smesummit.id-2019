@@ -18,7 +18,7 @@
           </label>
           <div class="control">
             <input
-              v-model="formData.email"
+              v-model="formData.email_user_id"
               class="input"
               :class="{'is-danger': !isValidFormEmail}"
               type="email"
@@ -269,6 +269,14 @@
       </form>
 
       <div
+        class="notification is-info"
+        style="margin-top: 1em;">
+        <span>After you submit payment confirmation, our admin will check the data as soon as possible.</span>
+        <br>
+        Please be patient, we will inform you via email after your submission already checked and approved by our admin.
+      </div>
+
+      <div
         v-show="isHaveError"
         class="notification is-danger"
         style="margin-top: 1em;">
@@ -298,10 +306,10 @@ export default {
   ],
   data () {
     return {
-      url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
+      url_api: `${API_ENDPOINT.PAYMENT_CONFIRMATION}`,
       paymentTypes: ['participant', 'sponsor', 'coacher'],
       formData: {
-        email: '',
+        email_user_id: '',
         phone: '',
         total_payment: '',
         payment_type: 'participant',
@@ -328,12 +336,26 @@ export default {
   },
   methods: {
     checkFormValidation () {
-      this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
+      this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email_user_id) && isEmail(this.formData.email_user_id)
       this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
+      this.isValidTotalPayment = isRequiredWithMinMax(3, 255, this.formData.total_payment)
+      this.isValidPaymentType = isRequiredWithMinMax(3, 255, this.formData.payment_type)
+      this.isValidDateTransfer = isRequiredWithMinMax(3, 255, this.formData.date_transfer)
+      this.isValidNoReference = isRequiredWithMinMax(3, 255, this.formData.no_ref)
+      this.isValidBankName = isRequiredWithMinMax(3, 255, this.formData.bank_name)
+      this.isValidBankUsername = isRequiredWithMinMax(3, 255, this.formData.bank_username)
+      this.isValidScreenshoot = isRequiredWithMinMax(3, 255, this.formData.screenshoot)
       this.isValidFormCaptcha = isRequiredWithMinMax(5, 10, this.formData.captcha)
 
       if (this.isValidFormEmail &&
       this.isValidFormPhone &&
+      this.isValidTotalPayment &&
+      this.isValidPaymentType &&
+      this.isValidDateTransfer &&
+      this.isValidNoReference &&
+      this.isValidBankName &&
+      this.isValidBankUsername &&
+      this.isValidScreenshoot &&
       this.isValidFormCaptcha) {
         return true
       }
@@ -356,12 +378,12 @@ export default {
         this.loadingSubmit = true
         this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData) // eslint-disable-line no-unused-vars
-        // this.$store.dispatch('postRegisterParticipant', {
-        //   token: this._token,
-        //   data: dataForSubmit,
-        //   success: this.onSuccessSubmit,
-        //   failed: this.onErrorSubmit
-        // })
+        this.$store.dispatch('postPaymentConfirmation', {
+          token: this._token,
+          data: dataForSubmit,
+          success: this.onSuccessSubmit,
+          failed: this.onErrorSubmit
+        })
       } else this.isHaveError = true
     }
   }

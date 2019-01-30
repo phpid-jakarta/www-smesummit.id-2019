@@ -6,7 +6,8 @@ export const API_ENDPOINT = {
   REGISTER_SPONSOR: `${BASE_API_URL}/sponsor_register.php`,
   REGISTER_VOLUNTEER: `${BASE_API_URL}/volunteer_register.php`,
   REGISTER_COACHER: `${BASE_API_URL}/coacher_register.php`,
-  REGISTER_SPEAKER: `${BASE_API_URL}/speaker_register.php`
+  REGISTER_SPEAKER: `${BASE_API_URL}/speaker_register.php`,
+  PAYMENT_CONFIRMATION: `${BASE_API_URL}/payment_confirmation.php`
 }
 
 export const DESC = {
