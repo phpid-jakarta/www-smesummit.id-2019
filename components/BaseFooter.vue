@@ -106,11 +106,11 @@
             </nuxt-link>
           </li>
           <li class="sitemap__item">
-            <a
-              href="/tickets"
+            <nuxt-link
+              to="/tickets"
               title="Tickets">
               Tickets
-            </a>
+            </nuxt-link>
           </li>
           <li class="sitemap__item">
             <nuxt-link

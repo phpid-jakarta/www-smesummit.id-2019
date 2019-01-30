@@ -76,7 +76,7 @@ module.exports = {
   // loading: '~/components/loading.vue',
   loading: {
     color: '#f00',
-    height: '5px',
+    height: '4px',
     continuous: true
   },
 
