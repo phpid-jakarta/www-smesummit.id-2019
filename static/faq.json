@@ -41,7 +41,7 @@
       },
       {
         "question": "Berapa harga tiket event ini?",
-        "answer": "Untuk harga tiket, kami berikan 4 pilihan yakni: <ul><li>Normal Price: Rp 1000.000,-</li><li>Promo Price: Rp 750.000,-</li><li>Early Bird Price: Rp 500.000,-</li><li>Bundled Price (4 attendant): Rp 2.500.000,-</li></ul>"
+        "answer": "Untuk harga tiket, kami berikan 4 pilihan yakni: <ul><li>Normal Price: Rp 1000.000,-</li><li>Promo Price: Rp 750.000,-</li><li>Early Bird Price: Rp 500.000,-</li><li>Bundling Price for 4 attendant: </li><li>Harga Normal: Rp 3.500.000,-</li><li>Early Bird: Rp 1.500.000,-</li></ul>"
       }
     ],
     "coaching": [
