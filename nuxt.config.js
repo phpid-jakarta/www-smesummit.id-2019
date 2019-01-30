@@ -19,6 +19,7 @@ const routes = [
   '/register',
   '/speaker',
   '/sponsor',
+  '/tickets',
   '/volunteer'
 
 ]

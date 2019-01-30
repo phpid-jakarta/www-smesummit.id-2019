@@ -3,9 +3,6 @@
     <section
       id="reg-attendants"
       class="section reg-attendants">
-      <BenefitList
-        :items="benefits" />
-
       <h2 class="title has-text-centered title-section caption-text">
         REGISTER FOR ATTENDANTS
       </h2>
@@ -256,6 +253,9 @@
         <br>
         <span>{{ error }}</span>
       </div>
+      <br><br><br>
+      <TicketSection />
+      <br><br><br>
     </section>
   </div>
 </template>
@@ -263,9 +263,8 @@
 <script>
 import axios from 'axios'
 
-import BenefitList from '../components/BenefitList'
+import TicketSection from '../components/TicketSection'
 
-import { BENEFITS } from '../constant/benefit'
 import { API_ENDPOINT } from '../constant/index'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from '../mixins/page-mixin'
@@ -279,14 +278,13 @@ export default {
     }
   },
   components: {
-    BenefitList
+    TicketSection
   },
   mixins: [
     PageMixin
   ],
   data () {
     return {
-      benefits: BENEFITS,
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
       formData: {
         name: '',
