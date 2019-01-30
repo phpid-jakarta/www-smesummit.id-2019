@@ -18,7 +18,7 @@
           </label>
           <div class="control">
             <input
-              v-model="formData.email_user_id"
+              v-model="formData.email"
               class="input"
               :class="{'is-danger': !isValidFormEmail}"
               type="email"
@@ -197,7 +197,7 @@
               @change="handleFileUpload()">
           </div>
           <p class="help">
-            Before you uploding screenshoot, please compress your image via <a
+            Before you uploading screenshoot, please compress your image via <a
               href="https://tinyjpg.com/"
               target="_blank"
               rel="noopener">
@@ -221,6 +221,21 @@
             Please attach your transfer receipt
           </p>
         </div>
+
+        <div class="field">
+          <label class="label">
+            Additional Notes
+          </label>
+          <div class="control">
+            <textarea
+              v-model="formData.notes"
+              class="textarea"
+              placeholder="Ex: I pay for bundled price with email: abc@gmai.com, cde@gmail.com, fgh@gmail.com" />
+          </div>
+        </div>
+        <p class="help">
+          If you pay for bundling ticket, please let Us know all the emails.
+        </p>
 
         <div class="field">
           <div>
@@ -318,7 +333,7 @@ export default {
       url_api: `${API_ENDPOINT.PAYMENT_CONFIRMATION}`,
       paymentTypes: ['participant', 'sponsor', 'coacher'],
       formData: {
-        email_user_id: '',
+        email: '',
         phone: '',
         total_payment: '',
         payment_type: 'participant',
@@ -345,13 +360,13 @@ export default {
   },
   methods: {
     checkFormValidation () {
-      this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email_user_id) && isEmail(this.formData.email_user_id)
+      this.isValidFormEmail = isRequiredWithMinMax(3, 255, this.formData.email) && isEmail(this.formData.email)
       this.isValidFormPhone = isRequiredWithMinMax(3, 255, this.formData.phone)
       this.isValidTotalPayment = isRequiredWithMinMax(3, 255, this.formData.total_payment)
       this.isValidPaymentType = isRequiredWithMinMax(3, 255, this.formData.payment_type)
       this.isValidDateTransfer = isRequiredWithMinMax(3, 255, this.formData.date_transfer)
       this.isValidNoReference = isRequiredWithMinMax(3, 255, this.formData.no_ref)
-      this.isValidBankName = isRequiredWithMinMax(3, 255, this.formData.bank_name)
+      this.isValidBankName = isRequiredWithMinMax(1, 255, this.formData.bank_name)
       this.isValidBankUsername = isRequiredWithMinMax(3, 255, this.formData.bank_username)
       this.isValidScreenshoot = isRequired(this.formData.screenshoot)
       this.isValidFormCaptcha = isRequiredWithMinMax(5, 10, this.formData.captcha)
