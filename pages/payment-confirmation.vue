@@ -197,7 +197,7 @@
               @change="handleFileUpload()">
           </div>
           <p class="help">
-            Before you uploding screenshoot, please compress your image via <a
+            Before you uploading screenshoot, please compress your image via <a
               href="https://tinyjpg.com/"
               target="_blank"
               rel="noopener">
