@@ -217,6 +217,12 @@ section#register {
     padding: 1em 0;
     p {
       color: #fff;
+      font-size: .8rem;
+
+      a{
+        color: #fff;
+        text-decoration: underline;
+      }
     }
   }
 }

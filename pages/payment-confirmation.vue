@@ -196,9 +196,18 @@
               required
               @change="handleFileUpload()">
           </div>
+          <p class="help">
+            Before you uploding screenshoot, please compress your image via <a
+              href="https://tinyjpg.com/"
+              target="_blank"
+              rel="noopener">
+              https://tinyjpg.com/
+            </a>
+          </p>
           <div
             v-if="isValidScreenshoot && formData.screenshoot !== ''"
-            class="preview">
+            class="preview"
+            style="margin-top: 1em;">
             <label class="label">
               Preview Screenshoot
             </label>
@@ -209,7 +218,7 @@
           <p
             v-show="!isValidScreenshoot"
             class="help is-danger">
-            {{ getErrorMinMax(4, 255) }}
+            Please attach your transfer receipt
           </p>
         </div>
 
@@ -290,7 +299,7 @@
 
 <script>
 import { API_ENDPOINT } from '../constant/index'
-import { isRequiredWithMinMax, isEmail } from '../utils/validation'
+import { isRequired, isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from '../mixins/page-mixin'
 
 export default {
@@ -344,7 +353,7 @@ export default {
       this.isValidNoReference = isRequiredWithMinMax(3, 255, this.formData.no_ref)
       this.isValidBankName = isRequiredWithMinMax(3, 255, this.formData.bank_name)
       this.isValidBankUsername = isRequiredWithMinMax(3, 255, this.formData.bank_username)
-      this.isValidScreenshoot = isRequiredWithMinMax(3, 255, this.formData.screenshoot)
+      this.isValidScreenshoot = isRequired(this.formData.screenshoot)
       this.isValidFormCaptcha = isRequiredWithMinMax(5, 10, this.formData.captcha)
 
       if (this.isValidFormEmail &&
@@ -373,10 +382,10 @@ export default {
       }
     },
     doSubmit () {
+      this.error = ''
+      this.isHaveError = false
       if (this.checkFormValidation()) {
-        this.error = ''
         this.loadingSubmit = true
-        this.isHaveError = false
         const dataForSubmit = Object.assign({}, this.formData) // eslint-disable-line no-unused-vars
         this.$store.dispatch('postPaymentConfirmation', {
           token: this._token,
