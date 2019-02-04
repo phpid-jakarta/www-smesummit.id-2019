@@ -25,11 +25,11 @@
               placeholder="Ex: example@mail.com"
               required>
           </div>
-          <p
+          <span
             v-show="!isValidFormEmail"
             class="help is-danger">
             Your email is not valid. <br> {{ getErrorMinMax(4, 255) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -45,11 +45,11 @@
               placeholder="Ex: 0812-123-456-789-00 or @your.telegram"
               required>
           </div>
-          <p
+          <span
             v-show="!isValidFormPhone"
             class="help is-danger">
             {{ getErrorMinMax(4, 255) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -74,11 +74,11 @@
               </select>
             </div>
           </div>
-          <p
+          <span
             v-show="!isValidPaymentType"
             class="help is-danger">
             {{ getErrorMinMax(4, 255) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -94,11 +94,11 @@
               placeholder="Ex: 500000"
               required>
           </div>
-          <p
+          <span
             v-show="!isValidTotalPayment"
             class="help is-danger">
             {{ getErrorMinMax(1, 20) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -114,11 +114,11 @@
               placeholder="Ex: BCA, BRI, MANDIRI, etc"
               required>
           </div>
-          <p
+          <span
             v-show="!isValidBankName"
             class="help is-danger">
             {{ getErrorMinMax(1, 255) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -134,11 +134,11 @@
               placeholder="Ex: Irfan Maulana"
               required>
           </div>
-          <p
+          <span
             v-show="!isValidBankUsername"
             class="help is-danger">
             {{ getErrorMinMax(4, 255) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -154,11 +154,11 @@
               placeholder="Ex: 2019-02-19"
               required>
           </div>
-          <p
+          <span
             v-show="!isValidDateTransfer"
             class="help is-danger">
             {{ getErrorMinMax(4, 255) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -174,11 +174,11 @@
               placeholder="Ex: QWERTY-QWERTY-QWERTY-QWERTY-QWERTY"
               required>
           </div>
-          <p
+          <span
             v-show="!isValidNoReference"
             class="help is-danger">
             {{ getErrorMinMax(4, 255) }}
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -196,14 +196,14 @@
               required
               @change="handleFileUpload()">
           </div>
-          <p class="help">
+          <span class="help">
             Before you uploading screenshoot, please compress your image via <a
               href="https://tinyjpg.com/"
               target="_blank"
               rel="noopener">
               https://tinyjpg.com/
             </a>
-          </p>
+          </span>
           <div
             v-if="isValidScreenshoot && formData.screenshoot !== ''"
             class="preview"
@@ -215,11 +215,11 @@
               :src="formData.screenshoot"
               style="width: 300px;">
           </div>
-          <p
+          <span
             v-show="!isValidScreenshoot"
             class="help is-danger">
             Please attach your transfer receipt
-          </p>
+          </span>
         </div>
 
         <div class="field">
@@ -233,9 +233,9 @@
               placeholder="Ex: I pay for bundled price with email: abc@gmai.com, cde@gmail.com, fgh@gmail.com" />
           </div>
         </div>
-        <p class="help">
+        <span class="help">
           If you pay for bundling ticket, please let Us know all the emails.
-        </p>
+        </span>
 
         <div class="field">
           <div>
@@ -265,11 +265,12 @@
               v-model="formData.captcha"
               class="input"
               type="text">
-          </div><p
+          </div>
+          <span
             v-show="!isValidFormCaptcha"
             class="help is-danger">
             {{ getErrorMinMax(6, 10) }}
-          </p>
+          </span>
         </div>
 
         <div class="field is-grouped">
