@@ -439,21 +439,25 @@ export default {
           voucher: this.voucherCode
         },
         success: (res) => {
-          console.log(res, res.data.status)
           if (res.data.status === 'success') {
+            console.info(`Congratulation! your voucher ${this.voucherCode} already redemmed.`, res.data.data)
             this.voucherCodeError = ''
             this.voucherCodeResponse = res.data.data
             this.formData.voucher = this.voucherCode
             this.isValidFormVoucher = true
           }
-          this.voucherLoading = false
+          setTimeout(() => {
+            this.voucherLoading = false
+          }, 1000)
         },
         failed: (message) => {
           this.voucherCodeResponse = defaultVoucherRes
           this.voucherCodeError = message
           this.formData.voucher = ''
           this.isValidFormVoucher = false
-          this.voucherLoading = false
+          setTimeout(() => {
+            this.voucherLoading = false
+          }, 1000)
         }
       })
     }
