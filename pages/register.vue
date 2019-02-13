@@ -198,7 +198,7 @@
             <input
               v-model="voucherCode"
               class="input"
-              :class="{'is-danger': !isValidFormVoucher, 'is-success': isNotEmptyVoucherResponse}"
+              :class="{'is-danger': !isValidFormVoucher, 'is-success': isValidFormVoucher}"
               type="text"
               placeholder="Ex: QWERTY"
               required>
@@ -214,7 +214,7 @@
           </div>
         </div>
         <p
-          v-if="isNotEmptyVoucherResponse"
+          v-if="isValidFormVoucher"
           class="help is-success">
           <b>Congratulation!</b> your voucher already redeemed.
           <br>
@@ -224,7 +224,7 @@
           <br><br>
         </p>
         <p
-          v-show="!isValidFormVoucher"
+          v-show="!isValidFormVoucher && voucherCodeError !== ''"
           class="help is-danger">
           Voucher code is not valid
         </p>
@@ -354,17 +354,12 @@ export default {
       isValidFormEmail: true,
       isValidFormPhone: true,
       isValidFormProblemDesc: true,
-      isValidFormVoucher: true,
+      isValidFormVoucher: false,
       isValidFormCaptcha: true,
       isValidForm: false,
       positionList: [],
       companySectorList: [],
       coacherSectorList: []
-    }
-  },
-  computed: {
-    isNotEmptyVoucherResponse () {
-      return this.voucherCodeResponse.description !== '' && this.voucherCodeError !== ''
     }
   },
   created () {
@@ -433,6 +428,7 @@ export default {
       this.formData.voucher = ''
       this.voucherCodeResponse = defaultVoucherRes
       this.voucherLoading = true
+      this.isValidFormVoucher = false
       this.$store.dispatch('postRedeemVoucher', {
         token: this._token,
         data: {
