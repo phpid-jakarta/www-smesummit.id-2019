@@ -4,10 +4,14 @@ import { API_ENDPOINT } from '../constant/index'
 
 const ACTION_SUBMIT = '?action=submit'
 
-const generalPost = (url, token, data, success, failed) => {
+const generalPost = (url, token, data, success, failed, customAction) => {
+  let param = ACTION_SUBMIT
+  if (customAction) {
+    param = customAction
+  }
   const promiseRegister = tokenString => {
     return axios({
-      url: `${url}${ACTION_SUBMIT}`,
+      url: `${url}${param}`,
       method: 'post',
       headers: {
         'Authorization': `Bearer ${tokenString}`,
@@ -55,4 +59,9 @@ export const registerSpeaker = (token, data, success, failed) => {
 export const paymentConfirmation = (token, data, success, failed) => {
   const URL = `${API_ENDPOINT.PAYMENT_CONFIRMATION}`
   generalPost(URL, token, data, success, failed)
+}
+
+export const redeemVoucher = (token, data, success, failed) => {
+  const URL = `${API_ENDPOINT.REGISTER_PARTICIPANT}`
+  generalPost(URL, token, data, success, failed, '?action=voucher')
 }
