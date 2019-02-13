@@ -190,6 +190,43 @@
           </p>
         </div>
 
+        <label class="label">
+          Voucher / Promo Code
+        </label>
+        <div class="field is-grouped">
+          <div class="control">
+            <input
+              v-model="voucherCode"
+              class="input"
+              :class="{'is-danger': !isValidFormVoucher, 'is-success': isNotEmptyVoucherResponse}"
+              type="text"
+              placeholder="Ex: QWERTY"
+              required>
+          </div>
+          <div class="control">
+            <button
+              class="button is-link"
+              @click="doRedeemVoucher">
+              Apply Voucher
+            </button>
+          </div>
+        </div>
+        <p
+          v-if="isNotEmptyVoucherResponse"
+          class="help is-success">
+          <b>Congratulation!</b> your voucher already redeemed.
+          <br>
+          Normal Price: <b>{{ voucherCodeResponse.before_discount }}</b>
+          <br>
+          After Promo Price: <b>{{ voucherCodeResponse.after_discount }}</b>
+          <br><br>
+        </p>
+        <p
+          v-show="!isValidFormVoucher"
+          class="help is-danger">
+          Voucher code is not valid
+        </p>
+
         <div class="field">
           <div>
             <img
@@ -269,6 +306,12 @@ import { API_ENDPOINT } from '../constant/index'
 import { isRequiredWithMinMax, isEmail } from '../utils/validation'
 import PageMixin from '../mixins/page-mixin'
 
+const defaultVoucherRes = {
+  before_discount: 0,
+  after_discount: 0,
+  description: ''
+}
+
 export default {
   name: 'RegisterParticipants',
   layout: 'no-hero',
@@ -286,6 +329,9 @@ export default {
   data () {
     return {
       url_api: `${API_ENDPOINT.REGISTER_PARTICIPANT}`,
+      voucherCode: '',
+      voucherCodeError: '',
+      voucherCodeResponse: defaultVoucherRes,
       formData: {
         name: '',
         company_name: '',
@@ -295,6 +341,7 @@ export default {
         email: '',
         phone: '',
         problem_desc: '',
+        voucher: '',
         captcha: ''
       },
       isValidFormName: true,
@@ -304,11 +351,17 @@ export default {
       isValidFormEmail: true,
       isValidFormPhone: true,
       isValidFormProblemDesc: true,
+      isValidFormVoucher: true,
       isValidFormCaptcha: true,
       isValidForm: false,
       positionList: [],
       companySectorList: [],
       coacherSectorList: []
+    }
+  },
+  computed: {
+    isNotEmptyVoucherResponse () {
+      return this.voucherCodeResponse.description !== '' && this.voucherCodeError !== ''
     }
   },
   created () {
@@ -372,6 +425,30 @@ export default {
           failed: this.onErrorSubmit
         })
       } else this.isHaveError = true
+    },
+    doRedeemVoucher () {
+      this.formData.voucher = ''
+      this.voucherCodeResponse = defaultVoucherRes
+      this.$store.dispatch('postRedeemVoucher', {
+        token: this._token,
+        data: {
+          voucher: this.voucherCode
+        },
+        success: (res) => {
+          if (res.data.status === 'success') {
+            this.voucherCodeError = ''
+            this.voucherCodeResponse = res.data.data
+            this.formData.voucher = this.voucherCode
+            this.isValidFormVoucher = true
+          }
+        },
+        failed: (message) => {
+          this.voucherCodeResponse = defaultVoucherRes
+          this.voucherCodeError = message
+          this.formData.voucher = ''
+          this.isValidFormVoucher = false
+        }
+      })
     }
   }
 }

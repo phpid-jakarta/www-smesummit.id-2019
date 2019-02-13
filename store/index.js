@@ -9,7 +9,8 @@ import {
   registerVolunteer,
   registerCoacher,
   registerSpeaker,
-  paymentConfirmation
+  paymentConfirmation,
+  redeemVoucher
 } from '../services/register'
 
 const createStore = () => {
@@ -61,6 +62,9 @@ const createStore = () => {
       },
       postPaymentConfirmation ({ commit, dispatch }, { token, data, success, failed }) {
         paymentConfirmation(token, data, success, failed)
+      },
+      postRedeemVoucher ({ commit, dispatch }, { token, data, success, failed }) {
+        redeemVoucher(token, data, success, failed)
       },
       showNotification ({ commit }, { title = '', message = '' }) {
         commit('setNotification', { show: true, title, message })
