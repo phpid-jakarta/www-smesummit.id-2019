@@ -3,8 +3,10 @@
     <section
       class="section has-text-centered">
       <img
-        v-lazy="benefitCoacher.logo"
+        v-lazyload
         src="/images/placeholder.png"
+        :data-src="benefitCoacher.logo"
+        data-err="/images/placeholder.png"
         :alt="benefitCoacher.title"
         style="width: 200px;">
 

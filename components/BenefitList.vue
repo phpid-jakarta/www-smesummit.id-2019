@@ -13,8 +13,10 @@
           class="level-item">
           <!-- IDEA -->
           <img
-            v-lazy="benefit.logo"
+            v-lazyload
             src="/images/placeholder.png"
+            :data-src="benefit.logo"
+            data-err="/images/placeholder.png"
             :alt="benefit.title ">
           <div class="item__text">
             <h4>{{ benefit.title }}</h4>

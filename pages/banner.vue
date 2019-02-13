@@ -7,10 +7,12 @@
       <div class="column" />
       <div class="column">
         <img
-          v-lazy="`/images/banner/banner-${image}.jpeg`"
+          v-lazyload
+          src="/images/placeholder.png"
+          :data-src="`/images/banner/banner-${image}.jpeg`"
+          data-err="/images/placeholder.png"
           class="banner__item"
-          :alt="`Bannner ${image}`"
-          src="/images/placeholder.png">
+          :alt="`Bannner ${image}`">
       </div>
       <div class="column" />
     </div>
