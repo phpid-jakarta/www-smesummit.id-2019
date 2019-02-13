@@ -205,6 +205,8 @@
           </div>
           <div class="control">
             <a
+              :disabled="voucherLoading"
+              :class="{'is-loading': voucherLoading}"
               class="button is-link"
               @click="doRedeemVoucher">
               Apply Voucher
@@ -332,6 +334,7 @@ export default {
       voucherCode: '',
       voucherCodeError: '',
       voucherCodeResponse: defaultVoucherRes,
+      voucherLoading: false,
       formData: {
         name: '',
         company_name: '',
@@ -429,24 +432,28 @@ export default {
     doRedeemVoucher () {
       this.formData.voucher = ''
       this.voucherCodeResponse = defaultVoucherRes
+      this.voucherLoading = true
       this.$store.dispatch('postRedeemVoucher', {
         token: this._token,
         data: {
           voucher: this.voucherCode
         },
         success: (res) => {
+          console.log(res, res.data.status)
           if (res.data.status === 'success') {
             this.voucherCodeError = ''
             this.voucherCodeResponse = res.data.data
             this.formData.voucher = this.voucherCode
             this.isValidFormVoucher = true
           }
+          this.voucherLoading = false
         },
         failed: (message) => {
           this.voucherCodeResponse = defaultVoucherRes
           this.voucherCodeError = message
           this.formData.voucher = ''
           this.isValidFormVoucher = false
+          this.voucherLoading = false
         }
       })
     }

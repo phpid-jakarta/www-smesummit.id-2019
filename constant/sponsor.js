@@ -1,10 +1,10 @@
 export const MAIN_SPONSORS = [{
   name: 'Biznet Gio',
-  logo: '/images/sponsor/biznet-gio-logo.svg',
+  logo: '/images/sponsor/Biznet_GioCloud_Logo.png',
   link: 'https://www.biznetgio.com/'
 }, {
   name: 'Biznet Networks',
-  logo: '/images/sponsor/biznet-networks-logo.svg',
+  logo: '/images/sponsor/Biznet_Logo.png',
   link: 'http://www.biznetnetworks.com/id/'
 }]
 
