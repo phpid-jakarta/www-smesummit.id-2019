@@ -9,9 +9,11 @@
         <figure class="image">
           <picture>
             <img
-              v-lazy="'/images/organizer/logo-phpid-putih300.png'"
-              class="organizer__logo"
+              v-lazyload
               src="/images/placeholder.png"
+              data-src="/images/organizer/logo-phpid-putih300.png"
+              data-err="/images/placeholder.png"
+              class="organizer__logo"
               alt="PHP Indonesia">
           </picture>
         </figure>

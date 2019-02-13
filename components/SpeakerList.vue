@@ -14,8 +14,10 @@
           <figure class="image is-200x200">
             <picture>
               <img
-                v-lazy="speaker.photo.jpeg"
+                v-lazyload
                 src="/images/person.png"
+                :data-src="speaker.photo.jpeg"
+                data-err="/images/person.png"
                 :alt="speaker.name"
                 class="is-rounded">
             </picture>

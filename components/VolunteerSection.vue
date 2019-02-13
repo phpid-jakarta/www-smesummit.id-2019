@@ -7,9 +7,11 @@
     </h2>
 
     <img
-      v-lazy="'/images/banner/volunteer.jpg'"
-      class="volunteer_banner"
+      v-lazyload
       src="/images/placeholder.png"
+      data-src="/images/banner/volunteer.jpg"
+      data-err="/images/placeholder.png"
+      class="volunteer_banner"
       alt="Volunteer">
 
     <div class="level btn-call">

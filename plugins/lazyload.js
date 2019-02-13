@@ -1,9 +1,4 @@
 import Vue from 'vue'
-import VueLazyload from 'vue-lazyload'
+import VueTinyLazyloadImg from 'vue-tiny-lazyload-img'
 
-Vue.use(VueLazyload, {
-  observer: true,
-  preLoad: 1.3,
-  attempt: 1,
-  listenEvents: [ 'scroll' ]
-})
+Vue.use(VueTinyLazyloadImg)

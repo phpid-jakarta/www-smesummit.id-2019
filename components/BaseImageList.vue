@@ -23,10 +23,12 @@
             target="_blank"
             rel="noopener">
             <img
-              v-lazy="item.logo"
+              v-lazyload
+              src="/images/placeholder.png"
+              :data-src="item.logo"
+              data-err="/images/placeholder.png"
               class="sponsors_item"
-              :alt="item.name"
-              src="/images/placeholder.png">
+              :alt="item.name">
           </a>
         </div>
       </div>

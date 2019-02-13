@@ -9,8 +9,10 @@
       <figure class="level-item">
         <picture>
           <img
-            v-lazy="'/images/venue/ayana_ballroom_3_300px.jpeg'"
+            v-lazyload
             src="/images/placeholder.png"
+            data-src="/images/venue/ayana_ballroom_3_300px.jpeg"
+            data-err="/images/placeholder.png"
             alt="Ballroom Ayana Hotel Midplaza, Jakarta"
             height="300">
         </picture>
