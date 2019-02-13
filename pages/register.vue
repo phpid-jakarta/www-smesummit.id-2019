@@ -198,7 +198,7 @@
             <input
               v-model="voucherCode"
               class="input"
-              :class="{'is-danger': !isValidFormVoucher, 'is-success': isValidFormVoucher}"
+              :class="{'is-danger': (!isValidFormVoucher && voucherCodeError !== ''), 'is-success': isValidFormVoucher}"
               type="text"
               placeholder="Ex: QWERTY"
               required>
@@ -216,7 +216,7 @@
         <p
           v-if="isValidFormVoucher"
           class="help is-success">
-          <b>Congratulation!</b> your voucher already redeemed.
+          <b>Congratulation!</b> your voucher <b>{{ formData.voucher }}</b> already redeemed.
           <br>
           Normal Price: <b>{{ voucherCodeResponse.before_discount }}</b>
           <br>
@@ -335,6 +335,7 @@ export default {
       voucherCodeError: '',
       voucherCodeResponse: defaultVoucherRes,
       voucherLoading: false,
+      voucherAlreadyRedeem: false,
       formData: {
         name: '',
         company_name: '',
@@ -427,35 +428,41 @@ export default {
     doRedeemVoucher () {
       this.formData.voucher = ''
       this.voucherCodeResponse = defaultVoucherRes
-      this.voucherLoading = true
       this.isValidFormVoucher = false
-      this.$store.dispatch('postRedeemVoucher', {
-        token: this._token,
-        data: {
-          voucher: this.voucherCode
-        },
-        success: (res) => {
-          if (res.data.status === 'success') {
-            console.info(`Congratulation! your voucher ${this.voucherCode} already redemmed.`, res.data.data)
-            this.voucherCodeError = ''
-            this.voucherCodeResponse = res.data.data
-            this.formData.voucher = this.voucherCode
-            this.isValidFormVoucher = true
+      this.voucherAlreadyRedeem = false
+      if (!this.voucherLoading) {
+        this.voucherLoading = true
+        this.$store.dispatch('postRedeemVoucher', {
+          token: this._token,
+          data: {
+            voucher: this.voucherCode
+          },
+          success: (res) => {
+            if (res.data.status === 'success') {
+              console.info(`Congratulation! your voucher ${this.voucherCode} already redemmed.`, res.data.data)
+              this.voucherCodeError = ''
+              this.voucherCodeResponse = res.data.data
+              this.formData.voucher = this.voucherCode
+              this.isValidFormVoucher = true
+              this.voucherAlreadyRedeem = true
+            }
+            setTimeout(() => {
+              this.voucherLoading = false
+            }, 1000)
+          },
+          failed: (message) => {
+            this.voucherCodeResponse = defaultVoucherRes
+            this.voucherCodeError = message
+            this.formData.voucher = ''
+            this.isValidFormVoucher = false
+            this.voucherAlreadyRedeem = true
+            setTimeout(() => {
+              this.voucherLoading = false
+            }, 1000)
           }
-          setTimeout(() => {
-            this.voucherLoading = false
-          }, 1000)
-        },
-        failed: (message) => {
-          this.voucherCodeResponse = defaultVoucherRes
-          this.voucherCodeError = message
-          this.formData.voucher = ''
-          this.isValidFormVoucher = false
-          setTimeout(() => {
-            this.voucherLoading = false
-          }, 1000)
-        }
-      })
+        })
+
+      }
     }
   }
 }
