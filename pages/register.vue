@@ -204,11 +204,11 @@
               required>
           </div>
           <div class="control">
-            <button
+            <a
               class="button is-link"
               @click="doRedeemVoucher">
               Apply Voucher
-            </button>
+            </a>
           </div>
         </div>
         <p
