@@ -1,9 +1,8 @@
 # www-nontech-summit-2019
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors) ![](https://img.shields.io/badge/craftedby-PHPID-brightgreen.svg) [![Travis](https://img.shields.io/travis/phpid-jakarta/www-smesummit.id-2019.svg)](https://travis-ci.org/phpid-jakarta/www-smesummit.id-2019)
 
 Website for Small-Medium Enterprise Non-Tech Company Summit 2019 - Organized by PHP Indonesia
 
-![](https://img.shields.io/badge/craftedby-PHPID-brightgreen.svg) [![Travis](https://img.shields.io/travis/phpid-jakarta/www-smesummit.id-2019.svg)](https://travis-ci.org/phpid-jakarta/www-smesummit.id-2019)
 
 ## Repo
 
