@@ -52,6 +52,12 @@
       list-sub-title="SILVER SPONSOR" />
 
     <BaseImageList
+      :items="supporter"
+      list-type="supporter"
+      list-title="SUPPORTED BY"
+      :show-button="false" />
+
+    <BaseImageList
       :items="partners"
       list-type="media-partner"
       list-title="OFFICIAL MEDIA PARTNER"
@@ -77,6 +83,7 @@ import { MAIN_SPONSORS, SILVER_SPONSORS } from '../constant/sponsor'
 import { PARTNERS } from '../constant/media-partner'
 import { TARGETS } from '../constant/target'
 import { BENEFITS } from '../constant/benefit'
+import { SUPPORTER } from '../constant/supporter'
 
 export default {
   name: 'IndexPage',
@@ -95,7 +102,8 @@ export default {
       sponsors: MAIN_SPONSORS,
       silver_sponsor: SILVER_SPONSORS,
       partners: PARTNERS,
-      benefits: BENEFITS
+      benefits: BENEFITS,
+      supporter: SUPPORTER
     }
   },
   mounted () {
