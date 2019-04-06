@@ -216,7 +216,8 @@
         <p
           v-if="isValidFormVoucher"
           class="help is-success">
-          <b>Congratulation!</b> your voucher <b>{{ formData.voucher }}</b> already redeemed.
+          <b>Congratulation!</b> your voucher <b>{{ formData.voucher }}</b> has redeemed succesfully
+          
           <br>
           Normal Price: <b>{{ voucherCodeResponse.before_discount }}</b>
           <br>
