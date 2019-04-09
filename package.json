@@ -17,6 +17,7 @@
     "axios": "^0.18.0",
     "express": "^4.16.4",
     "intersection-observer": "^0.5.1",
+    "jsqr": "^1.2.0",
     "nuxt": "^2.4.3",
     "particles.js": "^2.0.0",
     "typed.js": "^2.0.10",

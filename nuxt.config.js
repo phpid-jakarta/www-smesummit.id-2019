@@ -90,7 +90,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/lazyload', ssr: false }
+    { src: '~/plugins/lazyload', ssr: false },
+    // { src: '~/plugins/qr-scanner', ssr: false }
   ],
 
   generate: {
