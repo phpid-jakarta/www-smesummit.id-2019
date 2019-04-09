@@ -13,7 +13,6 @@ import BaseHeader from '../components/BaseHeader'
 import BaseFooter from '../components/BaseFooter'
 import BaseToast from '../components/BaseToast'
 
-require('intersection-observer')
 require('particles.js')
 
 export default {
