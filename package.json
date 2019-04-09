@@ -9,39 +9,39 @@
     "build": "cross-env NODE_ENV=production nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "cross-env NODE_ENV=production nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "lint": "./node_modules/.bin/eslint --ext .js,.vue --ignore-path .eslintignore . --fix",
     "precommit": "npm run lint"
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.3",
     "axios": "^0.18.0",
     "express": "^4.16.4",
-    "intersection-observer": "^0.5.1",
-    "nuxt": "^2.4.3",
+    "jsqr": "^1.2.0",
+    "nuxt": "^2.6.1",
     "particles.js": "^2.0.0",
     "typed.js": "^2.0.10",
-    "vue-tiny-lazyload-img": "^0.0.3"
+    "vue-tiny-lazyload-img": "^0.1.0"
   },
   "devDependencies": {
     "@nuxtjs/pwa": "^2.6.0",
-    "@nuxtjs/sitemap": "0.2.0",
-    "autoprefixer": "^9.4.7",
+    "@nuxtjs/sitemap": "0.2.2",
+    "autoprefixer": "^9.5.1",
     "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
-    "css-loader": "^2.1.0",
-    "eslint": "^5.13.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^5.1.0",
+    "eslint-plugin-vue": "^5.2.2",
     "less-loader": "^4.1.0",
     "node-sass": "^4.11.0",
-    "nodemon": "^1.18.10",
+    "nodemon": "^1.18.11",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "vue-loader": "^15.6.2"
+    "vue-loader": "^15.7.0"
   }
 }

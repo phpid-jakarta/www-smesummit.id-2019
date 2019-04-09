@@ -90,7 +90,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/lazyload', ssr: false }
+    { src: '~/plugins/lazyload', ssr: false },
+    // { src: '~/plugins/qr-scanner', ssr: false }
   ],
 
   generate: {
@@ -144,7 +145,10 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }
