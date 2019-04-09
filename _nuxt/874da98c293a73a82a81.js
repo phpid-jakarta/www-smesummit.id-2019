@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{221:function(e,n,t){"use strict";t.r(n);var r={name:"QRScannerPage",data:function(){return{}}},c=t(2),component=Object(c.a)(r,function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("Hello World!")])},[],!1,null,"33a65ce2",null);n.default=component.exports}}]);
