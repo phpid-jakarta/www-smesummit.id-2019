@@ -5,6 +5,7 @@ import {
 import { getToken } from '../services/token'
 import {
   registerParticipant,
+  registerOtsParticipant,
   registerSponsor,
   registerVolunteer,
   registerCoacher,
@@ -47,6 +48,9 @@ const createStore = () => {
       },
       postRegisterParticipant ({ commit, dispatch }, { token, data, success, failed }) {
         registerParticipant(token, data, success, failed)
+      },
+      postOtsRegister ({ commit, dispatch }, { token, data, success, failed }) {
+        registerOtsParticipant(token, data, success, failed)
       },
       postRegisterCoacher ({ commit, dispatch }, { token, data, success, failed }) {
         registerCoacher(token, data, success, failed)

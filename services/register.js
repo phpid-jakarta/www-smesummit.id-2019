@@ -36,6 +36,11 @@ export const registerParticipant = (token, data, success, failed) => {
   generalPost(URL, token, data, success, failed)
 }
 
+export const registerOtsParticipant = (token, data, success, failed) => {
+  const URL = `${API_ENDPOINT.REGISTER_PARTICIPANT}`
+  generalPost(URL, token, data, success, failed, '?action=submit&wxc=1')
+}
+
 export const registerSponsor = (token, data, success, failed) => {
   const URL = `${API_ENDPOINT.REGISTER_SPONSOR}`
   generalPost(URL, token, data, success, failed)
