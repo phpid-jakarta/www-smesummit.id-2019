@@ -38,7 +38,7 @@ export default {
       this.requestToken()
     },
     onSuccessSubmit (res) {
-      if (res.data.data.message === 'register_success') {
+      if (res.data.data.message === 'register_success' || res.data.data.message === 'register_success_wxc') {
         this.$store.dispatch('showNotification', {
           title: 'Thank You',
           message: 'The data was successfully saved in our server.'
