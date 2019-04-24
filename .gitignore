@@ -80,3 +80,5 @@ dist
 # IDE
 .idea
 static/sw.js
+sitemap.xml
+sitemap.xml.gz
