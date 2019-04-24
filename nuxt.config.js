@@ -108,11 +108,10 @@ module.exports = {
   ],
 
   sitemap: {
-    path: '/sitemap.xml',
     hostname: 'https://www.smesummit.id',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: true, // Enable me when using nuxt generate
+    routes,
     exclude: [
       '/loading-mixin',
       '/page-mixin'
