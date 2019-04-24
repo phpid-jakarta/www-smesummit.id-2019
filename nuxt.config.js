@@ -14,6 +14,7 @@ const routes = [
   '/contact',
   '/developers',
   '/faq',
+  '/on-the-spot',
   '/organizer',
   '/payment-confirmation',
   '/register',
