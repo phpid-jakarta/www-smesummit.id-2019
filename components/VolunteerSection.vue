@@ -18,8 +18,8 @@
       <div class="level-item">
         <nuxt-link
           class="button is-outlined is-large is-info caption-text"
-          to="/volunteer">
-          Become Volunteer
+          to="#">
+          Register Closed
         </nuxt-link>
       </div>
     </div>
