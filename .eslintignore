@@ -1,8 +1,10 @@
-build/*.js
-config/*.js
-dist/*.js
-test/*.js
-static/*.js
+.nuxt
+archieves-page
+build
+config
+dist
+test
+static
 node_modules
 *.config*
 nuxt.config.js
