@@ -31,8 +31,8 @@
         <div class="level-item">
           <a
             class="button is-large is-danger caption-text"
-            href="/register">
-            Register Here
+            href="#">
+            Register Closed
           </a>
         </div>
       </div>
